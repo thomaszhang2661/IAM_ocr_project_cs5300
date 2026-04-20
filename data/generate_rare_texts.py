@@ -15,11 +15,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from openai import OpenAI
 
-CLIENT = OpenAI(
-    base_url='https://ark.cn-beijing.volces.com/api/v3',
-    api_key=os.environ.get('DOUBAO_API_KEY', ''),
-)
-MODEL = os.environ.get('DOUBAO_MODEL_ID', 'ep-20260214152858-8r9sn')
+try:
+    from secrets import DOUBAO_API_KEY, DOUBAO_MODEL_ID, DOUBAO_BASE_URL
+    CLIENT = OpenAI(base_url=DOUBAO_BASE_URL, api_key=DOUBAO_API_KEY)
+    MODEL  = DOUBAO_MODEL_ID
+except ImportError:
+    CLIENT = OpenAI(base_url='https://ark.cn-beijing.volces.com/api/v3', api_key='')
+    MODEL  = 'ep-20260214152858-8r9sn'
 
 IAM_ALPHABET = (
     ' !"#&\'()*+,-./0123456789:;?'

@@ -40,3 +40,4 @@ results/patch_samples/
 *.bak
 autoresearch/
 data/fonts_unused/
+secrets.py

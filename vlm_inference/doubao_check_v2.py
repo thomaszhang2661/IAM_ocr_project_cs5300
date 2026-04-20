@@ -31,9 +31,15 @@ from openai import OpenAI
 from tqdm import tqdm
 
 # ── Doubao defaults ───────────────────────────────────────────────────────────
-DOUBAO_BASE  = 'https://ark.cn-beijing.volces.com/api/v3'
-DOUBAO_KEY   = os.environ.get('DOUBAO_API_KEY', '')
-DOUBAO_MODEL = os.environ.get('DOUBAO_MODEL_ID', 'ep-20260214152858-8r9sn')
+try:
+    from secrets import DOUBAO_API_KEY, DOUBAO_MODEL_ID, DOUBAO_BASE_URL
+    DOUBAO_BASE  = DOUBAO_BASE_URL
+    DOUBAO_KEY   = DOUBAO_API_KEY
+    DOUBAO_MODEL = DOUBAO_MODEL_ID
+except ImportError:
+    DOUBAO_BASE  = 'https://ark.cn-beijing.volces.com/api/v3'
+    DOUBAO_KEY   = ''
+    DOUBAO_MODEL = 'ep-20260214152858-8r9sn'
 
 # ── Prompt v2 ─────────────────────────────────────────────────────────────────
 VERIFY_PROMPT_V2 = (
