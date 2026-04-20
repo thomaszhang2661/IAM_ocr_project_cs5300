@@ -1,0 +1,14 @@
+{
+  "checkpoint": "./checkpoints/hparam_search/run08_best.pt",
+  "split": "test",
+  "n_samples": 2915,
+  "beam_width": 50,
+  "alpha": 0.5,
+  "beta": 1.0,
+  "confusion_alpha": 0.1,
+  "confusion_min": 10,
+  "greedy_cer": 9.5817,
+  "greedy_wer": 29.7212,
+  "beam_cer": 9.4973,
+  "beam_wer": 29.4937
+}

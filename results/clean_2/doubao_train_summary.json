@@ -1,0 +1,11 @@
+{
+  "split": "train",
+  "prompt_version": "v2",
+  "total_samples": 6482,
+  "correct_count": 5663,
+  "ambiguous_count": 5,
+  "incorrect_count": 814,
+  "correct_rate": 0.8737,
+  "ambiguous_rate": 0.0008,
+  "incorrect_rate": 0.1256
+}

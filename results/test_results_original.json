@@ -1,0 +1,7 @@
+{
+  "run_name": "original",
+  "checkpoint": "checkpoints/original/best.pt",
+  "test_samples": 2915,
+  "cer_pct": 11.5345,
+  "wer_pct": 36.0688
+}

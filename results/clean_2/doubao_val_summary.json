@@ -1,0 +1,11 @@
+{
+  "split": "val",
+  "prompt_version": "v2",
+  "total_samples": 976,
+  "correct_count": 836,
+  "ambiguous_count": 1,
+  "incorrect_count": 139,
+  "correct_rate": 0.8566,
+  "ambiguous_rate": 0.001,
+  "incorrect_rate": 0.1424
+}

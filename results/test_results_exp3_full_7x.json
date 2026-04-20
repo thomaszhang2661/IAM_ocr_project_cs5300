@@ -1,0 +1,6 @@
+{
+  "run_name": "exp3_full_7x",
+  "test_samples": 2915,
+  "cer_pct": 7.7419,
+  "wer_pct": 24.0947
+}

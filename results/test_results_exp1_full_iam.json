@@ -1,0 +1,7 @@
+{
+  "run_name": "exp1_full_iam",
+  "checkpoint": "checkpoints/exp1_full_iam/best.pt",
+  "test_samples": 2915,
+  "cer_pct": 8.4265,
+  "wer_pct": 25.9381
+}

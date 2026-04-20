@@ -1,0 +1,15 @@
+run_id	val_cer	status	description	config
+00	9.0436	keep	baseline: hidden=256 dropout=0.1 bs=64 lr=1e-4	{"hidden": 256, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001}
+01	9.7923	discard	hidden=128	{"hidden": 128, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001}
+02	7.3466	keep	hidden=512	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001}
+09	8.9984	discard	lr=5e-5	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 5e-05, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+03	7.4535	discard	dropout=0.0 (no dropout)	{"hidden": 512, "dropout": 0.0, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+08	6.2865	keep	lr=3e-4	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0003, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+05	7.2040	keep	dropout=0.3	{"hidden": 512, "dropout": 0.3, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+04	7.8457	discard	dropout=0.2	{"hidden": 512, "dropout": 0.2, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+06	6.7262	keep	batch_size=32	{"hidden": 512, "dropout": 0.1, "batch_size": 32, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+07	8.3900	discard	batch_size=128	{"hidden": 512, "dropout": 0.1, "batch_size": 128, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": false}
+12	7.4226	discard	weight_decay=0 (no wd)	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0, "use_original_vgg": false}
+10	7.5034	discard	cnn_out=256 (smaller CNN)	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 256, "weight_decay": 0.0001, "use_original_vgg": false}
+11	8.0453	discard	weight_decay=1e-3	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.001, "use_original_vgg": false}
+13	7.4535	discard	original_vgg (last_kernel=2, H=32 style)	{"hidden": 512, "dropout": 0.1, "batch_size": 64, "lr": 0.0001, "cnn_out": 512, "weight_decay": 0.0001, "use_original_vgg": true}

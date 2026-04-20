@@ -1,0 +1,42 @@
+# Large data — not tracked
+checkpoints/
+data/lmdb/
+data/iam_hf/
+data/train_synth_raw/
+
+# Handwriting fonts (binary, large)
+data/handwriting_fonts/
+
+# Generated augment previews
+augment_preview/
+
+# HTML viewers with embedded images (large)
+results/*.html
+
+# Logs
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor
+.vscode/
+*.swp
+
+# Large binary results (keep CSVs and PNGs, skip LMDB outputs)
+data/lmdb/
+results/data_samples/
+results/sample_images/
+results/patch_samples/
+
+# Temp
+*.tmp
+*.bak
+autoresearch/
+data/fonts_unused/

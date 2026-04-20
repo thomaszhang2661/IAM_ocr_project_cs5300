@@ -1,0 +1,13 @@
+{
+  "best_cer_50ep": 6.2865,
+  "config": {
+    "hidden": 512,
+    "dropout": 0.1,
+    "batch_size": 64,
+    "lr": 3e-4,
+    "cnn_out": 512,
+    "weight_decay": 1e-4,
+    "use_original_vgg": false
+  },
+  "notes": "Parallel autoresearch over 14 runs. Best single-change: lr=3e-4 (6.29%). Runner-up: batch_size=32 (6.73%), dropout=0.3 (7.20%)."
+}

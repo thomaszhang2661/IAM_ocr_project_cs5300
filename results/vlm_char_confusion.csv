@@ -1,0 +1,937 @@
+wrong_char,correct_char,count,wrong_repr,correct_repr,note
+o,a,155,'o','a',lower–lower swap
+n,m,135,'n','m',lower–lower swap
+r,s,133,'r','s',lower–lower swap
+a,o,116,'a','o',lower–lower swap
+a,e,109,'a','e',lower–lower swap
+n,u,96,'n','u',lower–lower swap
+o,e,76,'o','e',lower–lower swap
+t,h,75,'t','h',lower–lower swap
+t,d,68,'t','d',lower–lower swap
+h,l,60,'h','l',lower–lower swap
+s,r,59,'s','r',lower–lower swap
+r,n,56,'r','n',lower–lower swap
+t,l,54,'t','l',lower–lower swap
+u,e,52,'u','e',lower–lower swap
+m,w,47,'m','w',lower–lower swap
+e,a,46,'e','a',lower–lower swap
+ ,s,42,' ','s',space mistaken as lower
+e,i,42,'e','i',lower–lower swap
+n,r,41,'n','r',lower–lower swap
+m,u,41,'m','u',lower–lower swap
+t,H,40,'t','H',lower mistaken as upper
+d,c,39,'d','c',lower–lower swap
+u,a,37,'u','a',lower–lower swap
+n,s,36,'n','s',lower–lower swap
+t,f,35,'t','f',lower–lower swap
+h,w,34,'h','w',lower–lower swap
+h,u,33,'h','u',lower–lower swap
+e,o,31,'e','o',lower–lower swap
+m,n,30,'m','n',lower–lower swap
+r,t,29,'r','t',lower–lower swap
+b,l,28,'b','l',lower–lower swap
+s,S,25,'s','S',lower mistaken as upper
+i,u,24,'i','u',lower–lower swap
+w,u,24,'w','u',lower–lower swap
+i,a,23,'i','a',lower–lower swap
+s,n,23,'s','n',lower–lower swap
+n,a,23,'n','a',lower–lower swap
+u,i,23,'u','i',lower–lower swap
+i,e,22,'i','e',lower–lower swap
+k,h,22,'k','h',lower–lower swap
+k,l,21,'k','l',lower–lower swap
+u,n,21,'u','n',lower–lower swap
+n,y,21,'n','y',lower–lower swap
+n,t,20,'n','t',lower–lower swap
+c,C,20,'c','C',lower mistaken as upper
+e,u,20,'e','u',lower–lower swap
+o,c,19,'o','c',lower–lower swap
+k,t,18,'k','t',lower–lower swap
+ ,"""",18,' ',"'""'",space mistaken as punct
+H,t,17,'H','t',upper mistaken as lower
+a,i,17,'a','i',lower–lower swap
+a,u,17,'a','u',lower–lower swap
+s,t,17,'s','t',lower–lower swap
+w,a,17,'w','a',lower–lower swap
+h,n,17,'h','n',lower–lower swap
+d,a,16,'d','a',lower–lower swap
+l,t,16,'l','t',lower–lower swap
+s,c,16,'s','c',lower–lower swap
+w,c,16,'w','c',lower–lower swap
+w,m,16,'w','m',lower–lower swap
+e,s,16,'e','s',lower–lower swap
+t,k,16,'t','k',lower–lower swap
+c,d,16,'c','d',lower–lower swap
+a,s,16,'a','s',lower–lower swap
+r,e,15,'r','e',lower–lower swap
+s,m,15,'s','m',lower–lower swap
+f,t,15,'f','t',lower–lower swap
+a,c,15,'a','c',lower–lower swap
+e,c,14,'e','c',lower–lower swap
+s,d,14,'s','d',lower–lower swap
+w,s,14,'w','s',lower–lower swap
+t,r,14,'t','r',lower–lower swap
+a,r,13,'a','r',lower–lower swap
+d,l,13,'d','l',lower–lower swap
+v,u,13,'v','u',lower–lower swap
+h,o,13,'h','o',lower–lower swap
+r,u,12,'r','u',lower–lower swap
+M,H,12,'M','H',upper–upper swap
+l,h,12,'l','h',lower–lower swap
+b,t,12,'b','t',lower–lower swap
+d,s,12,'d','s',lower–lower swap
+ ,e,12,' ','e',space mistaken as lower
+w,n,12,'w','n',lower–lower swap
+t,c,12,'t','c',lower–lower swap
+h,e,12,'h','e',lower–lower swap
+i,o,12,'i','o',lower–lower swap
+l,d,12,'l','d',lower–lower swap
+n,l,12,'n','l',lower–lower swap
+m,r,12,'m','r',lower–lower swap
+u,h,12,'u','h',lower–lower swap
+c,e,11,'c','e',lower–lower swap
+r,a,11,'r','a',lower–lower swap
+e,l,11,'e','l',lower–lower swap
+r,d,11,'r','d',lower–lower swap
+ ,h,11,' ','h',space mistaken as lower
+y,g,11,'y','g',lower–lower swap
+ ,l,11,' ','l',space mistaken as lower
+r,h,11,'r','h',lower–lower swap
+w,r,11,'w','r',lower–lower swap
+r,m,11,'r','m',lower–lower swap
+n,v,11,'n','v',lower–lower swap
+o,i,11,'o','i',lower–lower swap
+h,t,11,'h','t',lower–lower swap
+n,d,11,'n','d',lower–lower swap
+ ,",",10,' ',"','",space mistaken as punct
+a,n,10,'a','n',lower–lower swap
+n,w,10,'n','w',lower–lower swap
+n,h,10,'n','h',lower–lower swap
+v,r,10,'v','r',lower–lower swap
+r,c,10,'r','c',lower–lower swap
+ ,y,10,' ','y',space mistaken as lower
+s,a,10,'s','a',lower–lower swap
+d,t,10,'d','t',lower–lower swap
+d,e,10,'d','e',lower–lower swap
+t,W,10,'t','W',lower mistaken as upper
+t,n,10,'t','n',lower–lower swap
+a,x,10,'a','x',lower–lower swap
+v,w,9,'v','w',lower–lower swap
+e,n,9,'e','n',lower–lower swap
+v,c,9,'v','c',lower–lower swap
+u,v,9,'u','v',lower–lower swap
+u,r,9,'u','r',lower–lower swap
+F,T,9,'F','T',upper–upper swap
+h,b,9,'h','b',lower–lower swap
+-, ,9,'-',' ',punct mistaken as space
+r,i,9,'r','i',lower–lower swap
+o,s,9,'o','s',lower–lower swap
+ ,i,9,' ','i',space mistaken as lower
+u,o,9,'u','o',lower–lower swap
+s,y,9,'s','y',lower–lower swap
+I,H,9,'I','H',upper–upper swap
+w,W,8,'w','W',lower mistaken as upper
+s,e,8,'s','e',lower–lower swap
+e,d,8,'e','d',lower–lower swap
+.,t,8,'.','t',punct mistaken as lower
+L,l,8,'L','l',upper mistaken as lower
+n,c,8,'n','c',lower–lower swap
+o,h,8,'o','h',lower–lower swap
+h,L,8,'h','L',lower mistaken as upper
+ ,t,8,' ','t',space mistaken as lower
+r,v,8,'r','v',lower–lower swap
+t,a,8,'t','a',lower–lower swap
+i,h,8,'i','h',lower–lower swap
+c,s,8,'c','s',lower–lower swap
+t,b,8,'t','b',lower–lower swap
+r,l,8,'r','l',lower–lower swap
+h,a,8,'h','a',lower–lower swap
+e,k,8,'e','k',lower–lower swap
+u,m,8,'u','m',lower–lower swap
+o,d,8,'o','d',lower–lower swap
+a,g,8,'a','g',lower–lower swap
+b,s,8,'b','s',lower–lower swap
+',"""",8,"""'""","'""'",punct–punct swap
+n,e,7,'n','e',lower–lower swap
+h,k,7,'h','k',lower–lower swap
+e,r,7,'e','r',lower–lower swap
+i,l,7,'i','l',lower–lower swap
+d,o,7,'d','o',lower–lower swap
+i,r,7,'i','r',lower–lower swap
+y,i,7,'y','i',lower–lower swap
+h,i,7,'h','i',lower–lower swap
+m,a,7,'m','a',lower–lower swap
+ ,r,7,' ','r',space mistaken as lower
+s,o,7,'s','o',lower–lower swap
+a,l,7,'a','l',lower–lower swap
+A,a,7,'A','a',upper mistaken as lower
+u,w,7,'u','w',lower–lower swap
+o,r,7,'o','r',lower–lower swap
+t,e,7,'t','e',lower–lower swap
+a,h,7,'a','h',lower–lower swap
+T,t,7,'T','t',upper mistaken as lower
+f,l,7,'f','l',lower–lower swap
+s,i,7,'s','i',lower–lower swap
+u,c,6,'u','c',lower–lower swap
+n,i,6,'n','i',lower–lower swap
+ ,.,6,' ','.',space mistaken as punct
+s,l,6,'s','l',lower–lower swap
+t,o,6,'t','o',lower–lower swap
+t,"""",6,'t',"'""'",lower mistaken as punct
+t,i,6,'t','i',lower–lower swap
+e,h,6,'e','h',lower–lower swap
+i,I,6,'i','I',lower mistaken as upper
+m,i,6,'m','i',lower–lower swap
+b,h,6,'b','h',lower–lower swap
+e,t,6,'e','t',lower–lower swap
+C,G,6,'C','G',upper–upper swap
+O,o,6,'O','o',upper mistaken as lower
+#,t,6,'#','t',punct mistaken as lower
+e,y,6,'e','y',lower–lower swap
+d,n,6,'d','n',lower–lower swap
+c,r,6,'c','r',lower–lower swap
+t,s,6,'t','s',lower–lower swap
+i,s,6,'i','s',lower–lower swap
+a,d,6,'a','d',lower–lower swap
+h,r,6,'h','r',lower–lower swap
+-,s,6,'-','s',punct mistaken as lower
+S,s,6,'S','s',upper mistaken as lower
+p,P,6,'p','P',lower mistaken as upper
+t,T,6,'t','T',lower mistaken as upper
+w,i,6,'w','i',lower–lower swap
+t,A,6,'t','A',lower mistaken as upper
+N,W,6,'N','W',upper–upper swap
+m,c,6,'m','c',lower–lower swap
+m,l,6,'m','l',lower–lower swap
+i,y,6,'i','y',lower–lower swap
+b,S,6,'b','S',lower mistaken as upper
+M,h,5,'M','h',upper mistaken as lower
+m,M,5,'m','M',lower mistaken as upper
+o,u,5,'o','u',lower–lower swap
+S,L,5,'S','L',upper–upper swap
+b,f,5,'b','f',lower–lower swap
+l,f,5,'l','f',lower–lower swap
+l,g,5,'l','g',lower–lower swap
+h,s,5,'h','s',lower–lower swap
+e,g,5,'e','g',lower–lower swap
+w,t,5,'w','t',lower–lower swap
+6,b,5,'6','b',digit mistaken as lower
+r,o,5,'r','o',lower–lower swap
+t,u,5,'t','u',lower–lower swap
+w,e,5,'w','e',lower–lower swap
+t,M,5,'t','M',lower mistaken as upper
+v,s,5,'v','s',lower–lower swap
+t,p,5,'t','p',lower–lower swap
+N,n,5,'N','n',upper mistaken as lower
+l,w,5,'l','w',lower–lower swap
+i,"""",5,'i',"'""'",lower mistaken as punct
+a,t,5,'a','t',lower–lower swap
+z,g,5,'z','g',lower–lower swap
+l,c,5,'l','c',lower–lower swap
+t,K,5,'t','K',lower mistaken as upper
+m,s,5,'m','s',lower–lower swap
+g,f,5,'g','f',lower–lower swap
+ ,u,5,' ','u',space mistaken as lower
+o,t,5,'o','t',lower–lower swap
+n,o,5,'n','o',lower–lower swap
+ ,o,5,' ','o',space mistaken as lower
+-,e,5,'-','e',punct mistaken as lower
+ ,d,5,' ','d',space mistaken as lower
+s,"""",5,'s',"'""'",lower mistaken as punct
+n,g,5,'n','g',lower–lower swap
+1,A,5,'1','A',digit mistaken as upper
+L,C,4,'L','C',upper–upper swap
+A,t,4,'A','t',upper mistaken as lower
+f,h,4,'f','h',lower–lower swap
+f,s,4,'f','s',lower–lower swap
+t,w,4,'t','w',lower–lower swap
+H,h,4,'H','h',upper mistaken as lower
+A,H,4,'A','H',upper–upper swap
+G,C,4,'G','C',upper–upper swap
+s,w,4,'s','w',lower–lower swap
+w,v,4,'w','v',lower–lower swap
+c,x,4,'c','x',lower–lower swap
+t, ,4,'t',' ',lower mistaken as space
+h,d,4,'h','d',lower–lower swap
+i,p,4,'i','p',lower–lower swap
+C,c,4,'C','c',upper mistaken as lower
+n,k,4,'n','k',lower–lower swap
+ ,n,4,' ','n',space mistaken as lower
+c,w,4,'c','w',lower–lower swap
+u,l,4,'u','l',lower–lower swap
+g,s,4,'g','s',lower–lower swap
+-,t,4,'-','t',punct mistaken as lower
+ ,a,4,' ','a',space mistaken as lower
+u,s,4,'u','s',lower–lower swap
+k,a,4,'k','a',lower–lower swap
+R,r,4,'R','r',upper mistaken as lower
+l,e,4,'l','e',lower–lower swap
+l,n,4,'l','n',lower–lower swap
+G,g,4,'G','g',upper mistaken as lower
+k,e,4,'k','e',lower–lower swap
+w,o,4,'w','o',lower–lower swap
+r,p,4,'r','p',lower–lower swap
+m,v,4,'m','v',lower–lower swap
+s,g,4,'s','g',lower–lower swap
+s,p,4,'s','p',lower–lower swap
+i,d,4,'i','d',lower–lower swap
+l,i,4,'l','i',lower–lower swap
+l,C,4,'l','C',lower mistaken as upper
+v,l,4,'v','l',lower–lower swap
+f,F,4,'f','F',lower mistaken as upper
+m,e,4,'m','e',lower–lower swap
+b,i,4,'b','i',lower–lower swap
+a,q,4,'a','q',lower–lower swap
+d,g,4,'d','g',lower–lower swap
+b,d,4,'b','d',lower–lower swap
+v,n,4,'v','n',lower–lower swap
+ ,b,4,' ','b',space mistaken as lower
+h,m,4,'h','m',lower–lower swap
+T,P,4,'T','P',upper–upper swap
+a,v,3,'a','v',lower–lower swap
+c,t,3,'c','t',lower–lower swap
+c,g,3,'c','g',lower–lower swap
+Y,y,3,'Y','y',upper mistaken as lower
+I,J,3,'I','J',upper–upper swap
+b,p,3,'b','p',lower–lower swap
+f, ,3,'f',' ',lower mistaken as space
+u,t,3,'u','t',lower–lower swap
+d, ,3,'d',' ',lower mistaken as space
+o,m,3,'o','m',lower–lower swap
+-,n,3,'-','n',punct mistaken as lower
+M,U,3,'M','U',upper–upper swap
+L,h,3,'L','h',upper mistaken as lower
+g,y,3,'g','y',lower–lower swap
+k,c,3,'k','c',lower–lower swap
+n,',3,'n',"""'""",lower mistaken as punct
+t,v,3,'t','v',lower–lower swap
+I,i,3,'I','i',upper mistaken as lower
+E,e,3,'E','e',upper mistaken as lower
+#,b,3,'#','b',punct mistaken as lower
+p,f,3,'p','f',lower–lower swap
+m,b,3,'m','b',lower–lower swap
+b,k,3,'b','k',lower–lower swap
+3,5,3,'3','5',digit–digit swap
+m,"""",3,'m',"'""'",lower mistaken as punct
+W,h,3,'W','h',upper mistaken as lower
+g,p,3,'g','p',lower–lower swap
+i,f,3,'i','f',lower–lower swap
+M,T,3,'M','T',upper–upper swap
+m,o,3,'m','o',lower–lower swap
+l,k,3,'l','k',lower–lower swap
+H,T,3,'H','T',upper–upper swap
+M,t,3,'M','t',upper mistaken as lower
+.,e,3,'.','e',punct mistaken as lower
+b,g,3,'b','g',lower–lower swap
+o,n,3,'o','n',lower–lower swap
+w,l,3,'w','l',lower–lower swap
+ ,H,3,' ','H',space mistaken as upper
+k,v,3,'k','v',lower–lower swap
+r,g,3,'r','g',lower–lower swap
+ ,g,3,' ','g',space mistaken as lower
+ ,C,3,' ','C',space mistaken as upper
+i,k,3,'i','k',lower–lower swap
+.,",",3,'.',"','",punct–punct swap
+W,w,3,'W','w',upper mistaken as lower
+c,a,3,'c','a',lower–lower swap
+u,y,3,'u','y',lower–lower swap
+k,d,3,'k','d',lower–lower swap
+q,g,3,'q','g',lower–lower swap
+7,4,3,'7','4',digit–digit swap
+w,h,3,'w','h',lower–lower swap
+',I,3,"""'""",'I',punct mistaken as upper
+m,h,3,'m','h',lower–lower swap
+l,y,3,'l','y',lower–lower swap
+d,i,3,'d','i',lower–lower swap
+b,w,3,'b','w',lower–lower swap
+1,a,3,'1','a',digit mistaken as lower
+1,I,3,'1','I',digit mistaken as upper
+y,x,3,'y','x',lower–lower swap
+n,p,3,'n','p',lower–lower swap
+s,u,3,'s','u',lower–lower swap
+S,T,3,'S','T',upper–upper swap
+d,"""",3,'d',"'""'",lower mistaken as punct
+r,b,3,'r','b',lower–lower swap
+h, ,3,'h',' ',lower mistaken as space
+l,s,3,'l','s',lower–lower swap
+w,"""",3,'w',"'""'",lower mistaken as punct
+p,y,3,'p','y',lower–lower swap
+k,u,3,'k','u',lower–lower swap
+1,l,3,'1','l',digit mistaken as lower
+o,w,3,'o','w',lower–lower swap
+a,"""",3,'a',"'""'",lower mistaken as punct
+-,a,3,'-','a',punct mistaken as lower
+-,m,2,'-','m',punct mistaken as lower
+0,O,2,'0','O',digit mistaken as upper
+a,p,2,'a','p',lower–lower swap
+l,L,2,'l','L',lower mistaken as upper
+ ,;,2,' ',';',space mistaken as punct
+S,H,2,'S','H',upper–upper swap
+L,"""",2,'L',"'""'",upper mistaken as punct
+t,B,2,'t','B',lower mistaken as upper
+r,w,2,'r','w',lower–lower swap
+w,k,2,'w','k',lower–lower swap
+s,h,2,'s','h',lower–lower swap
+s, ,2,'s',' ',lower mistaken as space
+v,i,2,'v','i',lower–lower swap
+n,T,2,'n','T',lower mistaken as upper
+w,C,2,'w','C',lower mistaken as upper
+s,v,2,'s','v',lower–lower swap
+A,I,2,'A','I',upper–upper swap
+M,D,2,'M','D',upper–upper swap
+o,y,2,'o','y',lower–lower swap
+ ,f,2,' ','f',space mistaken as lower
+t,m,2,'t','m',lower–lower swap
+e,"""",2,'e',"'""'",lower mistaken as punct
+P,B,2,'P','B',upper–upper swap
+S,d,2,'S','d',upper mistaken as lower
+#,w,2,'#','w',punct mistaken as lower
+c,o,2,'c','o',lower–lower swap
+e,m,2,'e','m',lower–lower swap
+8,5,2,'8','5',digit–digit swap
+i,j,2,'i','j',lower–lower swap
+d,k,2,'d','k',lower–lower swap
+A,M,2,'A','M',upper–upper swap
+1,x,2,'1','x',digit mistaken as lower
+m,p,2,'m','p',lower–lower swap
+m,W,2,'m','W',lower mistaken as upper
+I,O,2,'I','O',upper–upper swap
+W,l,2,'W','l',upper mistaken as lower
+c,l,2,'c','l',lower–lower swap
+b,B,2,'b','B',lower mistaken as upper
+l,u,2,'l','u',lower–lower swap
+x,s,2,'x','s',lower–lower swap
+i,c,2,'i','c',lower–lower swap
+i,w,2,'i','w',lower–lower swap
+b,r,2,'b','r',lower–lower swap
+g,e,2,'g','e',lower–lower swap
+h,H,2,'h','H',lower mistaken as upper
+i,t,2,'i','t',lower–lower swap
+#,o,2,'#','o',punct mistaken as lower
+m, ,2,'m',' ',lower mistaken as space
+#,i,2,'#','i',punct mistaken as lower
+c,v,2,'c','v',lower–lower swap
+b,C,2,'b','C',lower mistaken as upper
+k,i,2,'k','i',lower–lower swap
+v,m,2,'v','m',lower–lower swap
+k,g,2,'k','g',lower–lower swap
+"""",t,2,"'""'",'t',punct mistaken as lower
+0,l,2,'0','l',digit mistaken as lower
+5,S,2,'5','S',digit mistaken as upper
+L,d,2,'L','d',upper mistaken as lower
+2,z,2,'2','z',digit mistaken as lower
+d,h,2,'d','h',lower–lower swap
+M,s,2,'M','s',upper mistaken as lower
+z,s,2,'z','s',lower–lower swap
+e, ,2,'e',' ',lower mistaken as space
+D,d,2,'D','d',upper mistaken as lower
+c,u,2,'c','u',lower–lower swap
+I,l,2,'I','l',upper mistaken as lower
+1,N,2,'1','N',digit mistaken as upper
+u,k,2,'u','k',lower–lower swap
+y,u,2,'y','u',lower–lower swap
+k,n,2,'k','n',lower–lower swap
+f,b,2,'f','b',lower–lower swap
+p,r,2,'p','r',lower–lower swap
+",",t,2,"','",'t',punct mistaken as lower
+f,p,2,'f','p',lower–lower swap
+y,n,2,'y','n',lower–lower swap
+b,G,2,'b','G',lower mistaken as upper
+y,e,2,'y','e',lower–lower swap
+y,a,2,'y','a',lower–lower swap
+H,"""",2,'H',"'""'",upper mistaken as punct
+g,i,2,'g','i',lower–lower swap
+g,c,2,'g','c',lower–lower swap
+S,D,2,'S','D',upper–upper swap
+t,N,2,'t','N',lower mistaken as upper
+s,M,2,'s','M',lower mistaken as upper
+w,b,2,'w','b',lower–lower swap
+t,y,2,'t','y',lower–lower swap
+A,G,2,'A','G',upper–upper swap
+N,M,2,'N','M',upper–upper swap
+k,m,2,'k','m',lower–lower swap
+U,W,2,'U','W',upper–upper swap
+1,T,2,'1','T',digit mistaken as upper
+6,G,2,'6','G',digit mistaken as upper
+M,P,2,'M','P',upper–upper swap
+b,n,2,'b','n',lower–lower swap
+s,H,2,'s','H',lower mistaken as upper
+i,v,2,'i','v',lower–lower swap
+f,L,2,'f','L',lower mistaken as upper
+',h,2,"""'""",'h',punct mistaken as lower
+f,u,2,'f','u',lower–lower swap
+r,f,2,'r','f',lower–lower swap
+ ,',2,' ',"""'""",space mistaken as punct
+L,H,2,'L','H',upper–upper swap
+9,5,2,'9','5',digit–digit swap
+i,.,2,'i','.',lower mistaken as punct
+l,m,2,'l','m',lower–lower swap
+y,Y,2,'y','Y',lower mistaken as upper
+A,F,2,'A','F',upper–upper swap
+.,w,2,'.','w',punct mistaken as lower
+p,t,2,'p','t',lower–lower swap
+.,s,2,'.','s',punct mistaken as lower
+k,b,2,'k','b',lower–lower swap
+m,k,2,'m','k',lower–lower swap
+b,o,2,'b','o',lower–lower swap
+l,P,2,'l','P',lower mistaken as upper
+n,b,2,'n','b',lower–lower swap
+a, ,2,'a',' ',lower mistaken as space
+T,C,2,'T','C',upper–upper swap
+M,W,2,'M','W',upper–upper swap
+p,e,2,'p','e',lower–lower swap
+h,"""",2,'h',"'""'",lower mistaken as punct
+v,o,2,'v','o',lower–lower swap
+s,b,2,'s','b',lower–lower swap
+i, ,2,'i',' ',lower mistaken as space
+g,q,2,'g','q',lower–lower swap
+.,l,2,'.','l',punct mistaken as lower
+d,r,2,'d','r',lower–lower swap
+l, ,2,'l',' ',lower mistaken as space
+l,M,2,'l','M',lower mistaken as upper
+h,S,2,'h','S',lower mistaken as upper
+k, ,2,'k',' ',lower mistaken as space
+0,U,1,'0','U',digit mistaken as upper
+M,1,1,'M','1',upper mistaken as digit
+a,C,1,'a','C',lower mistaken as upper
+d,u,1,'d','u',lower–lower swap
+L,P,1,'L','P',upper–upper swap
+#,P,1,'#','P',punct mistaken as upper
+U,L,1,'U','L',upper–upper swap
+q,c,1,'q','c',lower–lower swap
+.,"""",1,'.',"'""'",punct–punct swap
+C,E,1,'C','E',upper–upper swap
+",",M,1,"','",'M',punct mistaken as upper
+I,/,1,'I','/',upper mistaken as punct
+r,j,1,'r','j',lower–lower swap
+s,k,1,'s','k',lower–lower swap
+M,K,1,'M','K',upper–upper swap
+o,K,1,'o','K',lower mistaken as upper
+e,T,1,'e','T',lower mistaken as upper
+"""",m,1,"'""'",'m',punct mistaken as lower
+A,h,1,'A','h',upper mistaken as lower
+U,B,1,'U','B',upper–upper swap
+t,P,1,'t','P',lower mistaken as upper
+"""",w,1,"'""'",'w',punct mistaken as lower
+1, ,1,'1',' ',digit mistaken as space
+A,"""",1,'A',"'""'",upper mistaken as punct
+#,h,1,'#','h',punct mistaken as lower
+I,U,1,'I','U',upper–upper swap
+o,"""",1,'o',"'""'",lower mistaken as punct
+8,&,1,'8','&',digit mistaken as punct
+W,a,1,'W','a',upper mistaken as lower
+.,h,1,'.','h',punct mistaken as lower
+t,',1,'t',"""'""",lower mistaken as punct
+t,g,1,'t','g',lower–lower swap
+g,B,1,'g','B',lower mistaken as upper
+i,M,1,'i','M',lower mistaken as upper
+",",m,1,"','",'m',punct mistaken as lower
+",",w,1,"','",'w',punct mistaken as lower
+i,T,1,'i','T',lower mistaken as upper
+T,K,1,'T','K',upper–upper swap
+O,C,1,'O','C',upper–upper swap
+",",o,1,"','",'o',punct mistaken as lower
+9,8,1,'9','8',digit–digit swap
+K,l,1,'K','l',upper mistaken as lower
+o,b,1,'o','b',lower–lower swap
+",",I,1,"','",'I',punct mistaken as upper
+I,L,1,'I','L',upper–upper swap
+9,0,1,'9','0',digit–digit swap
+7,2,1,'7','2',digit–digit swap
+n,R,1,'n','R',lower mistaken as upper
+I,T,1,'I','T',upper–upper swap
+1,7,1,'1','7',digit–digit swap
+e,p,1,'e','p',lower–lower swap
+",",1,1,"','",'1',punct mistaken as digit
+;,d,1,';','d',punct mistaken as lower
+#,s,1,'#','s',punct mistaken as lower
+A,b,1,'A','b',upper mistaken as lower
+r,y,1,'r','y',lower–lower swap
+9,S,1,'9','S',digit mistaken as upper
+F,+,1,'F','+',upper mistaken as punct
+q,p,1,'q','p',lower–lower swap
+m,g,1,'m','g',lower–lower swap
+g,t,1,'g','t',lower–lower swap
+P,f,1,'P','f',upper mistaken as lower
+M,A,1,'M','A',upper–upper swap
+g,r,1,'g','r',lower–lower swap
+l,b,1,'l','b',lower–lower swap
+f,d,1,'f','d',lower–lower swap
+e,w,1,'e','w',lower–lower swap
+d,q,1,'d','q',lower–lower swap
+k,w,1,'k','w',lower–lower swap
+T,M,1,'T','M',upper–upper swap
+#,a,1,'#','a',punct mistaken as lower
+g,d,1,'g','d',lower–lower swap
+#,K,1,'#','K',punct mistaken as upper
+m,y,1,'m','y',lower–lower swap
+n,q,1,'n','q',lower–lower swap
+d,A,1,'d','A',lower mistaken as upper
+M,I,1,'M','I',upper–upper swap
+P,p,1,'P','p',upper mistaken as lower
+M,n,1,'M','n',upper mistaken as lower
+S,f,1,'S','f',upper mistaken as lower
+M,B,1,'M','B',upper–upper swap
+#,p,1,'#','p',punct mistaken as lower
+t,O,1,'t','O',lower mistaken as upper
+h,v,1,'h','v',lower–lower swap
+3,7,1,'3','7',digit–digit swap
+U,e,1,'U','e',upper mistaken as lower
+V,v,1,'V','v',upper mistaken as lower
+u,f,1,'u','f',lower–lower swap
+a,[,1,'a','[',lower mistaken as punct
+ ,R,1,' ','R',space mistaken as upper
+#,E,1,'#','E',punct mistaken as upper
+M,u,1,'M','u',upper mistaken as lower
+d,',1,'d',"""'""",lower mistaken as punct
+a,F,1,'a','F',lower mistaken as upper
+m,t,1,'m','t',lower–lower swap
+o,l,1,'o','l',lower–lower swap
+s,W,1,'s','W',lower mistaken as upper
+i,W,1,'i','W',lower mistaken as upper
+#,e,1,'#','e',punct mistaken as lower
+f,g,1,'f','g',lower–lower swap
+I,Y,1,'I','Y',upper–upper swap
+d,R,1,'d','R',lower mistaken as upper
+c,i,1,'c','i',lower–lower swap
+h,W,1,'h','W',lower mistaken as upper
+.,a,1,'.','a',punct mistaken as lower
+f,j,1,'f','j',lower–lower swap
+g,h,1,'g','h',lower–lower swap
+f,T,1,'f','T',lower mistaken as upper
+E,F,1,'E','F',upper–upper swap
+N,r,1,'N','r',upper mistaken as lower
+S,i,1,'S','i',upper mistaken as lower
+:,a,1,':','a',punct mistaken as lower
+2,O,1,'2','O',digit mistaken as upper
+n, ,1,'n',' ',lower mistaken as space
+I,A,1,'I','A',upper–upper swap
+N,l,1,'N','l',upper mistaken as lower
+.,S,1,'.','S',punct mistaken as upper
+s,P,1,'s','P',lower mistaken as upper
+.,x,1,'.','x',punct mistaken as lower
+N,m,1,'N','m',upper mistaken as lower
+o,v,1,'o','v',lower–lower swap
+9,3,1,'9','3',digit–digit swap
+#,?,1,'#','?',punct–punct swap
+r,k,1,'r','k',lower–lower swap
+8,S,1,'8','S',digit mistaken as upper
+0,W,1,'0','W',digit mistaken as upper
+0, ,1,'0',' ',digit mistaken as space
+",",A,1,"','",'A',punct mistaken as upper
+w,G,1,'w','G',lower mistaken as upper
+5,c,1,'5','c',digit mistaken as lower
+0,i,1,'0','i',digit mistaken as lower
+",",e,1,"','",'e',punct mistaken as lower
+0,n,1,'0','n',digit mistaken as lower
+0,c,1,'0','c',digit mistaken as lower
+0,e,1,'0','e',digit mistaken as lower
+W,M,1,'W','M',upper–upper swap
+M,R,1,'M','R',upper–upper swap
+b,m,1,'b','m',lower–lower swap
+h,g,1,'h','g',lower–lower swap
+9,g,1,'9','g',digit mistaken as lower
+s,A,1,'s','A',lower mistaken as upper
+T,h,1,'T','h',upper mistaken as lower
+x,a,1,'x','a',lower–lower swap
+I,h,1,'I','h',upper mistaken as lower
+f,c,1,'f','c',lower–lower swap
+o,k,1,'o','k',lower–lower swap
+M,L,1,'M','L',upper–upper swap
+M,o,1,'M','o',upper mistaken as lower
+M,i,1,'M','i',upper mistaken as lower
+M,S,1,'M','S',upper–upper swap
+l,r,1,'l','r',lower–lower swap
+f,w,1,'f','w',lower–lower swap
+M,a,1,'M','a',upper mistaken as lower
+w,g,1,'w','g',lower–lower swap
+v,V,1,'v','V',lower mistaken as upper
+G,"""",1,'G',"'""'",upper mistaken as punct
+U,u,1,'U','u',upper mistaken as lower
+a,&,1,'a','&',lower mistaken as punct
+T,W,1,'T','W',upper–upper swap
+V,l,1,'V','l',upper mistaken as lower
+I,g,1,'I','g',upper mistaken as lower
+n,f,1,'n','f',lower–lower swap
+:,c,1,':','c',punct mistaken as lower
+2,U,1,'2','U',digit mistaken as upper
+v,k,1,'v','k',lower–lower swap
+',v,1,"""'""",'v',punct mistaken as lower
+y,s,1,'y','s',lower–lower swap
+l,a,1,'l','a',lower–lower swap
+0,o,1,'0','o',digit mistaken as lower
+a,2,1,'a','2',lower mistaken as digit
+w,L,1,'w','L',lower mistaken as upper
+L,2,1,'L','2',upper mistaken as digit
+',1,1,"""'""",'1',punct mistaken as digit
+v,W,1,'v','W',lower mistaken as upper
+p,g,1,'p','g',lower–lower swap
+r,B,1,'r','B',lower mistaken as upper
+p,s,1,'p','s',lower–lower swap
+s,z,1,'s','z',lower–lower swap
+f,R,1,'f','R',lower mistaken as upper
+a,b,1,'a','b',lower–lower swap
+4,i,1,'4','i',digit mistaken as lower
+/,½,1,'/','½',punct–punct swap
+r,z,1,'r','z',lower–lower swap
+c,Q,1,'c','Q',lower mistaken as upper
+.,-,1,'.','-',punct–punct swap
+.,p,1,'.','p',punct mistaken as lower
+A,T,1,'A','T',upper–upper swap
+u,ü,1,'u','ü',lower–lower swap
+z,n,1,'z','n',lower–lower swap
+C,T,1,'C','T',upper–upper swap
+u,b,1,'u','b',lower–lower swap
+",",i,1,"','",'i',punct mistaken as lower
+r,"""",1,'r',"'""'",lower mistaken as punct
+y,o,1,'y','o',lower–lower swap
+j,f,1,'j','f',lower–lower swap
+D,t,1,'D','t',upper mistaken as lower
+h,y,1,'h','y',lower–lower swap
+4,3,1,'4','3',digit–digit swap
+b,"""",1,'b',"'""'",lower mistaken as punct
+.,i,1,'.','i',punct mistaken as lower
+4,5,1,'4','5',digit–digit swap
+o,g,1,'o','g',lower–lower swap
+",",a,1,"','",'a',punct mistaken as lower
+g,j,1,'g','j',lower–lower swap
+;,i,1,';','i',punct mistaken as lower
+A,C,1,'A','C',upper–upper swap
+f,k,1,'f','k',lower–lower swap
+m,H,1,'m','H',lower mistaken as upper
+I,s,1,'I','s',upper mistaken as lower
+U,"""",1,'U',"'""'",upper mistaken as punct
+t,S,1,'t','S',lower mistaken as upper
+I,a,1,'I','a',upper mistaken as lower
+a,9,1,'a','9',lower mistaken as digit
+n,4,1,'n','4',lower mistaken as digit
+6,"""",1,'6',"'""'",digit mistaken as punct
+N,I,1,'N','I',upper–upper swap
+v,d,1,'v','d',lower–lower swap
+P,R,1,'P','R',upper–upper swap
+#,M,1,'#','M',punct mistaken as upper
+D,O,1,'D','O',upper–upper swap
+t,L,1,'t','L',lower mistaken as upper
+a,G,1,'a','G',lower mistaken as upper
+K,N,1,'K','N',upper–upper swap
+K,t,1,'K','t',upper mistaken as lower
+"""", ,1,"'""'",' ',punct mistaken as space
+3,1,1,'3','1',digit–digit swap
+9,2,1,'9','2',digit–digit swap
+8,9,1,'8','9',digit–digit swap
+f,y,1,'f','y',lower–lower swap
+s,D,1,'s','D',lower mistaken as upper
+r,L,1,'r','L',lower mistaken as upper
+B,s,1,'B','s',upper mistaken as lower
+',O,1,"""'""",'O',punct mistaken as upper
+j,p,1,'j','p',lower–lower swap
+h,C,1,'h','C',lower mistaken as upper
+.,A,1,'.','A',punct mistaken as upper
+ ,w,1,' ','w',space mistaken as lower
+o,x,1,'o','x',lower–lower swap
+G,T,1,'G','T',upper–upper swap
+j,g,1,'j','g',lower–lower swap
+L,t,1,'L','t',upper mistaken as lower
+i,B,1,'i','B',lower mistaken as upper
+6, ,1,'6',' ',digit mistaken as space
+*,e,1,'*','e',punct mistaken as lower
+?,.,1,'?','.',punct–punct swap
+L,A,1,'L','A',upper–upper swap
+b,A,1,'b','A',lower mistaken as upper
+2, ,1,'2',' ',digit mistaken as space
+',F,1,"""'""",'F',punct mistaken as upper
+-,r,1,'-','r',punct mistaken as lower
+M,e,1,'M','e',upper mistaken as lower
+A,c,1,'A','c',upper mistaken as lower
+*, ,1,'*',' ',punct mistaken as space
+?,i,1,'?','i',punct mistaken as lower
+8,R,1,'8','R',digit mistaken as upper
+b,j,1,'b','j',lower–lower swap
+E,f,1,'E','f',upper mistaken as lower
+m,q,1,'m','q',lower–lower swap
+1,"""",1,'1',"'""'",digit mistaken as punct
+;,n,1,';','n',punct mistaken as lower
+J,f,1,'J','f',upper mistaken as lower
+b,W,1,'b','W',lower mistaken as upper
+1,s,1,'1','s',digit mistaken as lower
+b,q,1,'b','q',lower–lower swap
+W,H,1,'W','H',upper–upper swap
+#,A,1,'#','A',punct mistaken as upper
+r,T,1,'r','T',lower mistaken as upper
+l,o,1,'l','o',lower–lower swap
+f,v,1,'f','v',lower–lower swap
+ ,c,1,' ','c',space mistaken as lower
+(,f,1,'(','f',punct mistaken as lower
+M,N,1,'M','N',upper–upper swap
+.,y,1,'.','y',punct mistaken as lower
+I,F,1,'I','F',upper–upper swap
+A,W,1,'A','W',upper–upper swap
+O,t,1,'O','t',upper mistaken as lower
+h,I,1,'h','I',lower mistaken as upper
+W,t,1,'W','t',upper mistaken as lower
+J,T,1,'J','T',upper–upper swap
+"""",W,1,"'""'",'W',punct mistaken as upper
+j,s,1,'j','s',lower–lower swap
+',a,1,"""'""",'a',punct mistaken as lower
+i,ï,1,'i','ï',lower–lower swap
+"""",h,1,"'""'",'h',punct mistaken as lower
+',i,1,"""'""",'i',punct mistaken as lower
+D,H,1,'D','H',upper–upper swap
+2,I,1,'2','I',digit mistaken as upper
+2,d,1,'2','d',digit mistaken as lower
+2,Z,1,'2','Z',digit mistaken as upper
+2,E,1,'2','E',digit mistaken as upper
+u,x,1,'u','x',lower–lower swap
+n,"""",1,'n',"'""'",lower mistaken as punct
+I,y,1,'I','y',upper mistaken as lower
+ ,!,1,' ','!',space mistaken as punct
+"""",!,1,"'""'",'!',punct–punct swap
+w,d,1,'w','d',lower–lower swap
+v,a,1,'v','a',lower–lower swap
+ ,E,1,' ','E',space mistaken as upper
+B,b,1,'B','b',upper mistaken as lower
+V,N,1,'V','N',upper–upper swap
+c,b,1,'c','b',lower–lower swap
+C,S,1,'C','S',upper–upper swap
+w,x,1,'w','x',lower–lower swap
+ ,x,1,' ','x',space mistaken as lower
+1,.,1,'1','.',digit mistaken as punct
+1,M,1,'1','M',digit mistaken as upper
+-,.,1,'-','.',punct–punct swap
+1,R,1,'1','R',digit mistaken as upper
+2,c,1,'2','c',digit mistaken as lower
+n,x,1,'n','x',lower–lower swap
+p,"""",1,'p',"'""'",lower mistaken as punct
+a,w,1,'a','w',lower–lower swap
+1,d,1,'1','d',digit mistaken as lower
+1,L,1,'1','L',digit mistaken as upper
+ ,Q,1,' ','Q',space mistaken as upper
+U,C,1,'U','C',upper–upper swap
+ ,j,1,' ','j',space mistaken as lower
+j,r,1,'j','r',lower–lower swap
+r,',1,'r',"""'""",lower mistaken as punct
+p,c,1,'p','c',lower–lower swap
+H,s,1,'H','s',upper mistaken as lower
+v,x,1,'v','x',lower–lower swap
+t,j,1,'t','j',lower–lower swap
+c,m,1,'c','m',lower–lower swap
+r,x,1,'r','x',lower–lower swap
+',l,1,"""'""",'l',punct mistaken as lower
+y,q,1,'y','q',lower–lower swap
+e,q,1,'e','q',lower–lower swap
+J,L,1,'J','L',upper–upper swap
+G,Q,1,'G','Q',upper–upper swap
+K,s,1,'K','s',upper mistaken as lower
+H,N,1,'H','N',upper–upper swap
+m,S,1,'m','S',lower mistaken as upper
+j,"""",1,'j',"'""'",lower mistaken as punct
+p,q,1,'p','q',lower–lower swap
+g,D,1,'g','D',lower mistaken as upper
+L,J,1,'L','J',upper–upper swap
+h,j,1,'h','j',lower–lower swap
+l,O,1,'l','O',lower mistaken as upper
+g,S,1,'g','S',lower mistaken as upper
+r, ,1,'r',' ',lower mistaken as space
+",",n,1,"','",'n',punct mistaken as lower
+#,g,1,'#','g',punct mistaken as lower
+&,r,1,'&','r',punct mistaken as lower
+o,&,1,'o','&',lower mistaken as punct
+f,P,1,'f','P',lower mistaken as upper
+T,S,1,'T','S',upper–upper swap
+s,x,1,'s','x',lower–lower swap
+x,n,1,'x','n',lower–lower swap
+2,3,1,'2','3',digit–digit swap
+K,w,1,'K','w',upper mistaken as lower
+s,T,1,'s','T',lower mistaken as upper
+h,p,1,'h','p',lower–lower swap
+w,M,1,'w','M',lower mistaken as upper
+k,E,1,'k','E',lower mistaken as upper
+L,S,1,'L','S',upper–upper swap
+S,N,1,'S','N',upper–upper swap
+s,N,1,'s','N',lower mistaken as upper
+",",f,1,"','",'f',punct mistaken as lower
+o,O,1,'o','O',lower mistaken as upper
+u,d,1,'u','d',lower–lower swap
+p,a,1,'p','a',lower–lower swap
+n,M,1,'n','M',lower mistaken as upper
+d,w,1,'d','w',lower–lower swap
+",",y,1,"','",'y',punct mistaken as lower
+B,S,1,'B','S',upper–upper swap
+4,o,1,'4','o',digit mistaken as lower
+m,f,1,'m','f',lower–lower swap
+c,p,1,'c','p',lower–lower swap
+d,v,1,'d','v',lower–lower swap
+b,v,1,'b','v',lower–lower swap
+M,m,1,'M','m',upper mistaken as lower
+k,r,1,'k','r',lower–lower swap
+M,Y,1,'M','Y',upper–upper swap
+u,g,1,'u','g',lower–lower swap
+h,O,1,'h','O',lower mistaken as upper
+w,I,1,'w','I',lower mistaken as upper
+a,',1,'a',"""'""",lower mistaken as punct
+D,s,1,'D','s',upper mistaken as lower
+c,"""",1,'c',"'""'",lower mistaken as punct
+k,s,1,'k','s',lower–lower swap
+c, ,1,'c',' ',lower mistaken as space
+4,c,1,'4','c',digit mistaken as lower
+H,F,1,'H','F',upper–upper swap
+d,b,1,'d','b',lower–lower swap
+r,N,1,'r','N',lower mistaken as upper
+c,y,1,'c','y',lower–lower swap
+q,S,1,'q','S',lower mistaken as upper
+V,W,1,'V','W',upper–upper swap
+d,p,1,'d','p',lower–lower swap
+h,R,1,'h','R',lower mistaken as upper
+I,f,1,'I','f',upper mistaken as lower
+h,J,1,'h','J',lower mistaken as upper
+h,f,1,'h','f',lower–lower swap
+b, ,1,'b',' ',lower mistaken as space
+u,S,1,'u','S',lower mistaken as upper
+.,f,1,'.','f',punct mistaken as lower
+"""",o,1,"'""'",'o',punct mistaken as lower
+ ,m,1,' ','m',space mistaken as lower
+p,O,1,'p','O',lower mistaken as upper
+"""",n,1,"'""'",'n',punct mistaken as lower
+I,b,1,'I','b',upper mistaken as lower
+d,D,1,'d','D',lower mistaken as upper
+w,z,1,'w','z',lower–lower swap
+"""",A,1,"'""'",'A',punct mistaken as upper
+"""",3,1,"'""'",'3',punct mistaken as digit
+"""",',1,"'""'","""'""",punct–punct swap
+B,F,1,'B','F',upper–upper swap
+p,m,1,'p','m',lower–lower swap
+*,X,1,'*','X',punct mistaken as upper
+J,a,1,'J','a',upper mistaken as lower
+c,n,1,'c','n',lower–lower swap
+s,B,1,'s','B',lower mistaken as upper
+J,D,1,'J','D',upper–upper swap
+f,"""",1,'f',"'""'",lower mistaken as punct
+v,h,1,'v','h',lower–lower swap
+g, ,1,'g',' ',lower mistaken as space
+e,j,1,'e','j',lower–lower swap
+D,"""",1,'D',"'""'",upper mistaken as punct
+a,B,1,'a','B',lower mistaken as upper
+K,k,1,'K','k',upper mistaken as lower
+H,I,1,'H','I',upper–upper swap
+i,n,1,'i','n',lower–lower swap
+"""",l,1,"'""'",'l',punct mistaken as lower
+e,A,1,'e','A',lower mistaken as upper
+.,u,1,'.','u',punct mistaken as lower
+ ,D,1,' ','D',space mistaken as upper
+I,o,1,'I','o',upper mistaken as lower
+G,S,1,'G','S',upper–upper swap
+-,c,1,'-','c',punct mistaken as lower
+-,d,1,'-','d',punct mistaken as lower
+-,b,1,'-','b',punct mistaken as lower
+k,K,1,'k','K',lower mistaken as upper
+i,H,1,'i','H',lower mistaken as upper
+N,H,1,'N','H',upper–upper swap
+U,l,1,'U','l',upper mistaken as lower
+"""",i,1,"'""'",'i',punct mistaken as lower
+L,T,1,'L','T',upper–upper swap
+!,c,1,'!','c',punct mistaken as lower
+v,y,1,'v','y',lower–lower swap
+w,E,1,'w','E',lower mistaken as upper
+ ,p,1,' ','p',space mistaken as lower
+S,t,1,'S','t',upper mistaken as lower
+:,Y,1,':','Y',punct mistaken as upper

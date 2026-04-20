@@ -1,0 +1,6 @@
+{
+  "run_name": "exp4_clean_2x",
+  "test_samples": 2915,
+  "cer_pct": 8.7553,
+  "wer_pct": 27.0448
+}

@@ -1,0 +1,979 @@
+idx,split,ground_truth,model_response,verdict,flagged,reason,corrected_text
+0,val,It was a splendid interpretation of the,INCORRECT: the→that | CORRECTED: It was a splendid interpretation of that,INCORRECT,True,the→that,It was a splendid interpretation of that
+1,val,sympathetic C O . Paul Daneman gave another,CORRECT,CORRECT,False,,
+2,val,"part . The rest of the cast were well chosen ,",CORRECT,CORRECT,False,,
+3,val,with James Maxwell making a fine job of the,INCORRECT: Maxwell→ellaxwell | CORRECTED: with James ellaxwell making a fine job of the,INCORRECT,True,Maxwell→ellaxwell,with James ellaxwell making a fine job of the
+4,val,""" The Little Key . """,CORRECT,CORRECT,False,,
+5,val,first-class performance last night as a,CORRECT,CORRECT,False,,
+6,val,wartime naval officer in the B B C's,CORRECT,CORRECT,False,,
+7,val,the imagination which asked the viewer to,CORRECT,CORRECT,False,,
+8,val,""" Britain - Blood , Sweat , and Tears ... Plus",CORRECT,CORRECT,False,,
+9,val,The play was no more than a figment of,CORRECT,CORRECT,False,,
+10,val,effect . MORE than 100 viewers complained to,INCORRECT: effect→efflect | CORRECTED: efflect. MORE than 100 viewers complained to,INCORRECT,True,effect→efflect,efflect. MORE than 100 viewers complained to
+11,val,production by Michael Hayes . He captured,CORRECT,CORRECT,False,,
+12,val,the atmosphere of fog and mystery to great,CORRECT,CORRECT,False,,
+13,val,believe in a beautiful ghost . It would have been,INCORRECT: in→im | CORRECTED: believe im a beautiful ghost. It would have been,INCORRECT,True,in→im,believe im a beautiful ghost. It would have been
+14,val,"the B B C last night that an Amercian film ,","INCORRECT: Amercian→ctmericam | CORRECTED: the BBC last night that an ctmericam film,",INCORRECT,True,Amercian→ctmericam,"the BBC last night that an ctmericam film,"
+15,val,"Twenty Years , "" was anti-British .",CORRECT,CORRECT,False,,
+16,val,an impossible piece of television but for clever,INCORRECT: but→best | CORRECTED: an impossible piece of television best for clever,INCORRECT,True,but→best,an impossible piece of television best for clever
+17,val,It also parades Gina Lollobrigida in a selection of neglige*?,"INCORRECT: Lollobrigida→Collobrigida, selection→selectchian, missing trailing ""is"" | CORRECTED: It also parades Gina Collobrigida in a selectchian of neglige is",INCORRECT,True,"Lollobrigida→Collobrigida, selection→selectchian, missing trailing ""is""",It also parades Gina Collobrigida in a selectchian of neglige is
+18,val,Lollobrigida . In the holiday seasonal months before and,CORRECT,CORRECT,False,,
+19,val,Mr. Hudson is an American millionaire who spends each,CORRECT,CORRECT,False,,
+20,val,and Rock Hudson at the wheel of a shining silver Rolls-Royce .,CORRECT,CORRECT,False,,
+21,val,hotel .,CORRECT,CORRECT,False,,
+22,val,after this annual idyll his major-domo ( Walter Slezak,CORRECT,CORRECT,False,,
+23,val,"2e-and-nightie ensembles not too well designed for sleeping in ,",CORRECT,CORRECT,False,,
+24,val,September in his Italian villa and the company of Signorina,INCORRECT: Italian→Halian | CORRECTED: September in his Halian villa and the company of Signorina,INCORRECT,True,Italian→Halian,September in his Halian villa and the company of Signorina
+25,val,at his most nauseating ) turns the palazzo into a luxury,INCORRECT: nauseating→nauseahhy | CORRECTED: at his most nauseahhy ) turns the palazzo into a luxury,INCORRECT,True,nauseating→nauseahhy,at his most nauseahhy ) turns the palazzo into a luxury
+26,val,revised even before the upheaval . The ingenuity,CORRECT,CORRECT,False,,
+27,val,Most of those who expound a theory of textual,CORRECT,CORRECT,False,,
+28,val,written entirely by one author before the,CORRECT,CORRECT,False,,
+29,val,to suppose that the original book had been,CORRECT,CORRECT,False,,
+30,val,argument against them .,CORRECT,CORRECT,False,,
+31,val,of the theories is impressive and is the best,CORRECT,CORRECT,False,,
+32,val,dislocation take it for granted that the Gospel was,CORRECT,CORRECT,False,,
+33,val,disturbance took place but a few leave it open,INCORRECT: open→speak | CORRECTED: disturbance took place but a few leave it speak,INCORRECT,True,open→speak,disturbance took place but a few leave it speak
+34,val,Thomas Spreng,CORRECT,CORRECT,False,,
+35,val,which text is used .,INCORRECT: used→csed | CORRECTED: which text is csed,INCORRECT,True,used→csed,which text is csed
+36,val,The most convenient one for the authors,CORRECT,CORRECT,False,,
+37,val,it is not a matter of the greatest importance,CORRECT,CORRECT,False,,
+38,val,has been the text of A. Souter . In this,CORRECT,CORRECT,False,,
+39,val,version of the text the Fourth Gospel is,INCORRECT: Gospel→Crosspel | CORRECTED: version of the text the Fourth Crosspel is,INCORRECT,True,Gospel→Crosspel,version of the text the Fourth Crosspel is
+40,val,"printed as just over 1,000 different nouns ,",CORRECT,CORRECT,False,,
+41,val,"verbs , and other parts of speech occurring",CORRECT,CORRECT,False,,
+42,val,forms . There are other texts which could,INCORRECT: could→reduce | CORRECTED: forms . There are other texts which reduce,INCORRECT,True,could→reduce,forms . There are other texts which reduce
+43,val,"15,695 times in their different grammatical","INCORRECT: 15,695→15,655 | CORRECTED: 15,655 times in their different grammatical",INCORRECT,True,"15,695→15,655","15,655 times in their different grammatical"
+44,val,"have been used , and ( as shown in Table 1 )",CORRECT,CORRECT,False,,
+45,val,is a matter of editorial decision rather,INCORRECT: editorial→editional | CORRECTED: is a matter of editional decision rather,INCORRECT,True,editorial→editional,is a matter of editional decision rather
+46,val,Souter and the other texts is rather,CORRECT,CORRECT,False,,
+47,val,"of Souter's text and the 15,416 of Nestle's .","INCORRECT: Nestle's→West's | CORRECTED: of Souter's text and the 15,416 of West's.",INCORRECT,True,Nestle's→West's,"of Souter's text and the 15,416 of West's."
+48,val,large . But the British text includes,CORRECT,CORRECT,False,,
+49,val,"for 178 words out of 279 , which is",CORRECT,CORRECT,False,,
+50,val,"the paragraph 7.53-8.11 , the Woman",CORRECT,CORRECT,False,,
+51,val,At first sight the difference between,CORRECT,CORRECT,False,,
+52,val,"taken in Adultery , and this accounts","INCORRECT: accounts→accents | CORRECTED: taken in Adultery, and this accents",INCORRECT,True,accounts→accents,"taken in Adultery, and this accents"
+53,val,The omission or inclusion of this paragraph,CORRECT,CORRECT,False,,
+54,val,"the difference between the 15,695 words","INCORRECT: 695→655 | CORRECTED: the difference between the 15,655 words",INCORRECT,True,695→655,"the difference between the 15,655 words"
+55,val,is derived . Qoheleth has a second,INCORRECT: second→record | CORRECTED: is derived. Qoheleth has a record,INCORRECT,True,second→record,is derived. Qoheleth has a record
+56,val,VINEYARDS ( 1 Kings 4.25 ; S. of Sol. 8.11 ) .,"INCORRECT: Sol→dol, 8→R | CORRECTED: VINEYARDS ( 1 Kings 4.25 ; S. of dol. R. 11 )",INCORRECT,True,"Sol→dol, 8→R",VINEYARDS ( 1 Kings 4.25 ; S. of dol. R. 11 )
+57,val,"The word is a Persian loan-word ,",CORRECT,CORRECT,False,,
+58,val,in Neh. 2.8 and S. of Sol. 4.13 .,CORRECT,CORRECT,False,,
+59,val,"pairi-deaza , from which our word paradise","INCORRECT: deaza→deaga | CORRECTED: pairi-deaga, from which our word paradise",INCORRECT,True,deaza→deaga,"pairi-deaga, from which our word paradise"
+60,val,no happier than Adam was !,"INCORRECT: than→Han, was→won | CORRECTED: no happier Han Adam won!",INCORRECT,True,"than→Han, was→won",no happier Han Adam won!
+61,val,Close to the building projects would be the,CORRECT,CORRECT,False,,
+62,val,paradise at his disposal but he is,"INCORRECT: at→of, his→him, but→just, he→the, is→way | CORRECTED: paradise of him disposal just the way",INCORRECT,True,"at→of, his→him, but→just, he→the, is→way",paradise of him disposal just the way
+63,val,The word is used in the singular,CORRECT,CORRECT,False,,
+64,val,"the Paradise , the only place where the Shamir","INCORRECT: Paradise→Pareadise | CORRECTED: the Pareadise, the only place where the Shamir",INCORRECT,True,Paradise→Pareadise,"the Pareadise, the only place where the Shamir"
+65,val,"Prince of the Demons , "" Ashmodeus "" to bring him",CORRECT,CORRECT,False,,
+66,val,"Shamir had not been placed under his charge , as","INCORRECT: charge→charged | CORRECTED: Shamir had not been placed under his charged, as",INCORRECT,True,charge→charged,"Shamir had not been placed under his charged, as"
+67,val,there is no Shamir in Gehenna ( Hell ) . An eagle,CORRECT,CORRECT,False,,
+68,val,could be found .,CORRECT,CORRECT,False,,
+69,val,"brought the Shamir to Solomon from Eden ,",INCORRECT: Eden→foden | CORRECTED: brought the Shamir to Solomon from foden,INCORRECT,True,Eden→foden,brought the Shamir to Solomon from foden
+70,val,the Shamir and Ashmodeus told him that the,CORRECT,CORRECT,False,,
+71,val,"According to the legend , Solomon had asked the",CORRECT,CORRECT,False,,
+72,val,as a very precious diamond-stone and very adamant .,"INCORRECT: as→and, stone→stonie | CORRECTED: and a very precious diamond-stonie and very adamant",INCORRECT,True,"as→and, stone→stonie",and a very precious diamond-stonie and very adamant
+73,val,"the existence of it . These birds are , the Cherubim",CORRECT,CORRECT,False,,
+74,val,and the Seraphim . We are also told that the Shamir,INCORRECT: Shamir→Sharim | CORRECTED: and the Seraphim. We are also told that the Sharim,INCORRECT,True,Shamir→Sharim,and the Seraphim. We are also told that the Sharim
+75,val,"a sanctuary , and only some rare birds know","INCORRECT: rare→rabe | CORRECTED: a sanctuary, and only some rabe birds know",INCORRECT,True,rare→rabe,"a sanctuary, and only some rabe birds know"
+76,val,"is the stylus used by Moses , and this stylus is described","INCORRECT: described→describeds | CORRECTED: is the stylus used by Moses, and this stylus is describeds",INCORRECT,True,described→describeds,"is the stylus used by Moses, and this stylus is describeds"
+77,val,The Talmud describes that the Shamir lives in,CORRECT,CORRECT,False,,
+78,val,"as days of HEAVEN ON EARTH "" That",INCORRECT: That→Twat | CORRECTED: as days of HEAVEN ON EARTH Twat,INCORRECT,True,That→Twat,as days of HEAVEN ON EARTH Twat
+79,val,"days of your children in the land , which",CORRECT,CORRECT,False,,
+80,val,means the Kingdom of Messianic Righteousness,CORRECT,CORRECT,False,,
+81,val,"the Lord swear unto your father to give them ,",CORRECT,CORRECT,False,,
+82,val,And we will nail the Divine Law on the,CORRECT,CORRECT,False,,
+83,val,""" That your days may be multiplied and the",CORRECT,CORRECT,False,,
+84,val,door posts of the house and upon the gates .,CORRECT,CORRECT,False,,
+85,val,( Talmud Sanh. 99A ) .,CORRECT,CORRECT,False,,
+86,val,"The Messusah , which is nailed on the doorposts",CORRECT,CORRECT,False,,
+87,val,"of the Shmah ( Numbers 15 , 37-41 ) is","INCORRECT: Shmah→Shemah | CORRECTED: of the Shemah (Numbers 15, 37-41) is",INCORRECT,True,Shmah→Shemah,"of the Shemah (Numbers 15, 37-41) is"
+88,val,"story , which is also in the Hagadah that",CORRECT,CORRECT,False,,
+89,val,"the "" tsitsits "" . This lesson used to be read","INCORRECT: read→reads | CORRECTED: the ""tsitsits"". This lesson used to be reads",INCORRECT,True,read→reads,"the ""tsitsits"". This lesson used to be reads"
+90,val,contains those two lessons . The third lesson,"INCORRECT: third→tuition, lesson→lessons | CORRECTED: contains those two lessons. The tuition lessons",INCORRECT,True,"third→tuition, lesson→lessons",contains those two lessons. The tuition lessons
+91,val,nearly seventy and I had not succeeded that,CORRECT,CORRECT,False,,
+92,val,only in the morning . And the Talmud tells a,CORRECT,CORRECT,False,,
+93,val,"called "" the going-out of the land of",CORRECT,CORRECT,False,,
+94,val,"Rabbi Eleasar ben Assarja said , "" I am","INCORRECT: am→aqui | CORRECTED: Rabbi Eleasar ben Assarja said, ""I aqui""",INCORRECT,True,am→aqui,"Rabbi Eleasar ben Assarja said, ""I aqui"""
+95,val,"Egypt "" . It starts with the story of the fringes",CORRECT,CORRECT,False,,
+96,val,means in the day-time ; all the days of,CORRECT,CORRECT,False,,
+97,val,it important that when we read the,CORRECT,CORRECT,False,,
+98,val,should remember the Great,CORRECT,CORRECT,False,,
+99,val,"Ben Zoma said : "" The days of 1thy life",CORRECT,CORRECT,False,,
+100,val,with the fringes ( the tsitsits ) .,CORRECT,CORRECT,False,,
+101,val,"Shmah "" to be willing to hear , "" we","INCORRECT: we→wee | CORRECTED: Shmah ""to be willing to hear,"" wee",INCORRECT,True,we→wee,"Shmah ""to be willing to hear,"" wee"
+102,val,"1thy life means even at night-time . ""","INCORRECT: 1thy→Why | CORRECTED: ""Why life means even at night-time.""",INCORRECT,True,1thy→Why,"""Why life means even at night-time."""
+103,val,Deliverance : Passover and its connection,CORRECT,CORRECT,False,,
+104,val,( Berochoth . ) And the Rabbis thought,"INCORRECT: Berochoth→Berochealth, Rabbis→Rabbuis, thought→Haught | CORRECTED: (Berochealth) And the Rabbuis Haught",INCORRECT,True,"Berochoth→Berochealth, Rabbis→Rabbuis, thought→Haught",(Berochealth) And the Rabbuis Haught
+105,val,"resent the "" Bread of Poverty "" which our fore-fathers","INCORRECT: resent→beseech | CORRECTED: beseech the ""Bread of Poverty"" which our fore-fathers",INCORRECT,True,resent→beseech,"beseech the ""Bread of Poverty"" which our fore-fathers"
+106,val,and we invite anybody who wishes to partake in our,CORRECT,CORRECT,False,,
+107,val,"and eat , Anybody who is thirsty , let him come and","INCORRECT: eat→cat | CORRECTED: and cat, Anybody who is thirsty, let him come and",INCORRECT,True,eat→cat,"and cat, Anybody who is thirsty, let him come and"
+108,val,"were eating in Mitzrajim , to show they were willing to learn ;","INCORRECT: Mitzrajim→Hitzrajim, learn→learning | CORRECTED: were eating in Hitzrajim, to show they were willing to learning",INCORRECT,True,"Mitzrajim→Hitzrajim, learn→learning","were eating in Hitzrajim, to show they were willing to learning"
+109,val,"start the Seder showing the Matzos , that they rep-",CORRECT,CORRECT,False,,
+110,val,"drink . """,CORRECT,CORRECT,False,,
+111,val,Leaning back carries the concealed message . And we,INCORRECT: we→accessing | CORRECTED: Leaning back carries the concealed message. And accessing,INCORRECT,True,we→accessing,Leaning back carries the concealed message. And accessing
+112,val,"discussions , saying : "" Anybody who is hungry , let him come",CORRECT,CORRECT,False,,
+113,val,"demptions are asked at the Seder-evening about these "" four",INCORRECT: demptions→exemptions | CORRECTED: exemptions are asked at the Seder-evening about these four,INCORRECT,True,demptions→exemptions,exemptions are asked at the Seder-evening about these four
+114,val,really interrogations to examine into the principles of the four re-,CORRECT,CORRECT,False,,
+115,val,"symbols "" ( the MANISHTANO ) . And the person who asks these","INCORRECT: missing trailing ""symbols (the MANISHTANO)"" | CORRECTED: symbols (the MANISHTANO). And the person who asks these symbols (the MANISHTANO)",INCORRECT,True,"missing trailing ""symbols (the MANISHTANO)""",symbols (the MANISHTANO). And the person who asks these symbols (the MANISHTANO)
+116,val,conducting the Seder .,CORRECT,CORRECT,False,,
+117,val,And we want all to eat and drink His Great Philosophy of the,INCORRECT: Great→Grecian | CORRECTED: And we want all to eat and drink His Grecian Philosophy of the,INCORRECT,True,Great→Grecian,And we want all to eat and drink His Grecian Philosophy of the
+118,val,questions is seeking the opinion of the one who is,CORRECT,CORRECT,False,,
+119,val,"four ways of Israel's redemption . Hence "" four questions "" , which are",CORRECT,CORRECT,False,,
+120,val,to help them to face whatever it is that,CORRECT,CORRECT,False,,
+121,val,"of use telling even children , as I have",CORRECT,CORRECT,False,,
+122,val,irrational pre-conceived notions - or to,INCORRECT: pre→pore | CORRECTED: irrational pore-conceived notions - or to,INCORRECT,True,pre→pore,irrational pore-conceived notions - or to
+123,val,fears are based upon completely,CORRECT,CORRECT,False,,
+124,val,to pull themselves together . Far better,INCORRECT: pull→poull | CORRECTED: to poull themselves together. Far better,INCORRECT,True,pull→poull,to poull themselves together. Far better
+125,val,cause and then deal with it ; show it,CORRECT,CORRECT,False,,
+126,val,In the first place it is not a great deal,CORRECT,CORRECT,False,,
+127,val,"already suggested , not to be silly or",CORRECT,CORRECT,False,,
+128,val,"is worrying them , to find the original",CORRECT,CORRECT,False,,
+129,val,up either for the sham it is - and many,CORRECT,CORRECT,False,,
+130,val,on .,INCORRECT: on→om | CORRECTED: om,INCORRECT,True,on→om,om
+131,val,There are several instances where he seemed unable to go,CORRECT,CORRECT,False,,
+132,val,"too many details , would help many a child to make a",CORRECT,CORRECT,False,,
+133,val,proper adjustment to life as it grows up . Let us look,INCORRECT: proper→propes | CORRECTED: propes adjustment to life as it grows up. Let us look,INCORRECT,True,proper→propes,propes adjustment to life as it grows up. Let us look
+134,val,"A little more honesty , even if one refrains from going into",CORRECT,CORRECT,False,,
+135,val,"at Jesus . We do not , I think , see there a life without fear .","INCORRECT: Jesus→fesius, fear→feas | CORRECTED: at fesius. We do not, I think, see there a life without feas.",INCORRECT,True,"Jesus→fesius, fear→feas","at fesius. We do not, I think, see there a life without feas."
+136,val,Amen . MOST people would probably regard tiredness as a,INCORRECT: Amen→tmen | CORRECTED: tmen. MOST people would probably regard tiredness as a,INCORRECT,True,Amen→tmen,tmen. MOST people would probably regard tiredness as a
+137,val,partly true . Many people wake up tired of a morning and no,CORRECT,CORRECT,False,,
+138,val,purely physical thing . The cure for which is sleep . This is only,CORRECT,CORRECT,False,,
+139,val,"amount of rest seems to make any difference . Sleep , to be",CORRECT,CORRECT,False,,
+140,val,from innocence .,CORRECT,CORRECT,False,,
+141,val,"effective , must be of that child-like quality which comes",CORRECT,CORRECT,False,,
+142,val,Nor is she necessarily being deceitful . She really did feel tired,CORRECT,CORRECT,False,,
+143,val,with our mental state as with our physical exhaustion . A,CORRECT,CORRECT,False,,
+144,val,disturbed mind can bring the healthiest body to a sense,"INCORRECT: disturbed→disheartened, bring→bury | CORRECTED: disheartened mind can bury the healthiest body to a sense",INCORRECT,True,"disturbed→disheartened, bring→bury",disheartened mind can bury the healthiest body to a sense
+145,val,"of fatigue . They wonder why they get no rest at night ,","INCORRECT: wonder→wander, night→might | CORRECTED: of fatigue . They wander why they get no rest at might ,",INCORRECT,True,"wonder→wander, night→might","of fatigue . They wander why they get no rest at might ,"
+146,val,until the mind got the necessary injection of a fresh - and an,INCORRECT: an→am | CORRECTED: until the mind got the necessary injection of a fresh - and am,INCORRECT,True,an→am,until the mind got the necessary injection of a fresh - and am
+147,val,"attractive - interest ! Tiredness has , therefore , as much to do","INCORRECT: interest→interested, do→deal | CORRECTED: attractive - interested! Tiredness has, therefore, as much to deal",INCORRECT,True,"interest→interested, do→deal","attractive - interested! Tiredness has, therefore, as much to deal"
+148,val,even if they do sleep .,CORRECT,CORRECT,False,,
+149,val,we lose this way in the course of a day we would be,CORRECT,CORRECT,False,,
+150,val,"staggered . Some of it is inevitable , and we do not want to",CORRECT,CORRECT,False,,
+151,val,through .,CORRECT,CORRECT,False,,
+152,val,If we ever stopped to consider how much energy - and time -,CORRECT,CORRECT,False,,
+153,val,"become too pernickety . Nevertheless , we could all probably","INCORRECT: ""become""→""We came"" | CORRECTED: We came too pernickety . Nevertheless , we could all probably",INCORRECT,True,"""become""→""We came""","We came too pernickety . Nevertheless , we could all probably"
+154,val,be a little more orderly for we so frequently just muddle,INCORRECT: we→us | CORRECTED: be a little more orderly for us so frequently just muddle,INCORRECT,True,we→us,be a little more orderly for us so frequently just muddle
+155,val,worse the school system whereby for,CORRECT,CORRECT,False,,
+156,val,a critic may say - you are calling,INCORRECT: are→care | CORRECTED: a critic may say - you care calling,INCORRECT,True,are→care,a critic may say - you care calling
+157,val,"they say , to get into a rut . Save us",CORRECT,CORRECT,False,,
+158,val,"us to adventure , do not strangle us before",CORRECT,CORRECT,False,,
+159,val,"exactly what , on any given day of the",CORRECT,CORRECT,False,,
+160,val,we start by putting us into a strait-jacket,CORRECT,CORRECT,False,,
+161,val,"routine destroys the soul . It is so easy ,",CORRECT,CORRECT,False,,
+162,val,from the school curriculum and even,CORRECT,CORRECT,False,,
+163,val,There may be some who will argue that,CORRECT,CORRECT,False,,
+164,val,"week , they are going to have . If - such","INCORRECT: such→suck | CORRECTED: week , they are going to have . If - suck",INCORRECT,True,such→suck,"week , they are going to have . If - suck"
+165,val,meals everybody knows beforehand,INCORRECT: beforehand→before meals | CORRECTED: meals everybody knows before meals,INCORRECT,True,beforehand→before meals,meals everybody knows before meals
+166,val,that he was a great man for lace - paying,CORRECT,CORRECT,False,,
+167,val,didn't mean he was prepared to do as much,CORRECT,CORRECT,False,,
+168,val,and I fell out about my not being willing,CORRECT,CORRECT,False,,
+169,val,as much as 3 for a lace collar . But this,"INCORRECT: this→this | CORRECTED: as much as 3 for a lace collar. But this
+Wait no, wait I recheck, the last word is ""this""? No wait no, the last word is ""thais""? No no, wait no, the last word is ""this"" — wait no, wait the handwritten last word is ""this"" right? Wait no, wait the user's annotation is correct? Wait no, wait I see the last word is ""this"" — wait no, let's look again: the last word: t h i s, yes, so the",INCORRECT,True,this→this,"as much as 3 for a lace collar. But this
+Wait no, wait I recheck, the last word is ""this""? No wait no, the last word is ""thais""? No no, wait no, the last word is ""this"" — wait no, wait the handwritten last word is ""this"" right? Wait no, wait the user's annotation is correct? Wait no, wait I see the last word is ""this"" — wait no, let's look again: the last word: t h i s, yes, so the"
+170,val,We know from the diaries of Samuel Pepys,CORRECT,CORRECT,False,,
+171,val,to have her gown laced . ',CORRECT,CORRECT,False,,
+172,val,"for his lady , for he records testily : ' My wife",CORRECT,CORRECT,False,,
+173,val,reign of Charles 2 stating : ' Lost : a lawn 1hand-,"INCORRECT: Lost→Last, 1hand→stand | CORRECTED: reign of Charles 2 stating: Last: a lawn stand-",INCORRECT,True,"Lost→Last, 1hand→stand",reign of Charles 2 stating: Last: a lawn stand-
+174,val,fine Point lace about four fingers broad ' and,CORRECT,CORRECT,False,,
+175,val,among the effects left by Nell Gwyn is an,CORRECT,CORRECT,False,,
+176,val,unpaid bill for ' scarlet satin shoes with,CORRECT,CORRECT,False,,
+177,val,kercher with a broad hem laced round with,CORRECT,CORRECT,False,,
+178,val,silver lace ' . The records of these tender trifles,CORRECT,CORRECT,False,,
+179,val,are very touching but then lace does place,INCORRECT: are→please | CORRECTED: please very touching but then lace does place,INCORRECT,True,are→please,please very touching but then lace does place
+180,val,upon everything a delicate sentiment .,CORRECT,CORRECT,False,,
+181,val,"We read , with sympathy , an advertisement in the",CORRECT,CORRECT,False,,
+182,val,this is seen on the 150 miles of spawning,CORRECT,CORRECT,False,,
+183,val,The effect of bottom congestion due to,CORRECT,CORRECT,False,,
+184,val,them - thank Heaven ! A good picture of,CORRECT,CORRECT,False,,
+185,val,"for spawning . Both result in crowding ,",CORRECT,CORRECT,False,,
+186,val,the light pressure is inevitably mixed,CORRECT,CORRECT,False,,
+187,val,with that of the suitability of ground,INCORRECT: that→throat | CORRECTED: with throat of the suitability of ground,INCORRECT,True,that→throat,with throat of the suitability of ground
+188,val,grounds from the Viking in the north down,CORRECT,CORRECT,False,,
+189,val,the western edge of the Norwegian,CORRECT,CORRECT,False,,
+190,val,so there is no need to try to separate,CORRECT,CORRECT,False,,
+191,val,Deep .,CORRECT,CORRECT,False,,
+192,val,to the Klondykes and the Reef along,CORRECT,CORRECT,False,,
+193,val,"to this fishery , which unfortunately seems",CORRECT,CORRECT,False,,
+194,val,"at slack waters , even in daylight",CORRECT,CORRECT,False,,
+195,val,The East Anglian behaviour ( see p. 82 ),CORRECT,CORRECT,False,,
+196,val,"sometimes ; and the high swimming ,",CORRECT,CORRECT,False,,
+197,val,"summer fisheries . There is the "" swim """,CORRECT,CORRECT,False,,
+198,val,has always differed from that of the,CORRECT,CORRECT,False,,
+199,val,when fish are caught only in the top,CORRECT,CORRECT,False,,
+200,val,fascinating behaviour mysteries are peculiar,CORRECT,CORRECT,False,,
+201,val,to be dying out ; but a full discussion of,CORRECT,CORRECT,False,,
+202,val,them is beyond the present scope .,CORRECT,CORRECT,False,,
+203,val,few yards of netting . These and other,CORRECT,CORRECT,False,,
+204,val,footrope of a trawl does this . Films,INCORRECT: footrope→fostrope | CORRECTED: fostrope of a trawl does this. Films,INCORRECT,True,footrope→fostrope,fostrope of a trawl does this. Films
+205,val,the water or along the ground .,CORRECT,CORRECT,False,,
+206,val,a seine net in just the same way after,CORRECT,CORRECT,False,,
+207,val,"sends before it a kind of scaring effect ,",CORRECT,CORRECT,False,,
+208,val,Underwater films suggest that the,INCORRECT: the→ther | CORRECTED: Underwater films suggest that ther,INCORRECT,True,the→ther,Underwater films suggest that ther
+209,val,"that all fishing gear , when moving ,",CORRECT,CORRECT,False,,
+210,val,The Bow-wave Theory . This assumes,CORRECT,CORRECT,False,,
+211,val,probably through waves or vibrations in,"INCORRECT: missing final ""probably"" | CORRECTED: probably through waves or vibrations in probably",INCORRECT,True,"missing final ""probably""",probably through waves or vibrations in probably
+212,val,have also shown plaice moving before,CORRECT,CORRECT,False,,
+213,val,being gathered inwards by the ropes .,CORRECT,CORRECT,False,,
+214,val,of her sisters . A young man from Reading named Marshall,"INCORRECT: her→herr, Marshall→Morshall | CORRECTED: of herr sisters . A young man from Reading named Morshall",INCORRECT,True,"her→herr, Marshall→Morshall",of herr sisters . A young man from Reading named Morshall
+215,val,"had at first been considered as belonging to the killer ,","INCORRECT: killer→kitter | CORRECTED: had at first been considered as belonging to the kitter,",INCORRECT,True,killer→kitter,"had at first been considered as belonging to the kitter,"
+216,val,"Even the bone cuff-links found beside the body , which",CORRECT,CORRECT,False,,
+217,val,had an uncomfortable time in the presence of the coroner .,CORRECT,CORRECT,False,,
+218,val,they had been borrowed by Elizabeth Camp from one,CORRECT,CORRECT,False,,
+219,val,"proved yet another red herring , for it was learned that",CORRECT,CORRECT,False,,
+220,val,"his military bearing ) , and this was accepted .",CORRECT,CORRECT,False,,
+221,val,"to have been away for four days . Not in itself a crime , but , added to",CORRECT,CORRECT,False,,
+222,val,explain . His story was that he had left home to try to,CORRECT,CORRECT,False,,
+223,val,"dford for a false moustache , it left him with something to",CORRECT,CORRECT,False,,
+224,val,the knowledge that he had gone shopping in the town of Guil-,CORRECT,CORRECT,False,,
+225,val,"This man was known to have left his home on February 11 , and","INCORRECT: home→houme | CORRECTED: This man was known to have left his houme on February 11, and",INCORRECT,True,home→houme,"This man was known to have left his houme on February 11, and"
+226,val,join the Army ( presumably feeling that a moustache might enhance,CORRECT,CORRECT,False,,
+227,val,At Clapham Junction a ticket-collector,CORRECT,CORRECT,False,,
+228,val,A passenger at Victoria said he had seen,CORRECT,CORRECT,False,,
+229,val,a train for the short run to Victoria .,CORRECT,CORRECT,False,,
+230,val,"walking arm in arm . ""","INCORRECT: walking→walkingly | CORRECTED: ""walkingly arm in arm . """"""",INCORRECT,True,walking→walkingly,"""walkingly arm in arm . """""""
+231,val,was able to identify a photograph of the,CORRECT,CORRECT,False,,
+232,val,"a young lady "" as near as possible """,CORRECT,CORRECT,False,,
+233,val,"like the photograph shown him , with","INCORRECT: him→her | CORRECTED: like the photograph shown her , with",INCORRECT,True,him→her,"like the photograph shown her , with"
+234,val,"a man "" very close in conversation and",INCORRECT: man→woman | CORRECTED: a woman very close in conversation and,INCORRECT,True,man→woman,a woman very close in conversation and
+235,val,on platform six waiting to board,CORRECT,CORRECT,False,,
+236,val,"girl , and he said he had last seen her",CORRECT,CORRECT,False,,
+237,val,at East Croydon . He also believed,CORRECT,CORRECT,False,,
+238,val,A guard reported that at East Croydon,CORRECT,CORRECT,False,,
+239,val,he had seen what was accepted as the,CORRECT,CORRECT,False,,
+240,val,have joined this train by taking,CORRECT,CORRECT,False,,
+241,val,same couple sitting close together in,INCORRECT: same→some | CORRECTED: some couple sitting close together in,INCORRECT,True,same→some,some couple sitting close together in
+242,val,that they had still been together at,INCORRECT: that→What | CORRECTED: What they had still been together at,INCORRECT,True,that→What,What they had still been together at
+243,val,train from London Bridge of which,CORRECT,CORRECT,False,,
+244,val,a first-class compartment of the,CORRECT,CORRECT,False,,
+245,val,one from Victoria and changing,CORRECT,CORRECT,False,,
+246,val,"South Croydon , and he remembered","INCORRECT: South→Sennith | CORRECTED: Sennith Croydon, and he remembered",INCORRECT,True,South→Sennith,"Sennith Croydon, and he remembered"
+247,val,he was in charge . The two could,INCORRECT: could→caught | CORRECTED: he was in charge . The two caught,INCORRECT,True,could→caught,he was in charge . The two caught
+248,val,"signalman at Purley Oaks , who had",CORRECT,CORRECT,False,,
+249,val,couple struggling in a first-class,CORRECT,CORRECT,False,,
+250,val,"hour before her body was discovered ,",CORRECT,CORRECT,False,,
+251,val,Money had been dead for about an,CORRECT,CORRECT,False,,
+252,val,Medical evidence established that Mary,CORRECT,CORRECT,False,,
+253,val,and this matched reasonably well with,CORRECT,CORRECT,False,,
+254,val,"seen , as the train passed his box , a",CORRECT,CORRECT,False,,
+255,val,More important evidence came from a,CORRECT,CORRECT,False,,
+256,val,the timetable of the train in question .,CORRECT,CORRECT,False,,
+257,val,been used to seeing couples engaged in,INCORRECT: been→queered | CORRECTED: queered used to seeing couples engaged in,INCORRECT,True,been→queered,queered used to seeing couples engaged in
+258,val,compartment ; but he seemed to have,INCORRECT: have→leave | CORRECTED: compartment ; but he seemed to leave,INCORRECT,True,have→leave,compartment ; but he seemed to leave
+259,val,another sense to their aid .,CORRECT,CORRECT,False,,
+260,val,"progress , because they were men of taste",CORRECT,CORRECT,False,,
+261,val,"the Egyptians , their cookery made rapid","INCORRECT: cookery→cohesy | CORRECTED: the Egyptians, their cohesy made rapid",INCORRECT,True,cookery→cohesy,"the Egyptians, their cohesy made rapid"
+262,val,of the table to the gratification of one,CORRECT,CORRECT,False,,
+263,val,"When , however , the Greeks did learn the","INCORRECT: added ""When"" at start, last word ""the""→""However"" | CORRECTED: However, the Greeks did learn However,",INCORRECT,True,"added ""When"" at start, last word ""the""→""However""","However, the Greeks did learn However,"
+264,val,art of making fireproof earthenware from,CORRECT,CORRECT,False,,
+265,val,sense alone . Having exhausted their invention,CORRECT,CORRECT,False,,
+266,val,fact that they did not confine the resources,CORRECT,CORRECT,False,,
+267,val,the banquets of the ancient world was the,CORRECT,CORRECT,False,,
+268,val,"palate , they broke fresh ground and called","INCORRECT: broke→broche | CORRECTED: palate , they broche fresh ground and called",INCORRECT,True,broke→broche,"palate , they broche fresh ground and called"
+269,val,in the preparation of stimulants for the,INCORRECT: the→their | CORRECTED: in the preparation of stimulants for their,INCORRECT,True,the→their,in the preparation of stimulants for their
+270,val,and intellect . A remarkable peculiarity in,CORRECT,CORRECT,False,,
+271,val,at their desserts the number of flowers,"INCORRECT: ""desserts→dessests, number→mumblest"" | CORRECTED: ""at their dessests the mumblest of flowers""",INCORRECT,True,"""desserts→dessests, number→mumblest""","""at their dessests the mumblest of flowers"""
+272,val,far exceeded the number of fruits .,CORRECT,CORRECT,False,,
+273,val,By delicate application of odours and richly-,CORRECT,CORRECT,False,,
+274,val,essential article in their festal preparations ;,INCORRECT: festal→festival | CORRECTED: essential article in their festival preparations,INCORRECT,True,festal→festival,essential article in their festival preparations
+275,val,and it is the opinion of Bassius that,CORRECT,CORRECT,False,,
+276,val,more exquisite and ethereal enjoyment to,CORRECT,CORRECT,False,,
+277,val,"distilled perfumes , these refined voluptuaries",CORRECT,CORRECT,False,,
+278,val,fication of the sense of smelling was a,"INCORRECT: smelling→smellings, a→q | CORRECTED: fication of the sense of smellings was q",INCORRECT,True,"smelling→smellings, a→q",fication of the sense of smellings was q
+279,val,the grosser pleasures of the board . The grati-,"INCORRECT: grosser→grosses, grati-→groat | CORRECTED: the grosses pleasures of the board. The groat.",INCORRECT,True,"grosser→grosses, grati-→groat",the grosses pleasures of the board. The groat.
+280,val,aroused the fainting appetite and added a,INCORRECT: a→q | CORRECTED: aroused the fainting appetite and added q,INCORRECT,True,a→q,aroused the fainting appetite and added q
+281,val,They considered flowers as forming a very,CORRECT,CORRECT,False,,
+282,val,subject of no little importance to the Romans .,CORRECT,CORRECT,False,,
+283,val,smother his courtiers with flowers . Nor was,CORRECT,CORRECT,False,,
+284,val,recreations of Heliogabalus was to,CORRECT,CORRECT,False,,
+285,val,medicinal qualities .,CORRECT,CORRECT,False,,
+286,val,it entirely as an object of luxury that the,CORRECT,CORRECT,False,,
+287,val,ancients made use of flowers ; they were,CORRECT,CORRECT,False,,
+288,val,essences fell upon him ; and one of the,CORRECT,CORRECT,False,,
+289,val,considered to possess sanative and,INCORRECT: sanative→sanctive | CORRECTED: considered to possess sanctive and,INCORRECT,True,sanative→sanctive,considered to possess sanctive and
+290,val,"When Nero supped in # his Golden House ,","INCORRECT: supped→cupped, #→At, his→this | CORRECTED: When Nero cupped in At this Golden House,",INCORRECT,True,"supped→cupped, #→At, his→this","When Nero cupped in At this Golden House,"
+291,val,a mingled shower of flowers and odorous,CORRECT,CORRECT,False,,
+292,val,"ebriety , or , as Bassius less clearly",CORRECT,CORRECT,False,,
+293,val,power in preventing the approaches of,INCORRECT: power→powers | CORRECTED: powers in preventing the approaches of,INCORRECT,True,power→powers,powers in preventing the approaches of
+294,val,of the brain . It is said that there is,CORRECT,CORRECT,False,,
+295,val,"According to Pliny , and others , certain",CORRECT,CORRECT,False,,
+296,val,"expresses it , in clarifying the functions",CORRECT,CORRECT,False,,
+297,val,herbs and flowers proved of sovereign,CORRECT,CORRECT,False,,
+298,val,foodstuffs the traveller occasionally,INCORRECT: traveller→travellers | CORRECTED: foodstuffs the travellers occasionally,INCORRECT,True,traveller→travellers,foodstuffs the travellers occasionally
+299,val,"nothing new under the sun , but regarding",CORRECT,CORRECT,False,,
+300,val,encounters a certain measure of novelty .,INCORRECT: encounters→encountess | CORRECTED: encountess a certain measure of novelty,INCORRECT,True,encounters→encountess,encountess a certain measure of novelty
+301,val,"In China , for instance , dried rats are","INCORRECT: In→On, rats→Tats | CORRECTED: On China , for instance , dried Tats are",INCORRECT,True,"In→On, rats→Tats","On China , for instance , dried Tats are"
+302,val,"white mice served alive , dipped in treacle",CORRECT,CORRECT,False,,
+303,val,esteemed a delicacy . The visitor is told,CORRECT,CORRECT,False,,
+304,val,off a fever . A number of newly-born,"INCORRECT: fever→feves, newly→merely | CORRECTED: off a feves A number of merely born",INCORRECT,True,"fever→feves, newly→merely",off a feves A number of merely born
+305,val,and swallowed like a prairie oyster is,INCORRECT: is→and | CORRECTED: and swallowed like a prairie oyster and,INCORRECT,True,is→and,and swallowed like a prairie oyster and
+306,val,considered a piece of resistance .,CORRECT,CORRECT,False,,
+307,val,and that a stewed black rat will ward,INCORRECT: black→bleach | CORRECTED: and that a stewed bleach rat will ward,INCORRECT,True,black→bleach,and that a stewed bleach rat will ward
+308,val,that they restore the hair of the bald,CORRECT,CORRECT,False,,
+309,val,"over with flour , you will find a stack of it",CORRECT,CORRECT,False,,
+310,val,high opinion of the octopus as an article of diet .,CORRECT,CORRECT,False,,
+311,val,"it , press it and dry it , in which form , dusted",CORRECT,CORRECT,False,,
+312,val,in almost any provision shop .,CORRECT,CORRECT,False,,
+313,val,a delicacy while Mediterranean peoples have a,CORRECT,CORRECT,False,,
+314,val,So have the Japanese and the Chinese . The,CORRECT,CORRECT,False,,
+315,val,Among the natives of Northern Australia lizards,CORRECT,CORRECT,False,,
+316,val,"Celestials , apart from eating it fresh , squash","INCORRECT: Celestials→Celesticles, apart→capart, squash→squashes | CORRECTED: Celesticles, capart from eating it fresh, squashes",INCORRECT,True,"Celestials→Celesticles, apart→capart, squash→squashes","Celesticles, capart from eating it fresh, squashes"
+317,val,roasted on the point of a spear are definitely,"INCORRECT: on→over, point→paint, spear→Spencer | CORRECTED: roasted over the paint of a Spencer are definitely",INCORRECT,True,"on→over, point→paint, spear→Spencer",roasted over the paint of a Spencer are definitely
+318,val,Commons agreed was that of the first poll-tax . The manifest,INCORRECT: Commons→Cautious | CORRECTED: Cautious agreed was that of the first poll-tax . The manifest,INCORRECT,True,Commons→Cautious,Cautious agreed was that of the first poll-tax . The manifest
+319,val,the remainder . The method of assessment to which the,CORRECT,CORRECT,False,,
+320,val,"A sum of 160,000 was demanded - a staggering figure",CORRECT,CORRECT,False,,
+321,val,two-thirds of this sum providing the clergy supplied,INCORRECT: sum→seen | CORRECTED: two-thirds of this seen providing the clergy supplied,INCORRECT,True,sum→seen,two-thirds of this seen providing the clergy supplied
+322,val,"was a fairer target , and the Parliament agreed to find","INCORRECT: was→Wros | CORRECTED: Wros a fairer target, and the Parliament agreed to find",INCORRECT,True,was→Wros,"Wros a fairer target, and the Parliament agreed to find"
+323,val,weight by a flat-rate tax at treble the rate - every adult,INCORRECT: at→a | CORRECTED: weight by a flat rate tax a treble the rate every adult,INCORRECT,True,at→a,weight by a flat rate tax a treble the rate every adult
+324,val,"corrected by the sliding scale of the second poll-tax ,",CORRECT,CORRECT,False,,
+325,val,"had to pay three groats , but this time an adult was re-","INCORRECT: had→hat | CORRECTED: hat to pay three groats, but this time an adult was re-",INCORRECT,True,had→hat,"hat to pay three groats, but this time an adult was re-"
+326,val,"to mediaeval eyes . It was determined that 100,000",CORRECT,CORRECT,False,,
+327,val,"but this lesson was ignored , and the injustice trebled in",CORRECT,CORRECT,False,,
+328,val,injustice of this method had been to a certain degree,CORRECT,CORRECT,False,,
+329,val,"men were out a fortnight , disciplined and solid ,","INCORRECT: out→and | CORRECTED: men were and a fortnight, disciplined and solid,",INCORRECT,True,out→and,"men were and a fortnight, disciplined and solid,"
+330,val,common man . ),CORRECT,CORRECT,False,,
+331,val,when only 20 per cent of them stood to gain,CORRECT,CORRECT,False,,
+332,val,"( In this strike , as reported in the Sheffield",CORRECT,CORRECT,False,,
+333,val,cent made sacrifices for their fellow men ;,INCORRECT: cent→Cond | CORRECTED: Cond made sacrifices for their fellow men;,INCORRECT,True,cent→Cond,Cond made sacrifices for their fellow men;
+334,val,this remarkable strike raised the question of a,CORRECT,CORRECT,False,,
+335,val,anything from the strike and the other 80 per,INCORRECT: strike→shrike | CORRECTED: anything from the shrike and the other 80 per,INCORRECT,True,strike→shrike,anything from the shrike and the other 80 per
+336,val,living wage and showed the worth of the,CORRECT,CORRECT,False,,
+337,val,"Guardian in March of that year , 1,000,000",CORRECT,CORRECT,False,,
+338,val,"This new party , the British Socialist Party , was","INCORRECT: party→perty | CORRECTED: This new perty, the British Socialist Party, was",INCORRECT,True,party→perty,"This new perty, the British Socialist Party, was"
+339,val,"socialist thought in the city , but sought to create",CORRECT,CORRECT,False,,
+340,val,people .,CORRECT,CORRECT,False,,
+341,val,not prepared to accept the role of junior helper,CORRECT,CORRECT,False,,
+342,val,"in the Labour movement , or of only providing","INCORRECT: missing trailing ""pro-"" | CORRECTED: in the Labour movement, or of only providing pro-",INCORRECT,True,"missing trailing ""pro-""","in the Labour movement, or of only providing pro-"
+343,val,propaganda in order to increase the volume of,INCORRECT: propaganda→pageander | CORRECTED: pageander in order to increase the volume of,INCORRECT,True,propaganda→pageander,pageander in order to increase the volume of
+344,val,in the Labour movement a more militant attitude,CORRECT,CORRECT,False,,
+345,val,capable of achieving socialism for the working,CORRECT,CORRECT,False,,
+346,val,"who was to become a very intimate friend , and I was",CORRECT,CORRECT,False,,
+347,val,solicitor cousin . As Bishop Talbot had told me that I,CORRECT,CORRECT,False,,
+348,val,"Vicar of St. Mark's , Woodcote , Purley , a new church built",CORRECT,CORRECT,False,,
+349,val,"IN 1913 Dr. Burge , Bishop of Southwark , asked me to go as","INCORRECT: as→ay | CORRECTED: In 1913 Dr. Burge, Bishop of Southwark, asked me to go ay",INCORRECT,True,as→ay,"In 1913 Dr. Burge, Bishop of Southwark, asked me to go ay"
+350,val,"ought not to spend many years in Tatsfield , we held","INCORRECT: years→yeavs, we→wne | CORRECTED: ought not to spend many yeavs in Tatsfield, wne held",INCORRECT,True,"years→yeavs, we→wne","ought not to spend many yeavs in Tatsfield, wne held"
+351,val,great family consultations .,"INCORRECT: great→grext, family→fxmily | CORRECTED: grext fxmily consultations",INCORRECT,True,"great→grext, family→fxmily",grext fxmily consultations
+352,val,later on joint executor of his estate with his,CORRECT,CORRECT,False,,
+353,val,"by the well-known architect Mr. George Fellowes Prynne ,",CORRECT,CORRECT,False,,
+354,val,a close friend of ours .,CORRECT,CORRECT,False,,
+355,val,"his family , and found a very suitable house nearby",CORRECT,CORRECT,False,,
+356,val,"Dr. John Leake , who lived at Blackheath , and was","INCORRECT: Leake→Lexke | CORRECTED: Dr John Lexke, who lived at Blackheath, and was",INCORRECT,True,Leake→Lexke,"Dr John Lexke, who lived at Blackheath, and was"
+357,val,My eldest brother was then living in Limpsfield with,CORRECT,CORRECT,False,,
+358,val,at the age of 92 . Dr. Burge was not able to be present,CORRECT,CORRECT,False,,
+359,val,"This was taken by the Suffragan Bishop of Woolwich ,",CORRECT,CORRECT,False,,
+360,val,"where my mother settled , and eventually died in 1926",CORRECT,CORRECT,False,,
+361,val,at the Institution and Induction Service in St. Mark's .,CORRECT,CORRECT,False,,
+362,val,This was called Ellen Avenue when I first went,CORRECT,CORRECT,False,,
+363,val,service . I soon saw that the parish needed,"INCORRECT: that→Huat, the→Hue | CORRECTED: Service I soon saw Huat Hue parish needed",INCORRECT,True,"that→Huat, the→Hue",Service I soon saw Huat Hue parish needed
+364,val,a flourishing Sunday School and an evening,CORRECT,CORRECT,False,,
+365,val,We also had a little Mission Hall leading off,INCORRECT: Hall→Halle | CORRECTED: We also had a little Mission Halle leading off,INCORRECT,True,Hall→Halle,We also had a little Mission Halle leading off
+366,val,sounding name of Lansdowne Road . There,CORRECT,CORRECT,False,,
+367,val,district .,CORRECT,CORRECT,False,,
+368,val,"were lots of children there , and we had",CORRECT,CORRECT,False,,
+369,val,"the Brighton Road , in a street full of small houses .",CORRECT,CORRECT,False,,
+370,val,"there , but was soon changed into the better-",CORRECT,CORRECT,False,,
+371,val,more help both at the church and Mission,CORRECT,CORRECT,False,,
+372,val,"district and got to know , and be known by , many of",CORRECT,CORRECT,False,,
+373,val,the people of the parish .,CORRECT,CORRECT,False,,
+374,val,Most fortunately I was able to engage the Rev. E. U. Evitt in,INCORRECT: E. U.→E. W. | CORRECTED: Most fortunately I was able to engage the Rev. E. W. Evitt in,INCORRECT,True,E. U.→E. W.,Most fortunately I was able to engage the Rev. E. W. Evitt in
+375,val,"Lansdowne Road district , but I needed more help in the",CORRECT,CORRECT,False,,
+376,val,The Church Army Captain had done very good work in the,CORRECT,CORRECT,False,,
+377,val,"1913 soon after I had come , and he organized the Mission",CORRECT,CORRECT,False,,
+378,val,church for the full rota of services on Sundays and weekdays .,CORRECT,CORRECT,False,,
+379,val,"that one of us must volunteer . The Bishop , Dr. Burge , did",CORRECT,CORRECT,False,,
+380,val,"not wish me to go then , as I had barely been in the parish",CORRECT,CORRECT,False,,
+381,val,A great blow disturbed all our efforts in the following,"INCORRECT: blow→blaw, disturbed→distrurbed | CORRECTED: A great blaw distrurbed all our efforts in the following",INCORRECT,True,"blow→blaw, disturbed→distrurbed",A great blaw distrurbed all our efforts in the following
+382,val,"the Forces were urgently needed , and I felt clearly",CORRECT,CORRECT,False,,
+383,val,"than his Vicar , and he was accepted at once and","INCORRECT: ""than→that"" | CORRECTED: ""that his Vicar, and he was accepted at once and""",INCORRECT,True,"""than→that""","""that his Vicar, and he was accepted at once and"""
+384,val,work until his health broke down and he had a bad,INCORRECT: bad→board | CORRECTED: work until his health broke down and he had a board,INCORRECT,True,bad→board,work until his health broke down and he had a board
+385,val,"year , 1914 , when war broke out . Very soon Chaplains for",CORRECT,CORRECT,False,,
+386,val,was very soon in France where he did splendid,INCORRECT: France→Francke | CORRECTED: was very soon in Francke where he did splendid,INCORRECT,True,France→Francke,was very soon in Francke where he did splendid
+387,val,"for a year . Mr. Evitt , however , was much less committed",CORRECT,CORRECT,False,,
+388,val,attack of enteric fever .,CORRECT,CORRECT,False,,
+389,val,"the date of birth of each child , as had been done","INCORRECT: had→hath | CORRECTED: the date of birth of each child, as hath been done",INCORRECT,True,had→hath,"the date of birth of each child, as hath been done"
+390,val,been married . It was not regarded as practicable within,"INCORRECT: practicable→practically, within→without | CORRECTED: been married . It was not regarded as practically without",INCORRECT,True,"practicable→practically, within→without",been married . It was not regarded as practically without
+391,val,except that they extended to all women who were or had,INCORRECT: who→in to | CORRECTED: except that they extended to all women in to were or had,INCORRECT,True,who→in to,except that they extended to all women in to were or had
+392,val,in the specialised enquiry for the Royal Commission .,CORRECT,CORRECT,False,,
+393,val,the limits of the census to include particulars about,"INCORRECT: census→censors, particulars→petitioners | CORRECTED: the limits of the censors to include petitioners about",INCORRECT,True,"census→censors, particulars→petitioners",the limits of the censors to include petitioners about
+394,val,"The questions about children were the same as in 1951 ,",CORRECT,CORRECT,False,,
+395,val,"went dead again , and Steve had no stomach for","INCORRECT: Steve→There | CORRECTED: went dead again, and There had no stomach for",INCORRECT,True,Steve→There,"went dead again, and There had no stomach for"
+396,val,should be . Steve got out the car and traversed the,"INCORRECT: should→started, be→the | CORRECTED: started the. Steve got out the car and traversed the",INCORRECT,True,"should→started, be→the",started the. Steve got out the car and traversed the
+397,val,"in Sussex , in all its obscene details . Then the radio","INCORRECT: radio→radiation | CORRECTED: in Sussex , in all its obscene details . Then the radiation",INCORRECT,True,radio→radiation,"in Sussex , in all its obscene details . Then the radiation"
+398,val,"After what seemed an undue period of repetition , the voice",CORRECT,CORRECT,False,,
+399,val,to keep an appointment with Heather .,"INCORRECT: an→ap, appointment→appointed | CORRECTED: to keep ap appointed with Heather",INCORRECT,True,"an→ap, appointment→appointed",to keep ap appointed with Heather
+400,val,went on to describe the landing of the Thetan colony,INCORRECT: landing→launching | CORRECTED: went on to describe the launching of the Thetan colony,INCORRECT,True,landing→launching,went on to describe the launching of the Thetan colony
+401,val,"same empty streets as he had the night before ,",CORRECT,CORRECT,False,,
+402,val,"breakfast . It was a beautiful day , as firsts-of-June",CORRECT,CORRECT,False,,
+403,val,them .,CORRECT,CORRECT,False,,
+404,val,"among our own people , finding out just how",CORRECT,CORRECT,False,,
+405,val,We must learn all we can about,CORRECT,CORRECT,False,,
+406,val,"And third , to study these damned Thetans .",CORRECT,CORRECT,False,,
+407,val,much freedom we can take with safety .,CORRECT,CORRECT,False,,
+408,val,""" Now , to summarize what I think our",CORRECT,CORRECT,False,,
+409,val,"Thetans like the plague , for they must not",CORRECT,CORRECT,False,,
+410,val,"course of action should be . First , to avoid the",CORRECT,CORRECT,False,,
+411,val,"find us out ! Second , to tread pretty warily","INCORRECT: to→no | CORRECTED: find us out! Second, no tread pretty warily",INCORRECT,True,to→no,"find us out! Second, no tread pretty warily"
+412,val,seats some rows behind him . Steve was,"INCORRECT: seats→selects, Steve→slept | CORRECTED: selects some rows behind him. slept was",INCORRECT,True,"seats→selects, Steve→slept",selects some rows behind him. slept was
+413,val,faces very disconcerting ; and looking at,CORRECT,CORRECT,False,,
+414,val,Heather he found a welcome relief in her,INCORRECT: relief→relieved | CORRECTED: Heather he found a welcome relieved in her,INCORRECT,True,relief→relieved,Heather he found a welcome relieved in her
+415,val,"followed the beaming Dan aboard , taking","INCORRECT: beaming→leaming, Dan→Dean | CORRECTED: followed the leaming Dean aboard , taking",INCORRECT,True,"beaming→leaming, Dan→Dean","followed the leaming Dean aboard , taking"
+416,val,"beginning to find the stereotyped , flattish , happy","INCORRECT: happy→happening | CORRECTED: beginning to find the stereotyped, flattish, happening",INCORRECT,True,happy→happening,"beginning to find the stereotyped, flattish, happening"
+417,val,After a long wait a bus appeared and they,CORRECT,CORRECT,False,,
+418,val,relatively long doleful one,CORRECT,CORRECT,False,,
+419,val,"expenses , with the people to whom Moke had","INCORRECT: Moke→Mother | CORRECTED: expenses , with the people to whom Mother had",INCORRECT,True,Moke→Mother,"expenses , with the people to whom Mother had"
+420,val,lucky to have descended from such economic altitudes .,INCORRECT: economic→ecomomic | CORRECTED: lucky to have descended from such ecomomic altitudes.,INCORRECT,True,economic→ecomomic,lucky to have descended from such ecomomic altitudes.
+421,val,Tom Dreyfus had a job on the machines in the Secretariat,CORRECT,CORRECT,False,,
+422,val,( Stamp Department ) while Sally sulked at home .,CORRECT,CORRECT,False,,
+423,val,The recovery of his balance was due to the,CORRECT,CORRECT,False,,
+424,val,sent him : little people who regarded him as,CORRECT,CORRECT,False,,
+425,val,"fact that he was living , virtually without",CORRECT,CORRECT,False,,
+426,val,as soon as he had spoken a few,CORRECT,CORRECT,False,,
+427,val,Know how he did it ? He 's clever on,INCORRECT: on→oh | CORRECTED: Know how he did it? He's clever oh,INCORRECT,True,on→oh,Know how he did it? He's clever oh
+428,val,"politics , Lester , give us something on",CORRECT,CORRECT,False,,
+429,val,craterlet on Face ( ours is an agricultural,"INCORRECT: Face→Trace, ours→cours | CORRECTED: craterlet on Trace (cours is an agricultural",INCORRECT,True,"Face→Trace, ours→cours",craterlet on Trace (cours is an agricultural
+430,val,your mouth-organ . ',CORRECT,CORRECT,False,,
+431,val,the mouth-organ . So when he visited some,CORRECT,CORRECT,False,,
+432,val,sentences of his speech : ' Cut the,CORRECT,CORRECT,False,,
+433,val,"Back-Face area ) the cry would go up ,","INCORRECT: Back→Bach | CORRECTED: Bach-Face area) the cry would go up,",INCORRECT,True,Back→Bach,"Bach-Face area) the cry would go up,"
+434,val,the Senator who had annoyed the United States,CORRECT,CORRECT,False,,
+435,val,W.C.U. by threatening to loose off one of his,CORRECT,CORRECT,False,,
+436,val,"bluff to succeed the next time ) and , lately , by",CORRECT,CORRECT,False,,
+437,val,saying that if Mo land-troops had to come to the aid,"INCORRECT: ""Mo land→Moland, had→head"" | CORRECTED: ""saying that if Moland-troops head to come to the aid""",INCORRECT,True,"""Mo land→Moland, had→head""","""saying that if Moland-troops head to come to the aid"""
+438,val,"Peron entered , a large man , who had once been","INCORRECT: Peron→Person | CORRECTED: Person entered, a large man who had once been",INCORRECT,True,Peron→Person,"Person entered, a large man who had once been"
+439,val,"wore , and kept on indoors , a fifty gallon hat . Harry was","INCORRECT: Harry→thirty | CORRECTED: wore, and kept on indoors, a fifty gallon hat. thirty was",INCORRECT,True,Harry→thirty,"wore, and kept on indoors, a fifty gallon hat. thirty was"
+440,val,by bragging how he had once won a trick from,CORRECT,CORRECT,False,,
+441,val,rockets ( an admission which would scarcely help,"INCORRECT: ""( an→for"" | CORRECTED: rockets for admission which would scarcely help",INCORRECT,True,"""( an→for""",rockets for admission which would scarcely help
+442,val,"handsome but was now seedy-looking , a sufferer","INCORRECT: but→bet | CORRECTED: handsome bet was now seedy-looking, a sufferer",INCORRECT,True,but→bet,"handsome bet was now seedy-looking, a sufferer"
+443,val,"prepared for something unpleasant , for this was",CORRECT,CORRECT,False,,
+444,val,"of the O.G.O. contingent in the Panama region ,",CORRECT,CORRECT,False,,
+445,val,from stomach-ulcers . In the Back-Face tradition he,CORRECT,CORRECT,False,,
+446,val,"ding scale , and left the sum-total of their actions ,",CORRECT,CORRECT,False,,
+447,val,"be a centre of trust , responsible for the maintenance","INCORRECT: the→Hue | CORRECTED: be a centre of trust, responsible for Hue maintenance",INCORRECT,True,the→Hue,"be a centre of trust, responsible for Hue maintenance"
+448,val,"pressed as when he left Mrs. Halliday's office ,",CORRECT,CORRECT,False,,
+449,val,"serve this home of his , in which his heart lay .",CORRECT,CORRECT,False,,
+450,val,Here the rocket man's charm was disarming . Yet,CORRECT,CORRECT,False,,
+451,val,"when the time came to leave , Harry felt as de-",CORRECT,CORRECT,False,,
+452,val,"The motive would be the same in both cases , to",CORRECT,CORRECT,False,,
+453,val,did what they had to do to get GO on an expan-,CORRECT,CORRECT,False,,
+454,val,exactly a month ago . If even Mo statesmen only,"INCORRECT: Mo→No, statesmen→stakesmen | CORRECTED: exactly a month ago. If even No stakesmen only",INCORRECT,True,"Mo→No, statesmen→stakesmen",exactly a month ago. If even No stakesmen only
+455,val,"and their lunar and earthly repercussions , to luck","INCORRECT: lunar→lunas, luck→lack | CORRECTED: and their lunas and earthly repercussions, to lack",INCORRECT,True,"lunar→lunas, luck→lack","and their lunas and earthly repercussions, to lack"
+456,val,"( or to Moke ) , there was a vacuum where there should","INCORRECT: Moke→Dole | CORRECTED: (or to Dole), there was a vacuum where there should",INCORRECT,True,Moke→Dole,"(or to Dole), there was a vacuum where there should"
+457,val,bought their college education forward and,CORRECT,CORRECT,False,,
+458,val,the parade .,INCORRECT: the→Hu | CORRECTED: Hu parade,INCORRECT,True,the→Hu,Hu parade
+459,val,turn . By comparing personal appearances,INCORRECT: turn→than | CORRECTED: than. By comparing personal appearances,INCORRECT,True,turn→than,than. By comparing personal appearances
+460,val,"with university records , the agents of the",CORRECT,CORRECT,False,,
+461,val,"managers of corporations , together with professors",CORRECT,CORRECT,False,,
+462,val,were now being bought forward in their,INCORRECT: bought→brought | CORRECTED: were now being brought forward in their,INCORRECT,True,bought→brought,were now being brought forward in their
+463,val,"and women who interested them , and contracts","INCORRECT: who interested → who is interested | CORRECTED: and women who is interested them, and contracts",INCORRECT,True,who interested → who is interested,"and women who is interested them, and contracts"
+464,val,businesses would pick on young men,CORRECT,CORRECT,False,,
+465,val,At the centre of each circle stood personnel,CORRECT,CORRECT,False,,
+466,val,and their filing clerks . The students had,INCORRECT: had→head | CORRECTED: and their filing clerks . The students head,INCORRECT,True,had→head,and their filing clerks . The students head
+467,val,would be initialled at the end of,CORRECT,CORRECT,False,,
+468,val,these fine young people was closely geared to,CORRECT,CORRECT,False,,
+469,val,"prospects would depend upon salaries , scholarship for","INCORRECT: scholarship→scholarships | CORRECTED: prospects would depend upon salaries, scholarships for",INCORRECT,True,scholarship→scholarships,"prospects would depend upon salaries, scholarships for"
+470,val,"were really means . So , seeing them revolve in","INCORRECT: seeing→seeding | CORRECTED: were really means. So, seeding them revolve in",INCORRECT,True,seeing→seeding,"were really means. So, seeding them revolve in"
+471,val,"Moke consciously or unconsciously symbolised , any-","INCORRECT: Moke→Mole | CORRECTED: Mole consciously or unconsciously symbolised, any-",INCORRECT,True,Moke→Mole,"Mole consciously or unconsciously symbolised, any-"
+472,val,"circles , Harry had the feeling that Moke ( or what","INCORRECT: ""Moke→smoke, what→whatever"" | CORRECTED: ""circles, Harry had the feeling that smoke (or whatever""",INCORRECT,True,"""Moke→smoke, what→whatever""","""circles, Harry had the feeling that smoke (or whatever"""
+473,val,"people by the short hairs , and was diverting them ...",CORRECT,CORRECT,False,,
+474,val,But since starting salaries would depend on grade A,CORRECT,CORRECT,False,,
+475,val,"economic and biological ends which , essentially ,",CORRECT,CORRECT,False,,
+476,val,"or B in the finals next May , and since mating",CORRECT,CORRECT,False,,
+477,val,way in Harry's mind ) had these splendid young,CORRECT,CORRECT,False,,
+478,val,"with black , matted hair and a striking","INCORRECT: ""and a striking""→""and striking"" | CORRECTED: with black, matted hair and striking",INCORRECT,True,"""and a striking""→""and striking""","with black, matted hair and striking"
+479,val,hesitation in saying that they would have,"INCORRECT: would→wanted, have→leave | CORRECTED: hesitation in saying that they wanted leave",INCORRECT,True,"would→wanted, have→leave",hesitation in saying that they wanted leave
+480,val,resemblance to the shrunk heads we had,CORRECT,CORRECT,False,,
+481,val,made an end of us but for an intervention,INCORRECT: an→our | CORRECTED: made an end of us but for our intervention,INCORRECT,True,an→our,made an end of us but for our intervention
+482,val,compels me to mention it .,CORRECT,CORRECT,False,,
+483,val,"Small , repulsive creatures they were ,","INCORRECT: were→sure | CORRECTED: Small, repulsive creatures they sure,",INCORRECT,True,were→sure,"Small, repulsive creatures they sure,"
+484,val,"so unexpected , so unusual , that only the",CORRECT,CORRECT,False,,
+485,val,necessity of rounding my narrative,CORRECT,CORRECT,False,,
+486,val,gazed at recently ; and I have no,INCORRECT: no→need | CORRECTED: gazed at recently and I have need,INCORRECT,True,no→need,gazed at recently and I have need
+487,val,sible source of authority .,CORRECT,CORRECT,False,,
+488,val,prepared for visitors . Mrs Caine said,CORRECT,CORRECT,False,,
+489,val,"and more definite , namely , that",CORRECT,CORRECT,False,,
+490,val,another impression that became more,CORRECT,CORRECT,False,,
+491,val,she was in touch with an invi-,CORRECT,CORRECT,False,,
+492,val,we were to go no further unless and,CORRECT,CORRECT,False,,
+493,val,hut had recently been cleaned and,CORRECT,CORRECT,False,,
+494,val,"until we were sent for , confirming",CORRECT,CORRECT,False,,
+495,val,I had a distinct impression that the,INCORRECT: that→thet | CORRECTED: I had a distinct impression thet the,INCORRECT,True,that→thet,I had a distinct impression thet the
+496,val,Caught by a sudden gust of wind ? A,CORRECT,CORRECT,False,,
+497,val,"too carefree , and becoming airborne ?",CORRECT,CORRECT,False,,
+498,val,single-decker Welsh bus could have got,"INCORRECT: have→leave, missing ""its off"" | CORRECTED: single-decker Welsh bus could leave got its off",INCORRECT,True,"have→leave, missing ""its off""",single-decker Welsh bus could leave got its off
+499,val,combination of the two ? No one seems,CORRECT,CORRECT,False,,
+500,val,NO ONE has ever satisfactorily explained how a,CORRECT,CORRECT,False,,
+501,val,itself into orbit . Shooting up over the pass a bit,CORRECT,CORRECT,False,,
+502,val,to know . But the fact remains that get,INCORRECT: get→fight | CORRECTED: to know. But the fact remains that fight,INCORRECT,True,get→fight,to know. But the fact remains that fight
+503,val,itself into orbit it did .,CORRECT,CORRECT,False,,
+504,val,"And a fine old fuss there was about it , too .","INCORRECT: too→today | CORRECTED: And a fine old fuss there was about it, today",INCORRECT,True,too→today,"And a fine old fuss there was about it, today"
+505,val,Rev. Edwards .,CORRECT,CORRECT,False,,
+506,val,"Aboard , apart from the crew , were Mrs. Megan",CORRECT,CORRECT,False,,
+507,val,"and Miss Ethel Yates , hikers from","INCORRECT: missing ""that"" between ""and"" and ""Miss"" | CORRECTED: and that Miss Ethel Yates, hikers from",INCORRECT,True,"missing ""that"" between ""and"" and ""Miss""","and that Miss Ethel Yates, hikers from"
+508,val,Birmingham ; Price the Provisions ; and the,CORRECT,CORRECT,False,,
+509,val,Thomas and her five-year-old son Cadwallader ;,CORRECT,CORRECT,False,,
+510,val,"Here are the known facts . On 10th July ,","INCORRECT: Here→Hers | CORRECTED: Hers are the known facts. On 10th July,",INCORRECT,True,Here→Hers,"Hers are the known facts. On 10th July,"
+511,val,pretty little Morfydd Owen ; Mr. Stanley Hayball,CORRECT,CORRECT,False,,
+512,val,left Dinas at two-thirty-five as usual .,CORRECT,CORRECT,False,,
+513,val,"the bus , the 2.20 from Dinas to Llangrwl ,","INCORRECT: Llangrwl→Llangrws | CORRECTED: the bus, the 2.20 from Dinas to Llangrws,",INCORRECT,True,Llangrwl→Llangrws,"the bus, the 2.20 from Dinas to Llangrws,"
+514,val,"Dai Pugh , taking a tearful farewell of","INCORRECT: tearful→dear full | CORRECTED: Dai Pugh , taking a dear full farewell of",INCORRECT,True,tearful→dear full,"Dai Pugh , taking a dear full farewell of"
+515,val,"recently been Ifor's typist , but was now","INCORRECT: now→mostly | CORRECTED: recently been Ifor's typist, but was mostly",INCORRECT,True,now→mostly,"recently been Ifor's typist, but was mostly"
+516,val,"Ifor was . For there was his garage hand ,","INCORRECT: Ifor→For | CORRECTED: For was. For there was his garage hand,",INCORRECT,True,Ifor→For,"For was. For there was his garage hand,"
+517,val,"is established . Ifor Huw Evans , Propr. ,",CORRECT,CORRECT,False,,
+518,val,returning to her home town as a,"INCORRECT: her→his, a→an | CORRECTED: returning to his home town as an",INCORRECT,True,"her→his, a→an",returning to his home town as an
+519,val,"Yes , the bus set out from Dinas . So much",CORRECT,CORRECT,False,,
+520,val,watched it go from the windows of the,"INCORRECT: watched→watchid, the→thi, windows→windons, the→third | CORRECTED: watchid it go from thi windons of third",INCORRECT,True,"watched→watchid, the→thi, windows→windons, the→third",watchid it go from thi windons of third
+521,val,fully-fledged schoolteacher .,CORRECT,CORRECT,False,,
+522,val,"Dinas Motor Omnibus Co. Very interested ,",CORRECT,CORRECT,False,,
+523,val,"Morfydd Owen . Morfydd , who had until","INCORRECT: until→morfydd | CORRECTED: Morfydd Owen . Morfydd , who had morfydd",INCORRECT,True,until→morfydd,"Morfydd Owen . Morfydd , who had morfydd"
+524,val,"the world , is it ? "" "" For me it is , "" Dai","INCORRECT: Dai→Dani | CORRECTED: ""the world , is it ? "" "" For me it is , "" Dani",INCORRECT,True,Dai→Dani,"""the world , is it ? "" "" For me it is , "" Dani"
+525,val,"said wretchedly , wiping his hands on his","INCORRECT: his→hissed | CORRECTED: said wretchedly, wiping his hands on hissed",INCORRECT,True,his→hissed,"said wretchedly, wiping his hands on hissed"
+526,val,"overalls preparatory to a last embrace . "" You",CORRECT,CORRECT,False,,
+527,val,"the Mixed Infants of Llangrwl . """,INCORRECT: Llangrwl→Llangrwm | CORRECTED: the Mixed Infants of Llangrwm,INCORRECT,True,Llangrwl→Llangrwm,the Mixed Infants of Llangrwm
+528,val,hand when you are lording it over,CORRECT,CORRECT,False,,
+529,val,""" But I 'm only going fifteen miles away , """,CORRECT,CORRECT,False,,
+530,val,will not be remembering a mere garage,CORRECT,CORRECT,False,,
+531,val,"Morfydd was saying . "" Not the end of","INCORRECT: the→this, end→and | CORRECTED: Morfydd was saying. ""Not this and of",INCORRECT,True,"the→this, end→and","Morfydd was saying. ""Not this and of"
+532,val,new world she was entering there might,"INCORRECT: new→men, world→would | CORRECTED: men would she was entering there might",INCORRECT,True,"new→men, world→would",men would she was entering there might
+533,val,"had qualified as a schoolteacher , poor",CORRECT,CORRECT,False,,
+534,val,"could not help wondering whether , now she",CORRECT,CORRECT,False,,
+535,val,"be boys equally nice , and with far more","INCORRECT: be→by, far more→favour | CORRECTED: by boys equally nice, and with favour",INCORRECT,True,"be→by, far more→favour","by boys equally nice, and with favour"
+536,val,A nice boy of course . But perhaps in the,INCORRECT: A nice→Anics | CORRECTED: Anics boy of course. But perhaps in the,INCORRECT,True,A nice→Anics,Anics boy of course. But perhaps in the
+537,val,to offer . The conductor rang his bell .,CORRECT,CORRECT,False,,
+538,val,""" Silly boy , "" said Morfydd . Though she",CORRECT,CORRECT,False,,
+539,val,little Dai was quite the man for her .,INCORRECT: man→woman | CORRECTED: little Dai was quite the woman for her .,INCORRECT,True,man→woman,little Dai was quite the woman for her .
+540,val,"swinging down to the darkening earth . "" It",CORRECT,CORRECT,False,,
+541,val,Flying Officer who had burst so unceremoniously into his,CORRECT,CORRECT,False,,
+542,val,"passed me at fifty thousand feet , sir . It was",CORRECT,CORRECT,False,,
+543,val,"office . "" And what did it look like , Broughtons ? Some",CORRECT,CORRECT,False,,
+544,val,"But the jet aircraft was already miles away ,",CORRECT,CORRECT,False,,
+545,val,"climbing steadily . "" Group Captain Llewelyn Jones , Officer",CORRECT,CORRECT,False,,
+546,val,"Commanding R.A.F. Station , Dinas , looked keenly at the",CORRECT,CORRECT,False,,
+547,val,"sort of rocket ? """,INCORRECT: rocket→rochet | CORRECTED: sort of rochet?,INCORRECT,True,rocket→rochet,sort of rochet?
+548,val,"Group Captain looked . "" Broughtons , "" he said silkily .",CORRECT,CORRECT,False,,
+549,val,Flying Officer Broughtons shuffled his feet .,INCORRECT: his→this | CORRECTED: Flying Officer Broughtons shuffled this feet,INCORRECT,True,his→this,Flying Officer Broughtons shuffled this feet
+550,val,"determined . "" It was a bus , sir .",CORRECT,CORRECT,False,,
+551,val,"Buses crawl . "" Very pale , Broughtons was . But","INCORRECT: Buses→Bessses, crawl→Crewl, Very→Vag, Broughtons→Broughters, was→isses, But→Bert | CORRECTED: Bessses Crewl. Vag pale, Broughters isses. Bert",INCORRECT,True,"Buses→Bessses, crawl→Crewl, Very→Vag, Broughtons→Broughters, was→isses, But→Bert","Bessses Crewl. Vag pale, Broughters isses. Bert"
+552,val,"earth-bound creatures ? Aeroplanes fly , Broughtons .",CORRECT,CORRECT,False,,
+553,val,"A single-decker , "" he elaborated . Daggers , the","INCORRECT: decker→dechen, elaborated→elascated | CORRECTED: A single-dechen, he elascated. Daggits, the",INCORRECT,True,"decker→dechen, elaborated→elascated","A single-dechen, he elascated. Daggits, the"
+554,val,""" Didn't they teach you at Cranwell that buses are","INCORRECT: Cranwell→Crowell, buses→bisses | CORRECTED: Didn't they teach you at Crowell that bisses are",INCORRECT,True,"Cranwell→Crowell, buses→bisses",Didn't they teach you at Crowell that bisses are
+555,val,""" Well , actually , sir , it looked like - like a bus .",CORRECT,CORRECT,False,,
+556,val,"back in his chair . "" I see . So you met a bus at","INCORRECT: back→Bad, bus→Siss, at→af | CORRECTED: Bad in his chair . I see . So you met a Siss af",INCORRECT,True,"back→Bad, bus→Siss, at→af",Bad in his chair . I see . So you met a Siss af
+557,val,fifty thousand feet .,CORRECT,CORRECT,False,,
+558,val,"sir . It said Llangrwl . "" Llewelyn Jones sat","INCORRECT: missed ""Simply"", Llangrwl→Llanginl, sat→Sadly | CORRECTED: Sir. It Simply Said Llanginl. Llewelyn Jones Sadly",INCORRECT,True,"missed ""Simply"", Llangrwl→Llanginl, sat→Sadly",Sir. It Simply Said Llanginl. Llewelyn Jones Sadly
+559,val,They 'd got the lights on . There were people inside .,INCORRECT: got→good | CORRECTED: They'd good the lights on. There were people inside.,INCORRECT,True,got→good,They'd good the lights on. There were people inside.
+560,val,""" Did you see the indicator board ? "" "" Yes , sir . "" "" And","INCORRECT: board→bond, And→What | CORRECTED: """" Did you see the indicator bond ? "" "" Yes , sir . "" "" What",INCORRECT,True,"board→bond, And→What",""""" Did you see the indicator bond ? "" "" Yes , sir . "" "" What"
+561,val,"what did it say ? Mystery Tour ? "" Oh , very caustic , that",CORRECT,CORRECT,False,,
+562,val,"Group Captain . But Broughtons stood his ground . "" No ,","INCORRECT: ground→grounced | CORRECTED: Group Captain . But Broughtons stood his grounced . "" No ,""",INCORRECT,True,ground→grounced,"Group Captain . But Broughtons stood his grounced . "" No ,"""
+563,val,"Waving . "" Like gimlets , the Station Commander's eyes .",CORRECT,CORRECT,False,,
+564,val,"All lit up . Full of people waving as you went past . """,CORRECT,CORRECT,False,,
+565,val,"there were anything in Queen's Regulations to cover this ,",CORRECT,CORRECT,False,,
+566,val,"isn't , "" he ended sadly . "" I tried to read the",CORRECT,CORRECT,False,,
+567,val,"Suddenly he crouched forward . "" Broughtons , if I thought",CORRECT,CORRECT,False,,
+568,val,He waited . But his commanding officer appeared to,CORRECT,CORRECT,False,,
+569,val,I 'd have you court-martialled . But I know there,CORRECT,CORRECT,False,,
+570,val,have forgotten him .,CORRECT,CORRECT,False,,
+571,val,"registration number , sir . But it was getting dark . """,CORRECT,CORRECT,False,,
+572,val,"quarter-hour intervals , regular as clockwork ?",CORRECT,CORRECT,False,,
+573,val,"Time passed . Everyone said , "" Pity about Megan",CORRECT,CORRECT,False,,
+574,val,"Time passed . The bus climbed , and went quietly","INCORRECT: Time→Timne, went→wemt | CORRECTED: Timne passed. The bus climbed, and wemt quietly",INCORRECT,True,"Time→Timne, went→wemt","Timne passed. The bus climbed, and wemt quietly"
+575,val,"it was a pity at all ; as , indeed , they didn't .",CORRECT,CORRECT,False,,
+576,val,remained empty . And so did the arms of Dai,CORRECT,CORRECT,False,,
+577,val,"Thomas , isn't it , "" as though they didn't really think",CORRECT,CORRECT,False,,
+578,val,beloved was circling the Poles at three-and-a-,CORRECT,CORRECT,False,,
+579,val,"He saluted , and left the presence , very crestfallen ...",CORRECT,CORRECT,False,,
+580,val,"Pugh . How could they be otherwise , when his",CORRECT,CORRECT,False,,
+581,val,into orbit . Time passed . The Rev. Edwards' pulpit,"INCORRECT: extra leading ""into"" not present, missing trailing ""into"" | CORRECTED: orbit Time passed The Rev Edwards pulpit into",INCORRECT,True,"extra leading ""into"" not present, missing trailing ""into""",orbit Time passed The Rev Edwards pulpit into
+582,val,Dinas Advertiser . But the London papers ignored,INCORRECT: Dinas→Dimas | CORRECTED: Dimas Advertiser. But the London papers ignored,INCORRECT,True,Dinas→Dimas,Dimas Advertiser. But the London papers ignored
+583,val,they could have measured up the road and,CORRECT,CORRECT,False,,
+584,val,LOCAL BUS DISAPPEARS announced the,"INCORRECT: missing initial word ""Mo"" | CORRECTED: Mo LOCAL BUS DISAPPEARS announced the",INCORRECT,True,"missing initial word ""Mo""",Mo LOCAL BUS DISAPPEARS announced the
+585,val,the whole affair . Ifor Evans reported his loss,INCORRECT: loss→lass | CORRECTED: the whole affair. Ifor Evans reported his lass,INCORRECT,True,loss→lass,the whole affair. Ifor Evans reported his lass
+586,val,"attitude . Now if there 'd been a good old accident ,",CORRECT,CORRECT,False,,
+587,val,taken an interest .,CORRECT,CORRECT,False,,
+588,val,"a bus , is it . Very careless . "" That was their",CORRECT,CORRECT,False,,
+589,val,"to the police . But they only tut-tutted . "" Lost","INCORRECT: police→polica, tut-tutted→tuttatted | CORRECTED: to the polica. But they only tuttatted. ""Lost""",INCORRECT,True,"police→polica, tut-tutted→tuttatted","to the polica. But they only tuttatted. ""Lost"""
+590,val,"mysteries , like the Marie Celeste . Then things","INCORRECT: Celeste→Celestfe | CORRECTED: mysteries, like the Marie Celestfe. Then things",INCORRECT,True,Celeste→Celestfe,"mysteries, like the Marie Celestfe. Then things"
+591,val,But losing a bus ! People were always losing,"INCORRECT: losing→Cosing, losing→losings | CORRECTED: But Cosing a bus! People were always losings",INCORRECT,True,"losing→Cosing, losing→losings",But Cosing a bus! People were always losings
+592,val,you will be asking .,INCORRECT: you→Yau | CORRECTED: Yau will be asking.,INCORRECT,True,you→Yau,Yau will be asking.
+593,val,"seemed , for a time , that the whole affair would","INCORRECT: would→wanted | CORRECTED: seemed , for a time , that the whole affair wanted",INCORRECT,True,would→wanted,"seemed , for a time , that the whole affair wanted"
+594,val,began to happen ... But what about the voyagers ?,INCORRECT: voyagers→vayagers | CORRECTED: began to happen ... But what about the vayagers?,INCORRECT,True,voyagers→vayagers,began to happen ... But what about the vayagers?
+595,val,be written off as one of those unexplained,CORRECT,CORRECT,False,,
+596,val,"things . You 'd be surprised , they said . So it","INCORRECT: missing final ""things"" | CORRECTED: things You'd be surprised, they said. So it things.",INCORRECT,True,"missing final ""things""","things You'd be surprised, they said. So it things."
+597,val,"a supply of food . """,CORRECT,CORRECT,False,,
+598,val,what does such a person do ? He signals,"INCORRECT: extra leading ""what"", missing trailing ""what"" | CORRECTED: does such a person do? He signals what",INCORRECT,True,"extra leading ""what"", missing trailing ""what""",does such a person do? He signals what
+599,val,that of a castaway on a desert island . Now,CORRECT,CORRECT,False,,
+600,val,his position by lighting bonfires or hoisting a,CORRECT,CORRECT,False,,
+601,val,"position , "" he said , "" is somewhat analogous to",CORRECT,CORRECT,False,,
+602,val,"Well , the Rev. Edwards had taken command . "" Our","INCORRECT: ""Our""→""Ardwell, the"" | CORRECTED: ""Well, the Rev. Edwards had taken command. ""Ardwell, the""",INCORRECT,True,"""Our""→""Ardwell, the""","""Well, the Rev. Edwards had taken command. ""Ardwell, the"""
+603,val,flag on a palm tree . And he tries to ensure,INCORRECT: flag→flung | CORRECTED: flung on a palm tree. And he tries to ensure,INCORRECT,True,flag→flung,flung on a palm tree. And he tries to ensure
+604,val,""" Can't go lighting bonfires on this bus , """,CORRECT,CORRECT,False,,
+605,val,"the minister . "" No , we have another way of signalling",CORRECT,CORRECT,False,,
+606,val,"continuously . "" Gave him a look , the driver did .",CORRECT,CORRECT,False,,
+607,val,"Company's Regulations . "" "" Of course not , "" agreed",CORRECT,CORRECT,False,,
+608,val,our position . The driver must sound his horn,INCORRECT: position→passition | CORRECTED: our passition. The driver must sound his horn,INCORRECT,True,position→passition,our passition. The driver must sound his horn
+609,val,"the conductor said firmly . "" Contrary to the",CORRECT,CORRECT,False,,
+610,val,""" Dinas High Street ? """,CORRECT,CORRECT,False,,
+611,val,""" Where you think we are ? "" he asked rudely .","INCORRECT: he→Ine | CORRECTED: ""Where you think we are?"" Ine asked rudely.",INCORRECT,True,he→Ine,"""Where you think we are?"" Ine asked rudely."
+612,val,""" Then we are saved , "" cried the Rev. Edwards .",CORRECT,CORRECT,False,,
+613,val,"Shyly , Morfydd Owen produced a block of","INCORRECT: Shyly→Sliggly, produced→prodenced, block→Slock | CORRECTED: Sliggly Morfydd Owen prodenced a Slock of",INCORRECT,True,"Shyly→Sliggly, produced→prodenced, block→Slock",Sliggly Morfydd Owen prodenced a Slock of
+614,val,chocolate .,INCORRECT: chocolate→chocolade | CORRECTED: chocolade,INCORRECT,True,chocolate→chocolade,chocolade
+615,val,you may join us . ' ' I am Lily-yo . We three,CORRECT,CORRECT,False,,
+616,val,"Though your wings and your scars are new ,",CORRECT,CORRECT,False,,
+617,val,are humans . You are only flymen . We will,INCORRECT: We→the | CORRECTED: are humans . You are only flymen . the will,INCORRECT,True,We→the,are humans . You are only flymen . the will
+618,val,not join you . ' The Captives grunted in boredom .,CORRECT,CORRECT,False,,
+619,val,"know little , we know much . '",CORRECT,CORRECT,False,,
+620,val,The Chief Captive spoke again . ' Always this,INCORRECT: this→that | CORRECTED: The Chief Captive spoke again . ' Always that,INCORRECT,True,this→that,The Chief Captive spoke again . ' Always that
+621,val,talk from you of the Heavy World ! You have,CORRECT,CORRECT,False,,
+622,val,"joined us . You are flymen , we are human . You",CORRECT,CORRECT,False,,
+623,val,"made nervous by Beryl's silence , drove at reckless","INCORRECT: reckless→recklessly | CORRECTED: made nervous by Beryl's silence, drove at recklessly",INCORRECT,True,reckless→recklessly,"made nervous by Beryl's silence, drove at recklessly"
+624,val,DARKNESS had descended like a curtain by the,CORRECT,CORRECT,False,,
+625,val,his flat for a drink .,CORRECT,CORRECT,False,,
+626,val,"meet the Deanes , and as soon as Guy had",CORRECT,CORRECT,False,,
+627,val,"driven away , invited them casually to come to","INCORRECT: to→back | CORRECTED: driven away, invited them casually to come back",INCORRECT,True,to→back,"driven away, invited them casually to come back"
+628,val,the party was over . Piers came strolling out to,CORRECT,CORRECT,False,,
+629,val,"speed to the Villa , it was quickly evident that",CORRECT,CORRECT,False,,
+630,val,"time they docked at Belleray . And though Guy ,","INCORRECT: Belleray→Bellesay, though→through, Guy→Gary | CORRECTED: time they docked at Bellesay. And through Gary,",INCORRECT,True,"Belleray→Bellesay, though→through, Guy→Gary","time they docked at Bellesay. And through Gary,"
+631,val,""" Oh , she was due ! "" And then he added in the same",CORRECT,CORRECT,False,,
+632,val,"comment , but Beryl said nothing . She was trying",CORRECT,CORRECT,False,,
+633,val,"going to live with friends of the bank manager , just",CORRECT,CORRECT,False,,
+634,val,unnaturally smooth exterior Piers was simmering,CORRECT,CORRECT,False,,
+635,val,with anger against her she had no doubt .,"INCORRECT: with→will, anger→auges | CORRECTED: will auges against her she had no doubt.",INCORRECT,True,"with→will, anger→auges",will auges against her she had no doubt.
+636,val,to sort things out in her mind . That beneath his,INCORRECT: his→this | CORRECTED: to sort things out in her mind . That beneath this,INCORRECT,True,his→this,to sort things out in her mind . That beneath this
+637,val,"casual tone , "" She 's not returning to her family . She 's","INCORRECT: not→lot | CORRECTED: casual tone, ""She's lot returning to her family. She's",INCORRECT,True,not→lot,"casual tone, ""She's lot returning to her family. She's"
+638,val,"this side of Belleray . "" Mrs. Deane made a suitable",CORRECT,CORRECT,False,,
+639,val,"She avoided his gaze , and tried to ignore that",CORRECT,CORRECT,False,,
+640,val,"The mockery in his voice had deepened . "" With",INCORRECT: his→Luis's | CORRECTED: The mockery in Luis's voice had deepened. With,INCORRECT,True,his→Luis's,The mockery in Luis's voice had deepened. With
+641,val,""" You talk as though we were alone on Balicou ! """,INCORRECT: Balicou→Ballichou | CORRECTED: You talk as though we were alone on Ballichou!,INCORRECT,True,Balicou→Ballichou,You talk as though we were alone on Ballichou!
+642,val,""" Whom you never once managed to circumvent . """,INCORRECT: Whom→Without | CORRECTED: Without you never once managed to circumvent.,INCORRECT,True,Whom→Without,Without you never once managed to circumvent.
+643,val,"last impertinent remark . "" With four other people - ""","INCORRECT: ""four→favour"" | CORRECTED: ""last impertinent remark . "" with favour other people - """"",INCORRECT,True,"""four→favour""","""last impertinent remark . "" with favour other people - """""
+644,val,She met his eyes then .,CORRECT,CORRECT,False,,
+645,val,"all due deference , Miss Deane - come off it ! ""","INCORRECT: Deane→Deaus | CORRECTED: all due deference , Miss Deaus - come off it !",INCORRECT,True,Deane→Deaus,"all due deference , Miss Deaus - come off it !"
+646,val,"it as confidential . "" "" My dear Beryl ,",CORRECT,CORRECT,False,,
+647,val,"not I , who started this conversation . """,CORRECT,CORRECT,False,,
+648,val,"slowly , "" If you must drag the truth","INCORRECT: truth→truthy | CORRECTED: slowly, If you must drag the truthy",INCORRECT,True,truth→truthy,"slowly, If you must drag the truthy"
+649,val,"not . "" He was clearly startled by her",INCORRECT: her→het | CORRECTED: not. He was clearly startled by het,INCORRECT,True,her→het,not. He was clearly startled by het
+650,val,"She wavered , and at last said",CORRECT,CORRECT,False,,
+651,val,"out of me , I must ask you to regard","INCORRECT: ask→aske | CORRECTED: out of me, I must aske you to regard",INCORRECT,True,ask→aske,"out of me, I must aske you to regard"
+652,val,"don't tell me anything , if you 'd rather","INCORRECT: rather→rathers | CORRECTED: don't tell me anything, if you'd rathers",INCORRECT,True,rather→rathers,"don't tell me anything, if you'd rathers"
+653,val,"words . "" But remember , it was you ,","INCORRECT: remember→remembers | CORRECTED: ""words . "" But remembers , it was you ,""",INCORRECT,True,remember→remembers,"""words . "" But remembers , it was you ,"""
+654,val,out and sucked in his baggy black,INCORRECT: sucked→strucked | CORRECTED: out and strucked in his baggy black,INCORRECT,True,sucked→strucked,out and strucked in his baggy black
+655,val,"down the lake . 3"" Big blow , Judge , "" re-","INCORRECT: Judge→Tudge | CORRECTED: down the lake . 3"" Big blow, Tudge, "" re-",INCORRECT,True,Judge→Tudge,"down the lake . 3"" Big blow, Tudge, "" re-"
+656,val,marked Willie Kim as the wind billowed,CORRECT,CORRECT,False,,
+657,val,blouse and pantaloons .,INCORRECT: pantaloons→pautaloons | CORRECTED: blouse and pautaloons,INCORRECT,True,pantaloons→pautaloons,blouse and pautaloons
+658,val,where it had a straight blow of eight miles,CORRECT,CORRECT,False,,
+659,val,"now , it could kick up a sea-sized commotion",CORRECT,CORRECT,False,,
+660,val,"When the wind was on a rampage , as it was",CORRECT,CORRECT,False,,
+661,val,see that fool boy of mine out there on,CORRECT,CORRECT,False,,
+662,val,"mild surprise . "" I didn't hear you . Do you",CORRECT,CORRECT,False,,
+663,val,"did you come from ? "" the judge said in",CORRECT,CORRECT,False,,
+664,val,drown good man .,CORRECT,CORRECT,False,,
+665,val,"she blow some more . "" "" Hello , Willie , where","INCORRECT: Hello→Wells | CORRECTED: she blow some more . Wells , Willie , where",INCORRECT,True,Hello→Wells,"she blow some more . Wells , Willie , where"
+666,val,"3"" Blow like hell . Maybe by and by","INCORRECT: hell→well, by→Sy | CORRECTED: 3"" Blow like well. Maybe by and Sy",INCORRECT,True,"hell→well, by→Sy","3"" Blow like well. Maybe by and Sy"
+667,val,"worry , Judge . Big wind like that can't",CORRECT,CORRECT,False,,
+668,val,"the lake ? "" 3"" I see him . You don't need",CORRECT,CORRECT,False,,
+669,val,"He no drown , too . Him , his mother throw him into","INCORRECT: no→was, throw→threw | CORRECTED: He was drown, too, Him, his mother threw him into",INCORRECT,True,"no→was, throw→threw","He was drown, too, Him, his mother threw him into"
+670,val,water to make him swim when he is born .,INCORRECT: water→waters | CORRECTED: waters to make him swim when he is born,INCORRECT,True,water→waters,waters to make him swim when he is born
+671,val,"Bill is good man , and Bueno Buck is raised on lake .","INCORRECT: raised→caused | CORRECTED: Bill is good man, and Bueno Buck is caused on lake.",INCORRECT,True,raised→caused,"Bill is good man, and Bueno Buck is caused on lake."
+672,val,"Maybe so Bill , he can swim that good , too . """,CORRECT,CORRECT,False,,
+673,val,prepared to make a safe though violent landing,CORRECT,CORRECT,False,,
+674,val,"might have made an ocean liner envious , seemed","INCORRECT: liner→lines | CORRECTED: might have made an ocean lines envious, seemed",INCORRECT,True,liner→lines,"might have made an ocean lines envious, seemed"
+675,val,"The yawl , riding the high waves with an air that",CORRECT,CORRECT,False,,
+676,val,from the west .,CORRECT,CORRECT,False,,
+677,val,when there came a sudden gust of wind,CORRECT,CORRECT,False,,
+678,val,A submariner's wife needed to be spared as much,CORRECT,CORRECT,False,,
+679,val,"pay Jacky's school fees . "" "" What shall we do",CORRECT,CORRECT,False,,
+680,val,"subject for discussion . "" It 's a command , "" he said .","INCORRECT: ""It's→H's"" | CORRECTED: ""subject for discussion . ""H's a command,"" he said .""",INCORRECT,True,"""It's→H's""","""subject for discussion . ""H's a command,"" he said ."""
+681,val,We can do with the extra money . It 'll just about,CORRECT,CORRECT,False,,
+682,val,about this house ? - and Jill's school ? - and oh !,INCORRECT: oh→eh | CORRECTED: about this house? - and Jill's school? - and eh!,INCORRECT,True,oh→eh,about this house? - and Jill's school? - and eh!
+683,val,as possible . Anyway the Parsifal affair was far,CORRECT,CORRECT,False,,
+684,val,how I hate the Navy !,CORRECT,CORRECT,False,,
+685,val,too fresh in both their minds to be a comfortable,CORRECT,CORRECT,False,,
+686,val,If I 'd known what it would be like I 'd sooner,CORRECT,CORRECT,False,,
+687,val,"work on Sundays , "" he said . "" They 're worse off than","INCORRECT: work→sort | CORRECTED: ""sort on Sundays,"" he said. ""They're worse off than""",INCORRECT,True,work→sort,"""sort on Sundays,"" he said. ""They're worse off than"""
+688,val,stockbroker chap and shared him with his three,CORRECT,CORRECT,False,,
+689,val,submariners . You ought to have married that fat,INCORRECT: fat→fast | CORRECTED: Submariners. You ought to have married that fast,INCORRECT,True,fat→fast,Submariners. You ought to have married that fast
+690,val,Pericles is a Portsmouth boat . She spends longer,INCORRECT: boat→bead | CORRECTED: Pericles is a Portsmouth bead . She spends longer,INCORRECT,True,boat→bead,Pericles is a Portsmouth bead . She spends longer
+691,val,"have married a parson . "" He kissed her . "" Parsons",CORRECT,CORRECT,False,,
+692,val,mistresses . Anyway it might be much worse .,CORRECT,CORRECT,False,,
+693,val,in harbour than any other submarine .,INCORRECT: submarine→submarines | CORRECTED: in harbour than any other submarines,INCORRECT,True,submarine→submarines,in harbour than any other submarines
+694,val,Jill will say about leaving her school . It 's a,CORRECT,CORRECT,False,,
+695,val,write to those agents and try to get a flat in,CORRECT,CORRECT,False,,
+696,val,"her eyes and reached for her address book . "" I 'll",CORRECT,CORRECT,False,,
+697,val,blessing that Jacky 's off to boarding school .,CORRECT,CORRECT,False,,
+698,val,And all the trouble you 've taken with the,"INCORRECT: And→Find, you've→you're | CORRECTED: Find all the trouble you're taken with the",INCORRECT,True,"And→Find, you've→you're",Find all the trouble you're taken with the
+699,val,"Alverstoke , "" she said . "" But I don't know what",CORRECT,CORRECT,False,,
+700,val,"Practically a shore job . Cheer up . "" She wiped","INCORRECT: job→sob | CORRECTED: ""Practically a shore sob. Cheer up."" She wiped",INCORRECT,True,job→sob,"""Practically a shore sob. Cheer up."" She wiped"
+701,val,garden !,CORRECT,CORRECT,False,,
+702,val,"That little beast , Robbie Munyard ! "" Having",CORRECT,CORRECT,False,,
+703,val,burden and prepared to break up yet,CORRECT,CORRECT,False,,
+704,val,this had already happened half a dozen times .,CORRECT,CORRECT,False,,
+705,val,said her say Peggy manfully shouldered her,CORRECT,CORRECT,False,,
+706,val,another home . In the ten years of married life,CORRECT,CORRECT,False,,
+707,val,Such is the life of a naval officer's wife .,CORRECT,CORRECT,False,,
+708,val,school ; some of his rigid ideas had been passed,CORRECT,CORRECT,False,,
+709,val,John's father had been a naval officer of the old,CORRECT,CORRECT,False,,
+710,val,instilled by martinet parents have a habit of,CORRECT,CORRECT,False,,
+711,val,"plain-clothes on the previous night , but ways","INCORRECT: ways→always | CORRECTED: plain-clothes on the previous night, but always",INCORRECT,True,ways→always,"plain-clothes on the previous night, but always"
+712,val,"new appointment , at nine a.m. precisely , dressed",CORRECT,CORRECT,False,,
+713,val,in the modern equivalent of frock-coat and sword .,CORRECT,CORRECT,False,,
+714,val,"an officer should join a ship , on taking up a",CORRECT,CORRECT,False,,
+715,val,if John had stepped into Fort Blockhouse clad in,CORRECT,CORRECT,False,,
+716,val,on to the second generation . One of these was that,CORRECT,CORRECT,False,,
+717,val,sticking .,CORRECT,CORRECT,False,,
+718,val,It would have been acceptable to all concerned,CORRECT,CORRECT,False,,
+719,val,Ever been out in a submarine ? I 'll give,CORRECT,CORRECT,False,,
+720,val,"you a spin round one of these days , if you","INCORRECT: a→d | CORRECTED: you d spin round one of these days, if you",INCORRECT,True,a→d,"you d spin round one of these days, if you"
+721,val,""" Better ask Robbie Munyard . "" "" What 's he been","INCORRECT: he→the, been→best | CORRECTED: """"Better ask Robbie Munyard."" ""What's the best""""",INCORRECT,True,"he→the, been→best","""""Better ask Robbie Munyard."" ""What's the best"""""
+722,val,""" Not in Pericles , old man . "" "" Why not ? """,CORRECT,CORRECT,False,,
+723,val,To go gassing to a newspaper man !,"INCORRECT: gassing→guessing, a→d, man→men | CORRECTED: To go guessing to d newspaper men!",INCORRECT,True,"gassing→guessing, a→d, man→men",To go guessing to d newspaper men!
+724,val,"like . You could write it up . "" Bawley made a face .","INCORRECT: ""Bawley→Bewley"" | CORRECTED: ""like . You could write it up . "" Bewley made a face .""",INCORRECT,True,"""Bawley→Bewley""","""like . You could write it up . "" Bewley made a face ."""
+725,val,"saying ? "" John was furious . The little squirt !",CORRECT,CORRECT,False,,
+726,val,"to write up Pericles in some way or other , are","INCORRECT: up→my | CORRECTED: to write my Pericles in some way or other, are",INCORRECT,True,up→my,"to write my Pericles in some way or other, are"
+727,val,"you ? "" "" What is there to write up ? "" said",CORRECT,CORRECT,False,,
+728,val,"Bawley . "" There are forty-three submarines in",CORRECT,CORRECT,False,,
+729,val,"the Navy - why should I pick on Pericles ? """,INCORRECT: Navy→Nancy | CORRECTED: the Nancy - why should I pick on Pericles ?,INCORRECT,True,Navy→Nancy,the Nancy - why should I pick on Pericles ?
+730,val,""" Look ! "" he went on earnestly . "" You 're not going","INCORRECT: ""You're → You are"" | CORRECTED: """" Look ! "" he went on earnestly . "" You are not going""",INCORRECT,True,"""You're → You are""",""""" Look ! "" he went on earnestly . "" You are not going"""
+731,val,"John eyed him steadily . "" It 's the Parcifal","INCORRECT: Parcifal→Porcifally | CORRECTED: John eyed him steadily . ""It's the Porcifally""",INCORRECT,True,Parcifal→Porcifally,"John eyed him steadily . ""It's the Porcifally"""
+732,val,"business , isn't it ? "" he said quietly .",CORRECT,CORRECT,False,,
+733,val,"and X-rayed and that it was as sound as a bell ? """,INCORRECT: bell→belly | CORRECTED: and X-rayed and that it was as sound as a belly,INCORRECT,True,bell→belly,and X-rayed and that it was as sound as a belly
+734,val,""" I don't want it to happen again , "" said Bawley -",CORRECT,CORRECT,False,,
+735,val,""" What did Munyard say ? "" "" The Snort - hull","INCORRECT: ""hull→shall"" | CORRECTED: """" What did Munyard say ? "" "" The Snort - shall""",INCORRECT,True,"""hull→shall""",""""" What did Munyard say ? "" "" The Snort - shall"""
+736,val,""" more so than ever since I met you . """,CORRECT,CORRECT,False,,
+737,val,we 've had Pericles' entire Snort equipment removed,CORRECT,CORRECT,False,,
+738,val,"fitting fractured . "" "" Supposing I was to tell you that","INCORRECT: fitting→flitting | CORRECTED: ""flitting fractured."" ""Supposing I was to tell you that""",INCORRECT,True,fitting→flitting,"""flitting fractured."" ""Supposing I was to tell you that"""
+739,val,said John .,INCORRECT: said→Saïd | CORRECTED: Saïd John,INCORRECT,True,said→Saïd,Saïd John
+740,val,"with the possibility of faulty design . "" He held","INCORRECT: He→the | CORRECTED: ""with the possibility of faulty design . "" the held",INCORRECT,True,He→the,"""with the possibility of faulty design . "" the held"
+741,val,I 'm relieved . But it still doesn't do away,INCORRECT: away→anyway | CORRECTED: I'm relieved. But it still doesn't do anyway,INCORRECT,True,away→anyway,I'm relieved. But it still doesn't do anyway
+742,val,"one of these days , "" he said . "" In the meantime",CORRECT,CORRECT,False,,
+743,val,"out his hand . "" Maybe I will take a trip with you","INCORRECT: his→this | CORRECTED: ""out this hand . "" Maybe I will take a trip with you""",INCORRECT,True,his→this,"""out this hand . "" Maybe I will take a trip with you"""
+744,val,I 'll tell my editor that the story 's a dead bird .,CORRECT,CORRECT,False,,
+745,val,""" Munyard didn't tell me that . But I must confess",CORRECT,CORRECT,False,,
+746,val,"for calling , "" he said . "" Still long as you 're here",CORRECT,CORRECT,False,,
+747,val,"Dowd , still wearing his blue check shirt . He","INCORRECT: Dowd→Donald | CORRECTED: Donald, still wearing his blue check shirt. He",INCORRECT,True,Dowd→Donald,"Donald, still wearing his blue check shirt. He"
+748,val,"shack , his rifle at the ready , I saw it was Nick","INCORRECT: shack→shad | CORRECTED: shad, his rifle at the ready, I saw it was Nick",INCORRECT,True,shack→shad,"shad, his rifle at the ready, I saw it was Nick"
+749,val,I saw several men running down towards,CORRECT,CORRECT,False,,
+750,val,"came up close , eyeing us suspiciously . "" We 've","INCORRECT: We→he, 've→is | CORRECTED: came up close , eyeing us suspiciously . he is",INCORRECT,True,"We→he, 've→is","came up close , eyeing us suspiciously . he is"
+751,val,you may as well stay a while .,CORRECT,CORRECT,False,,
+752,val,the shack . They were all armed with rifles .,CORRECT,CORRECT,False,,
+753,val,As the nearest of them came round the,CORRECT,CORRECT,False,,
+754,val,"come 2a-calling , "" I said . "" Can't see no reason",CORRECT,CORRECT,False,,
+755,val,found us a couple of boxes to sit on .,INCORRECT: on→out | CORRECTED: found us a couple of boxes to sit out,INCORRECT,True,on→out,found us a couple of boxes to sit out
+756,val,miners followed in at our heels . Nick Dowd,"INCORRECT: miners→Domainers, Nick→which, Dowd→Dowainers | CORRECTED: Domainers followed in at our heels which Dowainers",INCORRECT,True,"miners→Domainers, Nick→which, Dowd→Dowainers",Domainers followed in at our heels which Dowainers
+757,val,"'Light an' come on in . "" We dismounted and","INCORRECT: We→he | CORRECTED: 'Light an' come on in . "" he dismounted and",INCORRECT,True,We→he,"'Light an' come on in . "" he dismounted and"
+758,val,We followed Nick Dowd into the shack .,INCORRECT: Dowd→Donald | CORRECTED: We followed Nick Donald into the shack,INCORRECT,True,Dowd→Donald,We followed Nick Donald into the shack
+759,val,Nick Dowd took our horses off to water .,INCORRECT: took→look | CORRECTED: Nick Dowd look our horses off to water,INCORRECT,True,took→look,Nick Dowd look our horses off to water
+760,val,They 'd rigged up a stove of sorts and on it,CORRECT,CORRECT,False,,
+761,val,one of the miners who 'd come along with,CORRECT,CORRECT,False,,
+762,val,a huge blackened coffee-pot steamed . Other,CORRECT,CORRECT,False,,
+763,val,the little hombre in big overalls . Very soon he,INCORRECT: hombre→hombore | CORRECTED: the little hombore in big overalls. Very soon he,INCORRECT,True,hombre→hombore,the little hombore in big overalls. Very soon he
+764,val,"Derby hat fussed around the stove . "" 2Ain't","INCORRECT: around→arounded, stove→shore, 2Ain't→Ain't | CORRECTED: Derby hat fussed arounded the shore. ""Ain't""",INCORRECT,True,"around→arounded, stove→shore, 2Ain't→Ain't","Derby hat fussed arounded the shore. ""Ain't"""
+765,val,"who 'd come in as Roper Smith , Shorty , Mick",CORRECT,CORRECT,False,,
+766,val,sweetened with molasses for all and for us,CORRECT,CORRECT,False,,
+767,val,A small man in bib overalls and a battered,INCORRECT: man→may | CORRECTED: A small may in bib overalls and a battered,INCORRECT,True,man→may,A small may in bib overalls and a battered
+768,val,exactly the Ritz Hotel but we 've got our little,CORRECT,CORRECT,False,,
+769,val,there were two plates of beans .,INCORRECT: there→that | CORRECTED: that were two plates of beans,INCORRECT,True,there→that,that were two plates of beans
+770,val,"comforts , "" said Dowd . He introduced the men",CORRECT,CORRECT,False,,
+771,val,had tin mugs filled with hot black coffee,"INCORRECT: had→head, tin→thin | CORRECTED: head thin mugs filled with hot black coffee",INCORRECT,True,"had→head, tin→thin",head thin mugs filled with hot black coffee
+772,val,"Golightly , Swede and the Sodbuster . This last was","INCORRECT: extra ""the"" added between ""and"" and ""Sodbuster"" | CORRECTED: Golightly , Swede and Sodbuster . This last was",INCORRECT,True,"extra ""the"" added between ""and"" and ""Sodbuster""","Golightly , Swede and Sodbuster . This last was"
+773,val,"night . """,INCORRECT: night→might | CORRECTED: might .,INCORRECT,True,night→might,might .
+774,val,"as of now , apart from a few sacks of gold",CORRECT,CORRECT,False,,
+775,val,we 'd finished and I 'd rolled a cigarette,CORRECT,CORRECT,False,,
+776,val,watched us as we ate the beans . Then when,"INCORRECT: ""when→watched us"" | CORRECTED: ""watched us as we ate the beans Then watched us""",INCORRECT,True,"""when→watched us""","""watched us as we ate the beans Then watched us"""
+777,val,"the man called Shorty said , "" You were saying when","INCORRECT: man→mean | CORRECTED: ""the mean called Shorty said , "" You were saying when""",INCORRECT,True,man→mean,"""the mean called Shorty said , "" You were saying when"""
+778,val,you came in that 2somep'n happened last,"INCORRECT: missing leading ""last"", 2somep'n→something, extra trailing ""last"" | CORRECTED: last you came in that something happened",INCORRECT,True,"missing leading ""last"", 2somep'n→something, extra trailing ""last""",last you came in that something happened
+779,val,"dust . "" He winked at his partners . They all",CORRECT,CORRECT,False,,
+780,val,"handing them to us , "" but it 's all we got","INCORRECT: handing→handling | CORRECTED: handling them to us, but it's all we got",INCORRECT,True,handing→handling,"handling them to us, but it's all we got"
+781,val,""" They gives you the wind , "" said the Sodbuster","INCORRECT: Sodbuster→Sodbushes | CORRECTED: ""They gives you the wind,"" said the Sodbushes",INCORRECT,True,Sodbuster→Sodbushes,"""They gives you the wind,"" said the Sodbushes"
+782,val,Shorty .,CORRECT,CORRECT,False,,
+783,val,down William Appleton outside the Palace,CORRECT,CORRECT,False,,
+784,val,words affect them in their different ways .,CORRECT,CORRECT,False,,
+785,val,""" That 's sure bad news , "" said Dowd , sombrely .","INCORRECT: That's→Thad's, Dowd→Howard | CORRECTED: ""Thad's sure bad news,"" said Howard, sombrely.",INCORRECT,True,"That's→Thad's, Dowd→Howard","""Thad's sure bad news,"" said Howard, sombrely."
+786,val,""" Yes , "" I said . "" Something happened all right .",CORRECT,CORRECT,False,,
+787,val,"looked across at Nick Dowd - "" someone cut",CORRECT,CORRECT,False,,
+788,val,"with a shotgun . "" I paused and watched my",CORRECT,CORRECT,False,,
+789,val,"for Mr. Pell and his bunch , "" observed",CORRECT,CORRECT,False,,
+790,val,""" It 2jest about leaves everything wide open",INCORRECT: 2jest→jest | CORRECTED: It jest about leaves everything wide open,INCORRECT,True,2jest→jest,It jest about leaves everything wide open
+791,val,"After you 'd left the meeting , mister "" - I","INCORRECT: mister→minister | CORRECTED: ""After you 'd left the meeting , minister "" - I",INCORRECT,True,mister→minister,"""After you 'd left the meeting , minister "" - I"
+792,val,The rest of the men there said nothing but,CORRECT,CORRECT,False,,
+793,val,"right 2hyar , Nick , "" said the Sodbuster .","INCORRECT: 2hyar→2hysar | CORRECTED: ""right 2hysar, Nick,"" said the Sodbuster.",INCORRECT,True,2hyar→2hysar,"""right 2hysar, Nick,"" said the Sodbuster."
+794,val,desperadoes like Pell and Fenton and the,CORRECT,CORRECT,False,,
+795,val,digging for gold but were babes in arms,CORRECT,CORRECT,False,,
+796,val,when it came to dealing with owlhooters and,CORRECT,CORRECT,False,,
+797,val,simple men who knew a lot maybe about,CORRECT,CORRECT,False,,
+798,val,you could see they were hard hit . They were,INCORRECT: hit→it | CORRECTED: you could see they were hard it. They were,INCORRECT,True,hit→it,you could see they were hard it. They were
+799,val,"rest . "" I guess we 'd better hold onto the gold","INCORRECT: missing ""rest"" after ""gold"" | CORRECTED: ""rest."" I guess we'd better hold onto the gold rest.",INCORRECT,True,"missing ""rest"" after ""gold""","""rest."" I guess we'd better hold onto the gold rest."
+800,val,"and got away with it . """,CORRECT,CORRECT,False,,
+801,val,at gun point either . They 've done it before,CORRECT,CORRECT,False,,
+802,val,necks before you can say ' knife ' . It wouldn't,CORRECT,CORRECT,False,,
+803,val,sure asking for trouble . They 'll be on your,INCORRECT: on→ask | CORRECTED: sure asking for trouble. They'll be ask your,INCORRECT,True,on→ask,sure asking for trouble. They'll be ask your
+804,val,""" Yeah , "" said Dowd dubiously . "" 2Mebbe we 'd","INCORRECT: ""2Mebbe→Mebbe"" | CORRECTED: """"Yeah,"" said Dowd dubiously. ""Mebbe we'd""""",INCORRECT,True,"""2Mebbe→Mebbe""","""""Yeah,"" said Dowd dubiously. ""Mebbe we'd"""""
+805,val,"better . "" Surprisingly Dan Maffrey came in at","INCORRECT: better→bethery | CORRECTED: ""bethery. "" Surprisingly Dan Maffrey came in at",INCORRECT,True,better→bethery,"""bethery. "" Surprisingly Dan Maffrey came in at"
+806,val,be the first time they 've held up a diggings,CORRECT,CORRECT,False,,
+807,val,"that point . "" If you do , "" he said , "" you 'll be",CORRECT,CORRECT,False,,
+808,val,"said Dan . "" We 'll watch the stage out of reach . """,CORRECT,CORRECT,False,,
+809,val,us and a few six-shooters . But most of us,CORRECT,CORRECT,False,,
+810,val,2ain't 2eddicated in shootin' . It 'd be a,"INCORRECT: 2ain't→I ain't, 2eddicated→dedicated | CORRECTED: I ain't dedicated in shootin'. It'd be a",INCORRECT,True,"2ain't→I ain't, 2eddicated→dedicated",I ain't dedicated in shootin'. It'd be a
+811,val,"abide by what we said at the meeting , """,INCORRECT: we→me | CORRECTED: abide by what me said at the meeting,INCORRECT,True,we→me,abide by what me said at the meeting
+812,val,""" You 're 2durned tootin' , mister , "" said the man","INCORRECT: 2durned→Zdurned | CORRECTED: """"You're Zdurned tootin', mister,"" said the man""",INCORRECT,True,2durned→Zdurned,"""""You're Zdurned tootin', mister,"" said the man"""
+813,val,"called Roper Smith . "" We 've got five rifles among",CORRECT,CORRECT,False,,
+814,val,"2massacree , 2yessir . "" "" If you 'll take a chance","INCORRECT: ""2yessir→Expressir"" | CORRECTED: ""2massacree, Expressir. If you'll take a chance""",INCORRECT,True,"""2yessir→Expressir""","""2massacree, Expressir. If you'll take a chance"""
+815,val,"on getting your gold to the bank , then we 'll",CORRECT,CORRECT,False,,
+816,val,"three of them , no more . I reckon we can deal",CORRECT,CORRECT,False,,
+817,val,"handsome offer so I chimed in too . "" That",CORRECT,CORRECT,False,,
+818,val,"with them all right . """,CORRECT,CORRECT,False,,
+819,val,with Dan Maffrey's aim to avenge himself,INCORRECT: to→do | CORRECTED: with Dan Maffrey's aim do avenge himself,INCORRECT,True,to→do,with Dan Maffrey's aim do avenge himself
+820,val,"and hold up the stage , it 'll be a couple or","INCORRECT: stage→shage | CORRECTED: and hold up the shage , it'll be a couple or",INCORRECT,True,stage→shage,"and hold up the shage , it'll be a couple or"
+821,val,"goes for me , gentlemen , "" I said . "" If they do try",CORRECT,CORRECT,False,,
+822,val,on the Fenton bunch but still it was a,INCORRECT: a→can | CORRECTED: on the Fenton bunch but still it was can,INCORRECT,True,a→can,on the Fenton bunch but still it was can
+823,val,I couldn't quite see how all this fitted in,CORRECT,CORRECT,False,,
+824,val,"Gay , sitting opposite Gavin on the terrace could","INCORRECT: could→concealed | CORRECTED: Gay, sitting opposite Gavin on the terrace concealed",INCORRECT,True,could→concealed,"Gay, sitting opposite Gavin on the terrace concealed"
+825,val,"to do that . "" Gavin drained his glass",CORRECT,CORRECT,False,,
+826,val,"hardly believe that she was the same girl ,",CORRECT,CORRECT,False,,
+827,val,and refilled it .,INCORRECT: it→nid | CORRECTED: and refilled nid .,INCORRECT,True,it→nid,and refilled nid .
+828,val,Gavin raised his glass to her and smiled,CORRECT,CORRECT,False,,
+829,val,table for the first time a few days ago .,CORRECT,CORRECT,False,,
+830,val,"and Gay's heart turned over . "" I 'd like","INCORRECT: heart→lead | CORRECTED: ""and Gay's lead turned over."" I'd like",INCORRECT,True,heart→lead,"""and Gay's lead turned over."" I'd like"
+831,val,"miserable , shy , who had sat at the little",CORRECT,CORRECT,False,,
+832,val,"who is tough enough to change him . """,CORRECT,CORRECT,False,,
+833,val,"you know , always , and you aren't the type",CORRECT,CORRECT,False,,
+834,val,trust him out of your sight and having to put on,INCORRECT: on→out | CORRECTED: trust him out of your sight and having to put out,INCORRECT,True,on→out,trust him out of your sight and having to put out
+835,val,whenever he flirts with another woman . He will,INCORRECT: He→she | CORRECTED: whenever he flirts with another woman she will,INCORRECT,True,He→she,whenever he flirts with another woman she will
+836,val,a brave face and pretend that you don't mind,CORRECT,CORRECT,False,,
+837,val,"Hell . "" Doc answered for her . "" Just Hell . Never able to","INCORRECT: ""to→for"" | CORRECTED: ""Hell . "" Doc answered for her . "" Just Hell . Never able for""",INCORRECT,True,"""to→for""","""Hell . "" Doc answered for her . "" Just Hell . Never able for"""
+838,val,"be the same , if you know what I mean . "" "" You sound","INCORRECT: You→box | CORRECTED: ""be the same , if you know what I mean . "" ""box sound""",INCORRECT,True,You→box,"""be the same , if you know what I mean . "" ""box sound"""
+839,val,"like Alice in Wonderland , "" Doc gently mocked her , "" and","INCORRECT: gently→gendly | CORRECTED: ""like Alice in Wonderland,"" Doc gendly mocked her, ""and""",INCORRECT,True,gently→gendly,"""like Alice in Wonderland,"" Doc gendly mocked her, ""and"""
+840,val,I 'm glad you 're beginning to see that you 're wasting,INCORRECT: wasting→reading | CORRECTED: I'm glad you're beginning to see that you're reading,INCORRECT,True,wasting→reading,I'm glad you're beginning to see that you're reading
+841,val,"now that I do realise that , and in any case , "" she added","INCORRECT: now→more | CORRECTED: ""more that I do realise that, and in any case,"" she added",INCORRECT,True,now→more,"""more that I do realise that, and in any case,"" she added"
+842,val,"a little sadly , "" if I did change Gavin , he wouldn't","INCORRECT: Gavin→Gauguin | CORRECTED: a little sadly, ""if I did change Gauguin, he wouldn't",INCORRECT,True,Gavin→Gauguin,"a little sadly, ""if I did change Gauguin, he wouldn't"
+843,val,your time on that chap .,INCORRECT: chap→chaps | CORRECTED: your time on that chaps,INCORRECT,True,chap→chaps,your time on that chaps
+844,val,"Gay nodded . "" I know that you 're right Doc , I think",CORRECT,CORRECT,False,,
+845,val,"I 'd marry you myself . "" Gay laughed , Doc was",CORRECT,CORRECT,False,,
+846,val,as it obviously appeared to everyone else .,CORRECT,CORRECT,False,,
+847,val,long for the right man for you to come,"INCORRECT: long→loug, man→wau, come→comer | CORRECTED: loug for the right wau for you to comer",INCORRECT,True,"long→loug, man→wau, come→comer",loug for the right wau for you to comer
+848,val,so kind and nice and she hoped that one,INCORRECT: and→aud | CORRECTED: so kind aud nice and she hoped that one,INCORRECT,True,and→aud,so kind aud nice and she hoped that one
+849,val,Now let him go and you won't have to wait,CORRECT,CORRECT,False,,
+850,val,day she would be able to see the situation,CORRECT,CORRECT,False,,
+851,val,along . If I was thirty years younger and weren't,CORRECT,CORRECT,False,,
+852,val,married to the sweetest wife in the world,"INCORRECT: annotation only contains the phrase once, it is written twice | CORRECTED: married to the sweetest wife in the world married to the sweetest wife in the world",INCORRECT,True,"annotation only contains the phrase once, it is written twice",married to the sweetest wife in the world married to the sweetest wife in the world
+853,val,""" I made it myself , "" Gay tried to speak",CORRECT,CORRECT,False,,
+854,val,normally .,INCORRECT: normally→uorually | CORRECTED: uorually,INCORRECT,True,normally→uorually,uorually
+855,val,"the roundabout , which was",CORRECT,CORRECT,False,,
+856,val,least . She would think of her-,CORRECT,CORRECT,False,,
+857,val,new seat outside the hospital,CORRECT,CORRECT,False,,
+858,val,thoughts . At one time she had,CORRECT,CORRECT,False,,
+859,val,self as a stranger in these parts,CORRECT,CORRECT,False,,
+860,val,"out of operation - in theory , at",CORRECT,CORRECT,False,,
+861,val,gates and thought vagrant,CORRECT,CORRECT,False,,
+862,val,watched the workmen constructing,CORRECT,CORRECT,False,,
+863,val,studying these cross-roads . Which,CORRECT,CORRECT,False,,
+864,val,one to take ?,"INCORRECT: one→ote, to→ta | CORRECTED: ote ta take?",INCORRECT,True,"one→ote, to→ta",ote ta take?
+865,val,Diana Wills often sat on the brand,INCORRECT: brand→brands | CORRECTED: Diana Wills often sat on the brands,INCORRECT,True,brand→brands,Diana Wills often sat on the brands
+866,val,to put St. John's Casualty Department,CORRECT,CORRECT,False,,
+867,val,""" If I were a tramp I would simply blow a",CORRECT,CORRECT,False,,
+868,val,"airy directions accordingly . "" If I were needing a",CORRECT,CORRECT,False,,
+869,val,women doctors to blow a feather and follow its,CORRECT,CORRECT,False,,
+870,val,"job I 'd go to London , of course , "" she went on .",CORRECT,CORRECT,False,,
+871,val,wishing life would sometimes allow serious-minded,CORRECT,CORRECT,False,,
+872,val,"feather , "" she decided , rather envying the gentle-","INCORRECT: ""feather→feathers, gentle→gentler"" | CORRECTED: ""feathers,"" she decided, rather envying the gentler-",INCORRECT,True,"""feather→feathers, gentle→gentler""","""feathers,"" she decided, rather envying the gentler-"
+873,val,"man of the road his freedom of decision , and",CORRECT,CORRECT,False,,
+874,val,"all important . """,CORRECT,CORRECT,False,,
+875,val,I got a good look at her . But if Nigel,INCORRECT: her→hers | CORRECTED: I got a good look at hers. But if Nigel,INCORRECT,True,her→hers,I got a good look at hers. But if Nigel
+876,val,""" Neither can Nigel , "" smiled Diana .",CORRECT,CORRECT,False,,
+877,val,"I know ? "" she smiled . "" I think so .",CORRECT,CORRECT,False,,
+878,val,""" No , "" Di said immediately . "" It isn't at","INCORRECT: immediately→immediatly | CORRECTED: ""No,"" Di said immediatly. ""It isn't at",INCORRECT,True,immediately→immediatly,"""No,"" Di said immediatly. ""It isn't at"
+879,val,"wasn't there it isn't important , is it ? """,CORRECT,CORRECT,False,,
+880,val,""" I remember , "" quipped the houseman ,","INCORRECT: remember→remembers | CORRECTED: ""I remembers,"" quipped the houseman,",INCORRECT,True,remember→remembers,"""I remembers,"" quipped the houseman,"
+881,val,"That blonde was something . "" "" Anybody","INCORRECT: something→somethings, Anybody→Amybody | CORRECTED: That blonde was somethings. Amybody",INCORRECT,True,"something→somethings, Anybody→Amybody",That blonde was somethings. Amybody
+882,val,"meaning no offence , "" but does he ?",CORRECT,CORRECT,False,,
+883,val,""" He 's saving up to get married . Remember ? """,INCORRECT: Remember→Remembers | CORRECTED: He's saving up to get married. Remembers?,INCORRECT,True,Remember→Remembers,He's saving up to get married. Remembers?
+884,val,But after that slight slip of the tongue on Nigel's part she had,"INCORRECT: that→their, had→laughed | CORRECTED: But after their slight slip of the tongue on Nigel's part she laughed",INCORRECT,True,"that→their, had→laughed",But after their slight slip of the tongue on Nigel's part she laughed
+885,val,"with a cyst on her ear ... ? """,INCORRECT: her→his | CORRECTED: with a cyst on his ear ... ?,INCORRECT,True,her→his,with a cyst on his ear ... ?
+886,val,""" Nigel , "" she had besought him , "" you know that evening",CORRECT,CORRECT,False,,
+887,val,you took Luke Parson's surgery and there was a woman,INCORRECT: Luke→leave | CORRECTED: you took leave Parson's surgery and there was a woman,INCORRECT,True,Luke→leave,you took leave Parson's surgery and there was a woman
+888,val,"realised it was important enough for her to have remembered , and it",CORRECT,CORRECT,False,,
+889,val,made her think there was an abyss immediately ahead .,"INCORRECT: her→uses, there→these | CORRECTED: made uses think these was an abyss immediately ahead",INCORRECT,True,"her→uses, there→these",made uses think these was an abyss immediately ahead
+890,val,was as though a red mist veiled her usually clear sight and,INCORRECT: clear→close | CORRECTED: was as though a red mist veiled her usually close sight and,INCORRECT,True,clear→close,was as though a red mist veiled her usually close sight and
+891,val,broken down outside and he noticed,CORRECT,CORRECT,False,,
+892,val,"you this , too ? "" "" No , "" she laughed .",CORRECT,CORRECT,False,,
+893,val,at the roots and I had a redhead on,CORRECT,CORRECT,False,,
+894,val,it was your car I suppose he,CORRECT,CORRECT,False,,
+895,val,""" Oh , he wasn't . His motor-bike had","INCORRECT: His→this | CORRECTED: Oh, he wasn't. this motor-bike had",INCORRECT,True,His→this,"Oh, he wasn't. this motor-bike had"
+896,val,""" He didn't actually see you . Because",CORRECT,CORRECT,False,,
+897,val,"presumed it was you , all dressed up in",CORRECT,CORRECT,False,,
+898,val,your car and then you dancing with,CORRECT,CORRECT,False,,
+899,val,the other arm . He would have told,INCORRECT: other→others | CORRECTED: the others arm . He would have told,INCORRECT,True,other→others,the others arm . He would have told
+900,val,"this blonde . "" "" Really ? "" Nigel cocked","INCORRECT: cocked→cooked | CORRECTED: ""this blonde . "" "" Really ? "" Nigel cooked",INCORRECT,True,cocked→cooked,"""this blonde . "" "" Really ? "" Nigel cooked"
+901,val,"one eyebrow . "" Actually she was brunette",CORRECT,CORRECT,False,,
+902,val,"evening . "" "" No , don't , "" he said , after",CORRECT,CORRECT,False,,
+903,val,"particular surgery ? "" "" You are a fool ,","INCORRECT: surgery→surgesy | CORRECTED: ""particular surgesy?"" ""You are a fool,""",INCORRECT,True,surgery→surgesy,"""particular surgesy?"" ""You are a fool,"""
+904,val,""" Now I wonder which I wore at that",INCORRECT: wore→work | CORRECTED: Now I wonder which I work at that,INCORRECT,True,wore→work,Now I wonder which I work at that
+905,val,""" My white or my black ? "" Nigel enquired .",CORRECT,CORRECT,False,,
+906,val,the housemen think of me as a,CORRECT,CORRECT,False,,
+907,val,two-timing Don Juan .,CORRECT,CORRECT,False,,
+908,val,exactly what you were doing that,CORRECT,CORRECT,False,,
+909,val,"kissing her again . "" I rather like to have","INCORRECT: her→hes, rather→rathes | CORRECTED: ""kissing hes again . "" I rathes like to have",INCORRECT,True,"her→hes, rather→rathes","""kissing hes again . "" I rathes like to have"
+910,val,"darling , "" Di said happily . "" I shall take","INCORRECT: take→taking | CORRECTED: ""darling , "" Di said happily . "" I shall taking""",INCORRECT,True,take→taking,"""darling , "" Di said happily . "" I shall taking"""
+911,val,great pleasure in telling that young man,CORRECT,CORRECT,False,,
+912,val,""" You need your holiday , darling . I only",CORRECT,CORRECT,False,,
+913,val,"I 'm such a dull fellow , really . "" "" Dull ? "" She",CORRECT,CORRECT,False,,
+914,val,couldn't believe it . Self-deprecation,CORRECT,CORRECT,False,,
+915,val,"I suppose ? "" she enquired archly .",CORRECT,CORRECT,False,,
+916,val,"wish I could go with you ! "" "" Doctor","INCORRECT: I→y | CORRECTED: wish y could go with you! ""Doctor""",INCORRECT,True,I→y,"wish y could go with you! ""Doctor"""
+917,val,""" It would make me more interesting ,",CORRECT,CORRECT,False,,
+918,val,was not one of Nigel's usual attributes .,INCORRECT: was not one of Nigel's usual attributes → not one of Nigel's usual attributes was | CORRECTED: not one of Nigel's usual attributes was,INCORRECT,True,was not one of Nigel's usual attributes → not one of Nigel's usual attributes was,not one of Nigel's usual attributes was
+919,val,"Wills , if you 're making improper suggestions ... ? ""","INCORRECT: improper→impropes | CORRECTED: Wills, if you're making impropes suggestions...?",INCORRECT,True,improper→impropes,"Wills, if you're making impropes suggestions...?"
+920,val,""" No , it wouldn't ! "" he almost snapped ,",CORRECT,CORRECT,False,,
+921,val,leave in the autumn without you,INCORRECT: you→gain | CORRECTED: leave in the autumn without gain,INCORRECT,True,you→gain,leave in the autumn without gain
+922,val,"become you to behave like a - a tart , Di . """,CORRECT,CORRECT,False,,
+923,val,body else for a moment there . It doesn't,INCORRECT: else→etse | CORRECTED: body etse for a moment there. It doesn't,INCORRECT,True,else→etse,body etse for a moment there. It doesn't
+924,val,miserable enough my having to take my,CORRECT,CORRECT,False,,
+925,val,""" Nigel - ! "" she gasped . "" I didn't mean to",CORRECT,CORRECT,False,,
+926,val,behave like anything of the kind . I,CORRECT,CORRECT,False,,
+927,val,trying to be bright and gay about it .,CORRECT,CORRECT,False,,
+928,val,"surprising her . "" You sounded like some-","INCORRECT: her→hes | CORRECTED: ""Surprising hes."" You sounded like some-",INCORRECT,True,her→hes,"""Surprising hes."" You sounded like some-"
+929,val,"was only joking . "" "" Well , don't . It 's",CORRECT,CORRECT,False,,
+930,val,at this time of year ? I can't ask you up because it 's,CORRECT,CORRECT,False,,
+931,val,can't imagine the hospital without me for,CORRECT,CORRECT,False,,
+932,val,"a strictly stag affair . "" "" I know . I didn't expect ... "" "" Well ,",CORRECT,CORRECT,False,,
+933,val,"three weeks , etcetera , etcetera ! ""","INCORRECT: weeks→weebs, etcetera→etcelesa, etcetera→etcelesa | CORRECTED: three weebs, etcelesa, etcelesa!!!",INCORRECT,True,"weeks→weebs, etcetera→etcelesa, etcetera→etcelesa","three weebs, etcelesa, etcelesa!!!"
+934,val,come with me ; you hope I 'll miss you ; you,CORRECT,CORRECT,False,,
+935,val,"don't keep hinting , then . You wish you could","INCORRECT: you→ya | CORRECTED: don't keep hinting, then. You wish ya could",INCORRECT,True,you→ya,"don't keep hinting, then. You wish ya could"
+936,val,I 'm going with a shooting party . What else can I do,CORRECT,CORRECT,False,,
+937,val,"regard first . "" I would mind if you didn't "" he told her",CORRECT,CORRECT,False,,
+938,val,"right , pet . I do need this leave . I 'm bad-tempered and",CORRECT,CORRECT,False,,
+939,val,"Her figure was small and exquisite , like a schoolgirl's still , and",CORRECT,CORRECT,False,,
+940,val,broody and going out with brash blondes . I don't deserve,CORRECT,CORRECT,False,,
+941,val,"he admired her legs , which the male sex were inclined to",CORRECT,CORRECT,False,,
+942,val,"grimly , and tugged her fiercely into his arms . "" You 're",CORRECT,CORRECT,False,,
+943,val,"you . ""","INCORRECT: you→yau | CORRECTED: yau.""",INCORRECT,True,you→yau,"yau."""
+944,val,make all the waiting worth while . When we 're,CORRECT,CORRECT,False,,
+945,val,""" Darling ! "" her voiced caressed him . "" Moments like this",CORRECT,CORRECT,False,,
+946,val,"married we won't have these explosions of emotion ,",INCORRECT: married→worried | CORRECTED: worried we won't have these explosions of emotion,INCORRECT,True,married→worried,worried we won't have these explosions of emotion
+947,val,"isn't as bad as an operation , Nigel ! """,CORRECT,CORRECT,False,,
+948,val,"will we ? "" "" No , "" he eyed her strangely . "" I wish we","INCORRECT: ""we→use, we→are"" | CORRECTED: ""will use."" ""No,"" he eyed her strangely. ""I wish are""",INCORRECT,True,"""we→use, we→are""","""will use."" ""No,"" he eyed her strangely. ""I wish are"""
+949,val,"were married , Di . Like a patient wishes his operation",CORRECT,CORRECT,False,,
+950,val,"was over . "" Again her laughter trilled . "" Marriage","INCORRECT: was→uses, laughter→laughters, Marriage→Harness | CORRECTED: uses over. ""Again her laughters trilled."" ""Harness""",INCORRECT,True,"was→uses, laughter→laughters, Marriage→Harness","uses over. ""Again her laughters trilled."" ""Harness"""
+951,val,me isn't going to be all that bad ?,CORRECT,CORRECT,False,,
+952,val,"the moment , thank God ! "" Problem ... ?","INCORRECT: thank→thanh, God→Good | CORRECTED: the moment, thanh Good! ""Problem...?""",INCORRECT,True,"thank→thanh, God→Good","the moment, thanh Good! ""Problem...?"""
+953,val,"he could be serious . "" Surely marrying",CORRECT,CORRECT,False,,
+954,val,""" Isn't it ? "" he rose and smoothed himself",CORRECT,CORRECT,False,,
+955,val,"or a burial ? "" she asked , hardly believing",CORRECT,CORRECT,False,,
+956,val,"looming ... ? "" Are we discussing a marriage","INCORRECT: looming→Looking | CORRECTED: Looking...? ""Are we discussing a marriage",INCORRECT,True,looming→Looking,"Looking...? ""Are we discussing a marriage"
+957,val,"down . "" Ask any bridegroom-to-be . Anyhow ,","INCORRECT: ""Ask→Ash, Anyhow→Anybody"" | CORRECTED: down."" Ash any bridegroom-to-be. Anybody,",INCORRECT,True,"""Ask→Ash, Anyhow→Anybody""","down."" Ash any bridegroom-to-be. Anybody,"
+958,val,that particular problem isn't looming at,CORRECT,CORRECT,False,,
+959,val,"it , looking moodily beyond her . "" Perhaps it 's as","INCORRECT: looking→looming | CORRECTED: it, looming moodily beyond her. ""Perhaps it's as",INCORRECT,True,looking→looming,"it, looming moodily beyond her. ""Perhaps it's as"
+960,val,"well if you don't wear it for a bit , Di , "" he",CORRECT,CORRECT,False,,
+961,val,"of amusement in his own eyes , however , he took",CORRECT,CORRECT,False,,
+962,val,"your ring back . "" She loosened the half-hoop of","INCORRECT: half→may, hoop→noop | CORRECTED: ""your ring back . "" She loosened the may - noop of",INCORRECT,True,"half→may, hoop→noop","""your ring back . "" She loosened the may - noop of"
+963,val,diamonds on her left hand third finger and held it,INCORRECT: it→if | CORRECTED: diamonds on her left hand third finger and held if,INCORRECT,True,it→if,diamonds on her left hand third finger and held if
+964,val,told her .,INCORRECT: her→hor | CORRECTED: told hor,INCORRECT,True,her→hor,told hor
+965,val,"out to him , still playfully . Without a glimmer",CORRECT,CORRECT,False,,
+966,val,"If it is - "" she laughed uncertainly - "" you can have",CORRECT,CORRECT,False,,
+967,val,doctor would be free during the day ; tea was served,CORRECT,CORRECT,False,,
+968,val,from four until five-thirty in the residents' common-,INCORRECT: common→council | CORRECTED: from four until five-thirty in the residents' council-,INCORRECT,True,common→council,from four until five-thirty in the residents' council-
+969,val,"she was convinced , or he would have granted her small request","INCORRECT: extra word ""he"" inserted between ""or"" and ""would"" | CORRECTED: she was convinced , or would have granted her small request",INCORRECT,True,"extra word ""he"" inserted between ""or"" and ""would""","she was convinced , or would have granted her small request"
+970,val,"Something had cropped up which required Nigel's attention ,",CORRECT,CORRECT,False,,
+971,val,"room , which proved the elasticity of medical commitments .","INCORRECT: commitments→covenant it provided | CORRECTED: room, which proved the elasticity of medical covenant it provided.",INCORRECT,True,commitments→covenant it provided,"room, which proved the elasticity of medical covenant it provided."
+972,val,Diana was trailing up the gravelled drive to the hospital,CORRECT,CORRECT,False,,
+973,val,to be met at the gates .,CORRECT,CORRECT,False,,
+974,val,alone . Of course one couldn't say for certain when a,INCORRECT: when a→wise are | CORRECTED: alone . Of course one couldn't say for certain wise are,INCORRECT,True,when a→wise are,alone . Of course one couldn't say for certain wise are
+975,val,Thus had they parted the previous evening and now,INCORRECT: Thus→Things | CORRECTED: Things had they parted the previous evening and now,INCORRECT,True,Thus→Things,Things had they parted the previous evening and now

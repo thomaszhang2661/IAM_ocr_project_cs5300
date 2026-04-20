@@ -1,0 +1,55 @@
+MODEL:
+  BACKBONE: "vgg"
+  MAX_SEQ_LEN: 201
+  ENCODER_HIDDEN_SIZE: 256
+  ENCODER_LAYERS: 2
+  ENCODER_TYPE: "gru"
+  ENCODER_BIDIRECTIONAL: True
+INPUT:
+  SIZE_CRNN: (64, 800)
+  SIZE_CRAFT: 960
+  PIXEL_MEAN: 0.9252072
+  PIXEL_STD: 0.20963529
+  RANDOM_X_TRANSLATION: 0.01
+  RANDOM_Y_TRANSLATION: 0.01
+  RANDOM_X_SCALING: 0.05
+  RANDOM_Y_SCALING: 0.05
+  RANDOM_SHEARING: 0.75
+  RANDOM_GAMMA: 1
+DATALOADER:
+  NUM_WORKERS: 8
+DATASETS:
+  IMAGE_PATH: "../training-data/images/"
+  LABEL_PATH: "../training-data/images/labels/"
+  TRAIN_LIST: "../training-data/train.txt"
+  VAL_LIST: "../training-data/val.txt"
+  TEST_LIST: "../training-data/test.txt"
+SOLVER:
+  EPOCHS: 100
+  LEARNING_RATE: 0.0001
+  LR_SCALE: 0.1
+  LR_PERIOD: 205
+  BATCH_SIZE: 32
+  CHECKPOINT_DIR: "./models/"
+  CHECKPOINT_NAME: "crnn_essay_???.pt"
+  PRINT_FREQ: 20
+  SAVE_MODEL_FREQ: 2
+  WARMUP_EPOCHS: 1
+  ENCODER_INIT: "orthogonal"
+  DECODER_INIT: "xavier"
+  CLIP_GRAD: 10
+  OPTIMIZER: "adam"
+  PRETRAINED_MODEL: "./models/crnn_v0_2_0.pth_2"
+TEST:
+  BATCH_SIZE: 32
+  CRAFT_MODEL: "./models/craft_v0_2_0.pth_2"
+  ROTNET_MODEL: ""
+  CRNN_MODEL_LINE: "./models/crnn_line_8_0620_1400.pt"
+  CRNN_MODEL_ESSAY: "./models/crnn_essay_2.pt"
+  SCORE_NET_MODEL: "./models/vgg6_v0_2_0.pth_2"
+#  DESKEW: True
+#  CLEANLINESS: True
+LOG:
+  PATH: "logs"
+  NAME: "log.txt"
+  LEVEL_NAME: "INFO"

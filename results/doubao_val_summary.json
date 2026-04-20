@@ -1,0 +1,10 @@
+{
+  "split": "val",
+  "total_samples": 976,
+  "correct_count": 616,
+  "ambiguous_count": 0,
+  "incorrect_count": 360,
+  "correct_rate": 0.6311,
+  "ambiguous_rate": 0.0,
+  "incorrect_rate": 0.3689
+}

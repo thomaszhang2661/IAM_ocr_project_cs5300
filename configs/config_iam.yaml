@@ -1,0 +1,57 @@
+MODEL:
+  BACKBONE: "vgg"
+  MAX_SEQ_LEN: 201
+  ENCODER_HIDDEN_SIZE: 256
+  ENCODER_LAYERS: 2
+  ENCODER_TYPE: "gru"
+  ENCODER_BIDIRECTIONAL: True
+INPUT:
+  SIZE_CRNN: (64, 800)
+  SIZE_CRAFT: 960
+  PIXEL_MEAN: 0.9252072
+  PIXEL_STD: 0.20963529
+  # Augmentation (conservative for IAM)
+  RANDOM_X_TRANSLATION: 0.01
+  RANDOM_Y_TRANSLATION: 0.01
+  RANDOM_X_SCALING: 0.05
+  RANDOM_Y_SCALING: 0.05
+  RANDOM_SHEARING: 0.5
+  RANDOM_GAMMA: 1
+DATALOADER:
+  NUM_WORKERS: 4
+DATASETS:
+  IAM_ROOT: "./data/iamdataset"   # path to IAM data root; override via --opts
+SOLVER:
+  EPOCHS: 30
+  LEARNING_RATE: 0.0001
+  LR_SCALE: 0.1
+  LR_PERIOD: 100
+  BATCH_SIZE: 16
+  CHECKPOINT_DIR: "./checkpoints"
+  CHECKPOINT_NAME: "crnn_iam.pt"
+  PRINT_FREQ: 50
+  SAVE_MODEL_FREQ: 1
+  WARMUP_EPOCHS: 1
+  ENCODER_INIT: "orthogonal"
+  DECODER_INIT: "xavier"
+  CLIP_GRAD: 10
+  OPTIMIZER: "adam"
+  PRETRAINED_MODEL: ""
+TEST:
+  BATCH_SIZE: 16
+  CRAFT_MODEL: ""
+  ROTNET_MODEL: ""
+  CRNN_MODEL_LINE: ""
+  CRNN_MODEL_ESSAY: ""
+  SCORE_NET_MODEL: ""
+LOG:
+  PATH: "logs"
+  NAME: "train_iam.log"
+  LEVEL_NAME: "INFO"
+# IAM-specific settings (not in original config schema; read manually)
+IAM:
+  TRAIN_SUBJECT_LISTS: ["trainset"]
+  TEST_SUBJECT_LISTS: ["testset"]
+  VAL_SUBJECT_LISTS: ["validationset1"]
+  CREDENTIALS_FILE: "./credentials.json"   # {"username": "...", "password": "..."}
+  FLAGGED_IDS_FILE: ""   # set to results/flagging/flagged_ids.txt for clean training

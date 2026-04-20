@@ -1,0 +1,7 @@
+{
+  "run_name": "exp3_full_3x",
+  "checkpoint": "checkpoints/exp3_full_3x/best.pt",
+  "test_samples": 2915,
+  "cer_pct": 7.6591,
+  "wer_pct": 24.2528
+}
