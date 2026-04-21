@@ -1,0 +1,7 @@
+{
+  "run_name": "exp5_clean2_10x_prelim",
+  "checkpoint": "checkpoints/exp5_clean2_10x/best.pt",
+  "test_samples": 2915,
+  "cer_pct": 8.2968,
+  "wer_pct": 25.618
+}

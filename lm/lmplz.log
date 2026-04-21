@@ -1,0 +1,26 @@
+=== 1/5 Counting and sorting n-grams ===
+Reading /data02/home/tiger/thomas/final_project/lm/corpus_all.txt
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Unigram tokens 2174680 types 105476
+=== 2/5 Calculating and sorting adjusted counts ===
+Chain sizes: 1:1265712 2:67324387328 3:126233231360 4:201973170176
+Statistics:
+1 105476 D1=0.666832 D2=1.01454 D3+=1.35193
+2 798511 D1=0.787816 D2=1.10074 D3+=1.35769
+3 1612671 D1=0.886946 D2=1.21093 D3+=1.38323
+4 1867889 D1=0.952935 D2=1.35165 D3+=1.49901
+Memory estimate for binary LM:
+type     MB
+probing  89 assuming -p 1.5
+probing 104 assuming -r models -p 1.5
+trie     42 without quantization
+trie     23 assuming -q 8 -b 8 quantization 
+trie     38 assuming -a 22 array pointer compression
+trie     19 assuming -a 22 -q 8 -b 8 array pointer compression and quantization
+=== 3/5 Calculating and sorting initial probabilities ===
+Chain sizes: 1:1265712 2:12776176 3:32253420 4:44829336
+=== 4/5 Calculating and writing order-interpolated probabilities ===
+Chain sizes: 1:1265712 2:12776176 3:32253420 4:44829336
+=== 5/5 Writing ARPA model ===
+Name:lmplz	VmPeak:386427144 kB	VmRSS:53512 kB	RSSMax:77323620 kB	user:7.14453	sys:33.5702	CPU:40.7148	real:39.8476

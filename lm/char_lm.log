@@ -1,0 +1,29 @@
+=== 1/5 Counting and sorting n-grams ===
+Reading /data02/home/tiger/thomas/final_project/lm/corpus_char_level.txt
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Unigram tokens 11525861 types 82
+=== 2/5 Calculating and sorting adjusted counts ===
+Chain sizes: 1:984 2:24340434944 3:45638316032 4:73021308928 5:106489413632 6:146042617856
+Substituting fallback discounts for order 0: D1=0.5 D2=1 D3+=1.5
+Statistics:
+1 82 D1=0.5 D2=1 D3+=1.5
+2 2795 D1=0.446043 D2=1.1867 D3+=1.50556
+3 23461 D1=0.51851 D2=1.18237 D3+=1.5755
+4 106705 D1=0.57257 D2=1.13891 D3+=1.51805
+5 331518 D1=0.615174 D2=1.14741 D3+=1.54251
+6 799017 D1=0.606547 D2=1.0447 D3+=1.43889
+Memory estimate for binary LM:
+type       kB
+probing 24933 assuming -p 1.5
+probing 27655 assuming -r models -p 1.5
+trie     8788 without quantization
+trie     3888 assuming -q 8 -b 8 quantization 
+trie     8150 assuming -a 22 array pointer compression
+trie     3251 assuming -a 22 -q 8 -b 8 array pointer compression and quantization
+=== 3/5 Calculating and sorting initial probabilities ===
+Chain sizes: 1:984 2:44720 3:469220 4:2560920 5:9282504 6:25568544
+=== 4/5 Calculating and writing order-interpolated probabilities ===
+Chain sizes: 1:984 2:44720 3:469220 4:2560920 5:9282504 6:25568544
+=== 5/5 Writing ARPA model ===
+Name:lmplz	VmPeak:386450780 kB	VmRSS:43832 kB	RSSMax:61015428 kB	user:6.08453	sys:23.785	CPU:29.8696	real:29.629

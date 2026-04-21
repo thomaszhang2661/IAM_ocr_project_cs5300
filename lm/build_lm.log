@@ -1,0 +1,31 @@
+bash: /data00/tiger/.local/share/conda/envs/ocr_IAM/lib/libtinfo.so.6: no version information available (required by bash)
+=== Step 1: collect IAM train text ===
+  IAM lines: 7458
+=== Step 2: download public English text (Project Gutenberg) ===
+  book 1342: 10744 lines so far
+  book 11: 13045 lines so far
+  book 84: 19219 lines so far
+  book 1661: 27798 lines so far
+  book 2701: 46022 lines so far
+  book 98: 57421 lines so far
+  book 1400: 72455 lines so far
+  book 2591: 80135 lines so far
+  book 174: 86607 lines so far
+  book 345: 99038 lines so far
+  book 5200: 100780 lines so far
+  book 76: 109405 lines so far
+  book 1232: 113558 lines so far
+  book 2554: 130503 lines so far
+  book 36: 135558 lines so far
+  book 16: 139556 lines so far
+  book 215: 142155 lines so far
+  book 1260: 157714 lines so far
+  book 46: 160632 lines so far
+  book 514: 176010 lines so far
+
+Total public corpus lines: 176010
+=== Step 3: merge corpora ===
+183468 lm/corpus_all.txt
+=== Step 4: train 4-gram KenLM (word-level) ===
+/tmp/kenlm/build/bin/lmplz: /home/tiger/miniconda3/envs/py310/lib/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /tmp/kenlm/build/bin/lmplz)
+/tmp/kenlm/build/bin/lmplz: /home/tiger/miniconda3/envs/py310/lib/libstdc++.so.6: version `CXXABI_1.3.15' not found (required by /tmp/kenlm/build/bin/lmplz)

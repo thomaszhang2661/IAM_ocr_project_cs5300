@@ -1,0 +1,76 @@
+Loaded: checkpoints/exp3_full_10x/best.pt
+Saved pairs → results/confusion_pairs_exp3.csv
+Saved heatmap → results/confusion_heatmap_exp3.csv
+
+=== Top 40 substitution pairs (exp3_full_10x) ===
+Ref    → Pred      Count     Rate%
+───────────────────────────────────
+'a'    → 'o'         280      3.6%
+'o'    → 'a'         174      2.4%
+'r'    → 's'         121      2.1%
+'t'    → 'l'         116      1.3%
+'n'    → 'm'         105      1.6%
+'u'    → 'n'         102      3.6%
+'a'    → 'e'          96      1.2%
+'s'    → 'r'          92      1.5%
+'m'    → 'n'          89      4.1%
+'r'    → 'n'          76      1.3%
+'o'    → 'e'          67      0.9%
+'n'    → 'r'          66      1.0%
+'u'    → 'a'          62      2.2%
+'n'    → 'u'          58      0.9%
+'s'    → 'n'          58      1.0%
+'e'    → 'a'          56      0.5%
+'h'    → 'l'          52      0.9%
+'l'    → 't'          49      1.2%
+'e'    → 'o'          48      0.4%
+'a'    → 'u'          48      0.6%
+'v'    → 'r'          46      4.8%
+'d'    → 'l'          45      1.1%
+'c'    → 'e'          45      1.9%
+'u'    → 'e'          45      1.6%
+'f'    → 't'          42      2.0%
+'r'    → 't'          39      0.7%
+'r'    → 'e'          38      0.7%
+'t'    → 'd'          38      0.4%
+'l'    → 'd'          36      0.9%
+'s'    → 'o'          35      0.6%
+'"'    → "'"          34      5.9%
+'S'    → 's'          31     12.9%
+'r'    → 'o'          31      0.5%
+'t'    → 'f'          31      0.4%
+'y'    → 'g'          30      1.6%
+'l'    → 'e'          29      0.7%
+'n'    → 's'          29      0.4%
+'h'    → 's'          28      0.5%
+'n'    → 'y'          27      0.4%
+'b'    → 'h'          27      1.8%
+
+=== Top deletions (model misses these chars) ===
+  ' '    deleted    603×  (2.6% of occurrences)
+  'r'    deleted    187×  (3.3% of occurrences)
+  'e'    deleted    144×  (1.2% of occurrences)
+  '.'    deleted    138×  (10.4% of occurrences)
+  's'    deleted    126×  (2.1% of occurrences)
+  't'    deleted    100×  (1.2% of occurrences)
+  'n'    deleted     88×  (1.3% of occurrences)
+  'i'    deleted     87×  (1.4% of occurrences)
+  'o'    deleted     80×  (1.1% of occurrences)
+  "'"    deleted     79×  (18.4% of occurrences)
+  'a'    deleted     77×  (1.0% of occurrences)
+  ','    deleted     70×  (5.3% of occurrences)
+  'l'    deleted     66×  (1.7% of occurrences)
+  'c'    deleted     65×  (2.8% of occurrences)
+  'h'    deleted     58×  (1.0% of occurrences)
+
+=== Top insertions (model hallucinates these) ===
+  ' '    inserted    187×
+  'e'    inserted     88×
+  'r'    inserted     74×
+  't'    inserted     52×
+  'l'    inserted     48×
+  'n'    inserted     47×
+  's'    inserted     43×
+  'o'    inserted     42×
+  'a'    inserted     42×
+  'i'    inserted     42×

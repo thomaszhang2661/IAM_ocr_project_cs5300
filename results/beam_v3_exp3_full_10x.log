@@ -1,0 +1,51 @@
+Loading the LM will be faster if you build a binary file.
+Reading /data02/home/tiger/thomas/final_project/lm/word_4gram.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Device: cuda
+Loaded: checkpoints/exp3_full_10x/best.pt
+Dataset: test (2915 samples)
+
+Building vocabulary...
+  IAM vocab: 10149 entries
+  Total vocabulary: 88429 entries (+78280 from dict/extra)
+Using KenLM: lm/word_4gram.arpa
+
+Loading confusion rules...
+  Loaded 0 confusion rules (min_count=999999)
+Building char n-gram scorer from IAM corpus...
+  Char scorer built on 57458 lines
+
+Decoding...
+
+==================================================
+Greedy   CER=7.53%  WER=23.56%
+Beam     CER=6.41%  WER=17.90%  (Δ=-1.12%)
+Corrected CER=6.41%  WER=17.90%  (Δ vs beam=+0.00%)
+Saved → results/beam_v3_exp3_full_10x.json
+
+--- Samples ---
+  REF:  assuredness " Bella Bella Marie " ( Parlophone ) , a lively song that changes tempo mid-way .
+  GRD:  assuredness " Bella Bella Mavie " ( Parlophone ) , a lively song that chonges tempo mit-way .
+  BEAM: assuredness " Bella Bella Marie " (Parlophone ) , a lively song that changes tempo midway .
+
+  REF:  I don't think he will storm the charts with this one , but it 's a good start .
+  GRD:  I don't thinn he will shorm the charks with this one , but it 's a good start .
+  BEAM: I don't think he will storm the charts with this one , but it 's a good start .
+
+  REF:  CHRIS CHARLES , 39 , who lives in Stockton-on-Tees , is an accountant .
+  GRD:  CHRIS CHARLES , 39 , who lives in Stocuton-on - Tees , is an accourtant 
+  BEAM: CHRIS CHARLES , 39 , who lives in Stocuton-on - Tees , is an accourtant
+
+  REF:  Tolch , as he is known in Tin Pan Alley , likes songs with a month in the title . He wrote
+  GRD:  Totch , as he is unown in Tin Pan Alley , lines songs with a month in the tille . He wrote
+  BEAM: Tolch , as he is unown in Tin Pan Alley , lines songs with a month in the tille . He wrote
+
+  REF:  " My September Love , " the big David Whitfield hit of 1956 .
+  GRD:  itly Septenoer love , " " the big Dovid whitfield hit of 1956 .
+  BEAM: itly Septenoer love " " the big Dovid whitfield hit of 1956 .
+
+  REF:  writer . He writes with Tolchard Evans , composer of " Lady of Spain " and other big hits .
+  GRD:  wriber . He wribes with Tolchard Evons , composes of " Lady of Soain " and other big hits .
+  BEAM: writer . He writes with Tolchard Evons , composes of " Lady of Spain " and other big hits .
+

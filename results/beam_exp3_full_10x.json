@@ -1,0 +1,14 @@
+{
+  "checkpoint": "checkpoints/exp3_full_10x/best.pt",
+  "split": "test",
+  "n_samples": 2915,
+  "beam_width": 50,
+  "alpha": 0.5,
+  "beta": 1.0,
+  "confusion_alpha": 0.1,
+  "confusion_min": 10,
+  "greedy_cer": 7.5278,
+  "greedy_wer": 23.5587,
+  "beam_cer": 7.4959,
+  "beam_wer": 23.4931
+}

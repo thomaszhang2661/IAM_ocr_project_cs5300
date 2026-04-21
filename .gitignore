@@ -41,3 +41,11 @@ results/patch_samples/
 autoresearch/
 data/fonts_unused/
 api_secrets.py
+
+# Large LM model files (>100MB, cannot push to GitHub)
+lm/word_4gram.arpa
+lm/char_6gram.arpa
+lm/corpus_char_level.txt
+
+# Large report HTML (self-contained with base64 images)
+results/report.html
