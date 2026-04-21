@@ -1,0 +1,16 @@
+{
+  "checkpoint": "checkpoints/exp5_clean2_7x/best.pt",
+  "split": "test",
+  "n_samples": 2915,
+  "lm_path": "lm/word_4gram.arpa",
+  "beam_width": 50,
+  "alpha": 0.5,
+  "beta": 1.0,
+  "confusion_min": 999999,
+  "greedy_cer": 8.1734,
+  "greedy_wer": 25.294,
+  "beam_cer": 6.8376,
+  "beam_wer": 18.7613,
+  "corrected_cer": 6.8376,
+  "corrected_wer": 18.7613
+}

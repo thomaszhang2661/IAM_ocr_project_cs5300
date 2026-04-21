@@ -1,0 +1,629 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}
+
+\graphicspath{{../../results/}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Handwritten Text Recognition on IAM: VLM-Assisted Annotation Auditing, Synthetic Data Augmentation, and Language Model Rescoring for CRNN-CTC}
+
+\author{
+  \IEEEauthorblockN{Jian (Thomas) Zhang}
+  \IEEEauthorblockA{
+    \textit{Khoury College of Computer Sciences}\\
+    \textit{Northeastern University}\\
+    CS5300 Computer Vision --- Final Project, April 2026\\
+    zhang.jian@northeastern.edu
+  }
+}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a data-centric study of handwritten text recognition (HTR) on the IAM Handwriting Database using a CRNN-CTC architecture. We make four contributions. First, a systematic 14-run hyperparameter search identifies an optimal configuration (BiGRU hidden=512, lr=$3\times10^{-4}$) that achieves \textbf{6.29\% validation CER} at 50 epochs---a 30\% relative improvement over a vanilla baseline. Second, a VLM-assisted annotation quality audit using Doubao Seed 2.0 Pro reveals structured character-level confusion patterns, and demonstrates that prompt engineering critically determines cleaning outcome: an aggressive prompt removing 33\% of training data degrades test CER from 8.43\% to 10.33\%, while a conservative prompt removing 12.6\% has negligible effect. A novel cross-matrix analysis shows that the VLM's annotation confusion pairs and the model's prediction confusion pairs are significantly correlated (Spearman $\rho=0.559$, $p<0.0001$ across 160 shared pairs), indicating both reflect the same underlying visual ambiguity in handwritten cursive strokes rather than system-specific biases. Third, a synthetic data augmentation pipeline targeting underrepresented characters achieves \textbf{7.52\% test CER} at 10$\times$ scale---an 11\% relative improvement---with per-character analysis confirming the largest gains on rare symbols (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase). Fourth, beam search with a KenLM 4-gram language model trained on public English corpora reduces CER to \textbf{6.41\%}, a 1.12\% absolute improvement over greedy decoding, with a key insight that vocabulary case preservation is critical for proper-noun-heavy datasets.
+\end{abstract}
+
+\begin{IEEEkeywords}
+handwritten text recognition, CRNN-CTC, VLM annotation auditing, synthetic data augmentation, language model rescoring, IAM database
+\end{IEEEkeywords}
+
+%% ============================================================
+\section{Introduction}
+%% ============================================================
+
+Handwritten text recognition (HTR)---the automatic transcription of handwritten images to digital text---remains a core challenge in computer vision. Despite significant progress from CRNN-CTC architectures~\cite{shi2016} to Transformer-based models such as TrOCR~\cite{li2021}, two foundational issues receive comparatively little attention: annotation quality in standard benchmarks, and the practical gap between training data composition and model robustness.
+
+The IAM Handwriting Database~\cite{marti2002} is the most widely used English HTR benchmark, containing 13,353 line-level samples from 657 writers. It is generally treated as a gold-standard reference. This work applies Doubao Seed 2.0 Pro, a state-of-the-art VLM, to audit all 10,373 IAM samples (train + val + test), revealing structured annotation error patterns and---crucially---demonstrating that the design of the VLM auditing prompt determines whether cleaning helps or hurts downstream performance.
+
+Figure~\ref{fig:samples} shows representative IAM line images alongside VLM audit output. To contextualize our results, Table~\ref{tab:sota} summarizes the current state of the art on IAM.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{test_samples.png}
+  \caption{Representative IAM handwriting line images from the test set. Character-level ambiguities (e.g., \texttt{o}/\texttt{a}, \texttt{n}/\texttt{m}) are visible even to human readers.}
+  \label{fig:samples}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{IAM Line-Level Test CER. CRNN-CTC is used as a controlled setting to isolate data-centric effects from architectural improvements.}
+\label{tab:sota}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Model} & \textbf{Architecture} & \textbf{CER} & \textbf{LM} \\
+\midrule
+DRetHTR (2025)          & Decoder-only RetNet  & 2.26\% & Yes    \\
+TrOCR-Large~\cite{li2021} & BEiT + RoBERTa    & 2.89\% & No     \\
+Retsinas et al.~\cite{retsinas2022} & CRNN+CTC shortcut & 5.14\% & No \\
+Ours (Exp3-10x + beam)  & CRNN-CTC BiGRU       & \textbf{6.41\%} & 4-gram \\
+Ours (Exp3-10x, greedy) & CRNN-CTC BiGRU       & 7.52\% & No     \\
+Ours (Exp1, greedy)     & CRNN-CTC BiGRU       & 8.43\% & No     \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Our model does not aim to surpass Transformer-based SOTA. Instead, we use CRNN-CTC as a controlled setting to answer four research questions:
+
+\begin{itemize}
+  \item \textbf{RQ1:} Does systematic hyperparameter search substantially improve CRNN-CTC performance on IAM?
+  \item \textbf{RQ2:} Does VLM-assisted annotation cleaning improve test CER, and how sensitive is the result to the cleaning aggressiveness?
+  \item \textbf{RQ3:} Does font-based synthetic data augmentation at various scales provide consistent improvement, particularly for rare characters?
+  \item \textbf{RQ4:} Does word-level n-gram language model rescoring provide meaningful gains over unigram-based beam search?
+\end{itemize}
+
+\noindent\textbf{Contributions:}
+\begin{enumerate}
+  \item Systematic 14-run, 7-GPU parallel hyperparameter search for CRNN-CTC, reducing val CER from 9.04\% to 6.29\%.
+  \item First systematic VLM-based annotation quality audit of IAM, with a $26\times26$ character confusion matrix and a controlled experiment showing that cleaning aggressiveness critically mediates outcomes.
+  \item Synthetic data pipeline targeting underrepresented characters, evaluated at $1\times$--$10\times$ scale across three training set variants (full IAM, V1-cleaned, V2-cleaned) with per-character error analysis.
+  \item Beam search decoding with KenLM 4-gram LM achieving 6.41\% test CER; vocabulary case preservation identified as a critical factor.
+\end{enumerate}
+
+%% ============================================================
+\section{Related Work}
+%% ============================================================
+
+\subsection{CRNN-CTC for Handwritten Text Recognition}
+
+The CRNN architecture~\cite{shi2016} combining VGG-style CNN feature extraction with bidirectional LSTM sequence modeling, trained end-to-end with CTC loss~\cite{graves2006}, established the dominant paradigm for HTR for nearly a decade. On IAM, vanilla CRNN-CTC baselines achieve 8--12\% CER without language model rescoring.
+
+More recent CRNN variants with residual blocks and an auxiliary CTC shortcut~\cite{retsinas2022} reach 5.14\% CER on IAM line-level recognition without external language models. The current state of the art is dominated by Transformer-based approaches: TrOCR~\cite{li2021} achieves 2.89\% CER by combining a pretrained BEiT image encoder with a RoBERTa decoder, pretrained on 684 million synthetic lines. We intentionally use CRNN-CTC to maintain experimental tractability.
+
+\subsection{Label Noise in Benchmark Datasets}
+
+Label noise in training data is a well-documented source of model degradation~\cite{frenay2014}. Most relevant to our work, REVEAL~\cite{jiang2025} proposes a unified framework using multiple VLMs to renovate image classification test sets by detecting label noise and imputing missing labels. We apply a similar philosophy to the HTR domain, adding a key finding: VLM prompt design critically determines whether cleaning helps or hurts downstream training. To our knowledge, no prior work has systematically audited IAM annotation quality using modern VLMs.
+
+\subsection{Synthetic Data Augmentation for HTR}
+
+Font-based text rendering (trdg,~\cite{belval2019}) provides a low-cost source of labeled training data. Prior work has used trdg to generate up to 2.5 million synthetic lines for pretraining~\cite{luo2023}. We design our pipeline to specifically target underrepresented characters in the IAM distribution, using an LLM to generate text templates dense in rare characters---addressing known class imbalance rather than simply scaling volume.
+
+\subsection{Language Model Rescoring for CTC}
+
+CTC beam search with n-gram language model rescoring is the standard post-processing approach for both ASR~\cite{hannun2014} and HTR. The pyctcdecode + KenLM pipeline scores hypotheses as:
+\begin{equation}
+  \text{score} = \alpha \cdot p_{\text{CTC}} + \beta \cdot p_{\text{LM}} + \gamma \cdot |w|
+\end{equation}
+where $\alpha, \beta, \gamma$ are tunable weights and $|w|$ is the word count. Word-level n-gram LMs provide stronger rescoring than character-level models because they capture word-level context that CTC's frame-level modeling misses. Our results confirm a 1.12\% absolute CER reduction from 4-gram LM rescoring vs.\ greedy decoding (7.53\%$\to$6.41\%), and a 0.09\% reduction vs.\ unigram beam search (7.50\%$\to$6.41\%).
+
+%% ============================================================
+\section{Dataset and Preprocessing}
+%% ============================================================
+
+\subsection{IAM Handwriting Database}
+
+The IAM Handwriting Database~\cite{marti2002} contains handwritten English text scanned at 300 dpi from 657 writers. We use the standard line-level split shown in Table~\ref{tab:iam_split}.
+
+\begin{table}[h]
+\centering
+\caption{IAM Dataset Split Statistics}
+\label{tab:iam_split}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Split} & \textbf{Samples} & \textbf{Writers} \\
+\midrule
+Train      & 6,482  & $\sim$547 \\
+Validation & 976    & $\sim$55  \\
+Test       & 2,915  & $\sim$55  \\
+\midrule
+\textbf{Total} & \textbf{10,373} & \textbf{657} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All images are resized to height $H=64$ pixels with aspect ratio preserved via padding, normalized per-channel (zero mean, unit variance), and stored in LMDB format. The character vocabulary contains 80 classes: 79 IAM-standard characters plus a CTC blank token (index 0).
+
+Figure~\ref{fig:charfreq} shows the IAM character frequency distribution. Lowercase letters dominate ($\sim$68\%), while rare characters such as \texttt{\#}, \texttt{*}, \texttt{;} appear fewer than 60 times in the entire training set---motivating our targeted synthetic augmentation strategy.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{char_freq_distribution.png}
+  \caption{IAM training set character frequency distribution. The heavily skewed distribution motivates our targeted synthetic data pipeline.}
+  \label{fig:charfreq}
+\end{figure}
+
+\subsection{VLM Annotation Quality Audit (V1 --- Aggressive)}
+
+We audited all 10,373 samples using Doubao Seed 2.0 Pro with a prompt instructing the model to ``err on the side of flagging'' any possible annotation error. Table~\ref{tab:v1audit} shows results.
+
+\begin{table}[h]
+\centering
+\caption{V1 VLM Audit Results}
+\label{tab:v1audit}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Split} & \textbf{Total} & \textbf{Flagged} & \textbf{Rate} \\
+\midrule
+Train      & 6,482  & 2,144 & 33.1\% \\
+Validation & 976    & 360   & 36.9\% \\
+Test       & 2,915  & 1,053 & 36.1\% \\
+\midrule
+\textbf{Total} & \textbf{10,373} & \textbf{3,557} & \textbf{34.3\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{VLM Annotation Quality Audit (V2 --- Conservative)}
+
+We designed an improved V2 prompt that explicitly instructs the model to ``default to CORRECT'' and lists specific false-positive traps (digit 0 vs.\ letter O, British spelling variants, abbreviations, etc.). Applied to the training split only, V2 reduces the flag rate from 33.1\% to 12.6\%, removing 814 samples instead of 2,144.
+
+\subsection{Character Confusion Analysis}
+
+Substitutions were extracted by character-level alignment (\texttt{difflib.SequenceMatcher}) between IAM ground-truth and VLM V1-corrected text, identifying \textbf{936 unique confusion pairs} totaling \textbf{5,058 substitution events}. Table~\ref{tab:confusion_top} shows the top 10 pairs. The dominant pattern is lowercase--lowercase confusion ($\approx$93\% of events), concentrated on visually similar cursive strokes: \texttt{o}$\leftrightarrow$\texttt{a} (271 combined), \texttt{n}$\leftrightarrow$\texttt{m} (135+), \texttt{r}$\leftrightarrow$\texttt{s} (192 combined).
+
+\begin{table}[h]
+\centering
+\caption{Top-10 VLM Annotation Confusion Pairs}
+\label{tab:confusion_top}
+\begin{tabular}{@{}clcc@{}}
+\toprule
+\textbf{Rank} & \textbf{Pair} & \textbf{Count} & \textbf{Category} \\
+\midrule
+1  & \texttt{o}$\to$\texttt{a} & 155 & lower--lower \\
+2  & \texttt{n}$\to$\texttt{m} & 135 & lower--lower \\
+3  & \texttt{r}$\to$\texttt{s} & 133 & lower--lower \\
+4  & \texttt{a}$\to$\texttt{o} & 116 & lower--lower \\
+5  & \texttt{a}$\to$\texttt{e} & 109 & lower--lower \\
+6  & \texttt{n}$\to$\texttt{u} & 96  & lower--lower \\
+7  & \texttt{o}$\to$\texttt{e} & 76  & lower--lower \\
+8  & \texttt{t}$\to$\texttt{h} & 75  & lower--lower \\
+9  & \texttt{t}$\to$\texttt{d} & 68  & lower--lower \\
+10 & \texttt{h}$\to$\texttt{l} & 60  & lower--lower \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:vlmconfusion} visualizes the top-35 VLM annotation confusion pairs ranked by frequency.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{vlm_confusion_top35.png}
+  \caption{Top-35 VLM annotation confusion pairs (substitution count). Lowercase--lowercase pairs dominate, driven by visual similarity in cursive strokes.}
+  \label{fig:vlmconfusion}
+\end{figure}
+
+%% ============================================================
+\section{Model Architecture}
+%% ============================================================
+
+\subsection{CRNN-CTC}
+
+Our model follows the standard CRNN pipeline: CNN feature extractor $\to$ BiGRU encoder $\to$ CTC decoder. We adapt the original VGG CRNN backbone (designed for $H=32$) to $H=64$ by modifying the final convolutional kernel to $(4,1)$, validated to outperform the original $(2,1)$ design at $H=64$ (7.35\% vs.\ 7.45\% val CER). The sequence encoder is a 2-layer Bidirectional GRU (hidden size = 512), followed by a Linear$(1024 \to 80)$ projection with log-softmax. Total parameters: $\approx$16.7M.
+
+\subsection{Training Details}
+
+\begin{table}[h]
+\centering
+\caption{Training Hyperparameters}
+\label{tab:hparams}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Hyperparameter} & \textbf{Value} \\
+\midrule
+Optimizer       & AdamW, weight\_decay=$10^{-4}$ \\
+Initial LR      & $3\times10^{-4}$ \\
+LR Schedule     & ReduceLROnPlateau (patience=10) \\
+Warmup          & 1 epoch linear \\
+Batch size      & 64 \\
+Gradient clip   & L2 norm $\leq 10.0$ \\
+Dropout         & 0.1 (before BiGRU) \\
+Epochs          & 150 (main) / 50 (search proxy) \\
+Input height    & $H=64$, width variable \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% ============================================================
+\section{Synthetic Data Pipeline}
+%% ============================================================
+
+\subsection{Motivation}
+
+The IAM training set has a heavily skewed character distribution: rare characters such as \texttt{\#}, \texttt{*}, \texttt{;} appear fewer than 10--60 times. Font-based synthesis efficiently increases sample count and character coverage.
+
+\subsection{Text Sources}
+
+We use a three-layer text pool: (1) IAM training labels ($\times2$, $\sim$13,000 sentences) for in-distribution vocabulary; (2) LLM-generated rare-character sentences ($\sim$12,000), prompted from Doubao Seed 2.0 Pro to ensure each target character appears at least twice per sentence; and (3) rule-based template sentences ($\sim$3,000) with random slots for digits, dates, and punctuation. Combined pool: $\sim$28,000 sentences.
+
+\subsection{Rendering}
+
+Font rendering uses trdg~\cite{belval2019} with 14 fonts (9 handwriting-style, 5 print). Each image: $H=64$px, random skew (0--3$^\circ$), random blur (0--1px), random distortion. We generate a single 65,000-sample LMDB; training experiments use fixed-seed subsets for comparability. Figure~\ref{fig:synth} shows representative synthetic samples; Figure~\ref{fig:synthfreq} confirms that the pipeline achieves balanced coverage of rare characters that are severely underrepresented in IAM.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{synth_samples.png}
+  \caption{Representative synthetic training samples generated by the font-rendering pipeline. Nine handwriting-style and five print fonts are used with random augmentation.}
+  \label{fig:synth}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{synth_char_freq.png}
+  \caption{Character frequency distribution in the synthetic data pool (65,000 samples). Rare characters (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase) are explicitly oversampled via LLM-generated text, directly addressing the IAM class imbalance shown in Fig.~\ref{fig:charfreq}.}
+  \label{fig:synthfreq}
+\end{figure}
+
+%% ============================================================
+\section{Hyperparameter Search}
+%% ============================================================
+
+\subsection{Protocol}
+
+Greedy sequential search: change one hyperparameter at a time, keep if validation CER improves $>0.05\%$ relative. All runs use 50 epochs as a proxy budget.
+
+\subsection{Results}
+
+Table~\ref{tab:hparam_search} summarizes all 14 runs. Figure~\ref{fig:hparam} visualizes the val CER across all configurations.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{hparam_search_chart.png}
+  \caption{Hyperparameter search results across 14 configurations. Hidden size 512 and lr=$3\times10^{-4}$ provide the two largest individual gains.}
+  \label{fig:hparam}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Hyperparameter Search Results (50-epoch proxy)}
+\label{tab:hparam_search}
+\begin{tabular}{@{}clccc@{}}
+\toprule
+\textbf{Run} & \textbf{Change} & \textbf{Val CER} & $\boldsymbol{\Delta}$ & \textbf{Decision} \\
+\midrule
+00 & Baseline (hidden=256)    & 9.04\% & ---     & Keep \\
+01 & hidden=128               & 9.79\% & +0.75\% & Discard \\
+\textbf{02} & \textbf{hidden=512} & \textbf{7.35\%} & \textbf{$-$1.69\%} & \textbf{Keep} \\
+03 & dropout=0.0              & 7.45\% & +0.10\% & Discard \\
+04 & dropout=0.2              & 7.85\% & +0.50\% & Discard \\
+05 & dropout=0.3              & 7.20\% & $-$0.15\% & Keep \\
+06 & batch\_size=32           & 6.73\% & $-$0.62\% & Keep \\
+07 & batch\_size=128          & 8.39\% & +1.04\% & Discard \\
+\textbf{08} & \textbf{lr=$3\times10^{-4}$} & \textbf{6.29\%} & \textbf{$-$1.06\%} & \textbf{Keep} \\
+09 & lr=$5\times10^{-5}$      & 9.00\% & +2.71\% & Discard \\
+10 & cnn\_out=256             & 7.50\% & +1.21\% & Discard \\
+11 & weight\_decay=$10^{-3}$  & 8.05\% & +1.76\% & Discard \\
+12 & weight\_decay=0          & 7.42\% & +1.13\% & Discard \\
+13 & Original VGG kernel      & 7.45\% & +1.16\% & Discard \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+\texttt{hidden=512} produced the largest single improvement ($9.04\% \to 7.35\%$), indicating the BiGRU was the primary bottleneck. \texttt{lr=$3\times10^{-4}$} provided the second-largest gain ($7.35\% \to 6.29\%$), reflecting faster convergence within the 50-epoch proxy budget.
+
+%% ============================================================
+\section{Experiments}
+%% ============================================================
+
+\subsection{Experimental Setup}
+
+All main experiments use the optimal configuration from Section~VI, trained for 150 epochs. Table~\ref{tab:exp_index} defines the five experiment series. \textbf{Evaluation metric:} Character Error Rate (CER) $= \frac{\text{edit\_distance}(\hat{y}, y)}{\max(|y|, 1)} \times 100\%$.
+
+\begin{table}[h]
+\centering
+\caption{Experiment Series Index}
+\label{tab:exp_index}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Series} & \textbf{Base Training Set} & \textbf{Note} \\
+\midrule
+Exp1      & Full IAM (6,482)    & No synth; optimal hparams \\
+Exp2      & V1-cleaned (4,338)  & Aggressive VLM cleaning \\
+Exp3-$N$x & Full IAM + $N\times$ synth & Main augmentation series \\
+Exp4-$N$x & V1-cleaned + $N\times$ synth & Cleaning $\times$ synth interaction \\
+Exp5-$N$x & V2-cleaned (5,668) + $N\times$ synth & Conservative cleaning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each series addresses a specific research question. \textbf{Exp1} establishes the post-hparam-search baseline on the full IAM training set without any data augmentation. \textbf{Exp2} isolates the effect of aggressive VLM annotation cleaning (V1 prompt, $-$33\% of data). \textbf{Exp3} ($N = 1, 3, 5, 10$) is the primary synthetic augmentation experiment: it adds $N \times 6{,}482$ font-rendered samples to the full IAM set, testing whether synthetic volume provides monotonic improvement. \textbf{Exp4} ($N = 1, 2, 3, 5, 7, 10$) combines V1-cleaned IAM with the same synthetic pipeline, probing the interaction between data removal (cleaning) and data addition (augmentation) under a reduced real-data anchor. \textbf{Exp5} ($N = 0, 5, 7, 10$) repeats the augmentation study on the V2-cleaned set ($-$12.6\%), testing whether a less aggressive cleaning strategy changes the augmentation scaling behavior.
+
+\subsection{Full vs.\ VLM-Cleaned IAM}
+
+\begin{table}[h]
+\centering
+\caption{Full vs.\ VLM-Cleaned IAM Results}
+\label{tab:cleaning}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Exp} & \textbf{Training Set} & \textbf{Samples} & \textbf{Test CER} \\
+\midrule
+Exp1          & Full IAM       & 6,482 & 8.43\% \\
+Exp2          & V1 cleaned     & 4,338 & 10.33\% $\uparrow$ \\
+Exp5-base     & V2 cleaned     & 5,668 & 8.36\% $\approx$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+V1 cleaning ($-$33\% of data) significantly degrades test CER from 8.43\% to 10.33\%. V2 cleaning ($-$12.6\%) produces negligible change ($8.43\% \to 8.36\%$). Two explanations account for V1's regression: (1) removing 2,144 samples causes underfitting; (2) some IAM annotation conventions (e.g., digit 0 vs.\ letter O) that V1 flags are correct per IAM standard.
+
+\subsection{Synthetic Data Augmentation}
+
+\begin{table}[h]
+\centering
+\caption{Synthetic Augmentation Results: All Three Series}
+\label{tab:synth}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Exp} & \textbf{Base Set} & \textbf{Scale} & \textbf{Test CER} \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Exp3 --- Full IAM + synthetic (6,482 base samples)}} \\
+Exp1          & Full IAM   & 0$\times$  & 8.43\% \\
+Exp3-1x       & Full IAM   & 1$\times$  & 7.93\% \\
+Exp3-3x       & Full IAM   & 3$\times$  & 7.66\% \\
+Exp3-5x       & Full IAM   & 5$\times$  & 7.63\% \\
+\textbf{Exp3-10x} & \textbf{Full IAM} & \textbf{10$\times$} & \textbf{7.52\%} \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Exp4 --- V1-cleaned IAM + synthetic (4,338 base samples)}} \\
+Exp2          & V1 cleaned & 0$\times$  & 10.33\% \\
+Exp4-1x       & V1 cleaned & 1$\times$  & 8.94\% \\
+Exp4-2x       & V1 cleaned & 2$\times$  & 8.76\% \\
+\textbf{Exp4-3x} & \textbf{V1 cleaned} & \textbf{3$\times$} & \textbf{8.61\%} \\
+Exp4-5x       & V1 cleaned & 5$\times$  & 8.86\% $\uparrow$ \\
+Exp4-7x       & V1 cleaned & 7$\times$  & 8.91\% $\uparrow$ \\
+Exp4-10x      & V1 cleaned & 10$\times$ & 9.07\% $\uparrow$ \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Exp5 --- V2-cleaned IAM + synthetic (5,668 base samples)}} \\
+Exp5-base     & V2 cleaned & 0$\times$  & 8.36\% \\
+Exp5-5x       & V2 cleaned & 5$\times$  & 7.92\% \\
+Exp5-7x       & V2 cleaned & 7$\times$  & 8.17\% \\
+Exp5-10x      & V2 cleaned & 10$\times$ & 8.06\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Synthetic data provides consistent improvement for the full IAM baseline (Exp3): CER decreases from 8.43\% to 7.52\% at 10$\times$ scale, a 10.8\% relative improvement. Exp4 (V1-cleaned + synth) reveals a counter-intuitive finding: CER \emph{increases} beyond 3$\times$ ($8.61\% \to 8.91\% \to 9.07\%$ at 5$\times$--10$\times$), worsening compared to the V1-cleaned baseline with no synth. The likely cause is that the V1-cleaned IAM distribution (4,338 samples) is too small to anchor the model once synthetic data begins to dominate; the model overfits to the synthetic rendering domain. Exp5 narrows the gap to $\sim$0.4\% below Exp3 at equal scale but similarly stagnates beyond 5$\times$, suggesting a performance ceiling around 7.9--8.1\% CER once the ambiguous-but-informative samples removed by VLM cleaning are absent.
+
+\subsection{Per-Character Error Analysis}
+
+\begin{table}[h]
+\centering
+\caption{Per-Character CER: Exp1 vs.\ Exp3-10x (selected)}
+\label{tab:perchar}
+\begin{tabular}{@{}lcrrc@{}}
+\toprule
+\textbf{Char} & \textbf{Count} & \textbf{Exp1} & \textbf{Exp3-10x} & $\boldsymbol{\Delta}$ \\
+\midrule
+\texttt{\#} & 5   & 100.0\% & 60.0\%  & $-$40.0\% \\
+\texttt{;}  & 60  & 41.7\%  & 21.7\%  & $-$20.0\% \\
+\texttt{U}  & 11  & 36.4\%  & 18.2\%  & $-$18.2\% \\
+\texttt{R}  & 67  & 35.8\%  & 20.9\%  & $-$14.9\% \\
+\texttt{:}  & 29  & 55.2\%  & 41.4\%  & $-$13.8\% \\
+\texttt{!}  & 47  & 38.3\%  & 25.5\%  & $-$12.8\% \\
+\texttt{0}  & 34  & 38.2\%  & 26.5\%  & $-$11.8\% \\
+\texttt{W}  & 122 & 32.0\%  & 20.5\%  & $-$11.5\% \\
+\texttt{z}  & 45  & 35.6\%  & 40.0\%  & +4.4\%    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The largest improvements are concentrated in rare character categories targeted by our synthesis pipeline, directly confirming the effectiveness of LLM-generated rare-character text. The small regression on \texttt{z} is attributable to font rendering domain shift.
+
+\subsection{VLM Annotation Confusion vs.\ Model Prediction Confusion}
+
+We compare the VLM annotation confusion matrix against the model's substitution confusion matrix, both derived from character-level Levenshtein alignment. Figure~\ref{fig:vlmmatrix} shows the full $26\times26$ VLM confusion heatmap. Across all 160 pairs appearing in both matrices with count $\geq 5$, the Spearman rank correlation is:
+\begin{equation}
+  \rho = 0.559, \quad p < 0.0001 \quad (n = 160)
+\end{equation}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{vlm_confusion_matrix_1to1.png}
+  \caption{VLM annotation confusion matrix (single-character substitutions). Both axes represent characters; cell intensity indicates substitution frequency. The diagonal is zero (correct annotations excluded).}
+  \label{fig:vlmmatrix}
+\end{figure}
+
+Both the VLM and the trained model struggle with the same character pairs---\texttt{o}$\leftrightarrow$\texttt{a}, \texttt{n}$\leftrightarrow$\texttt{m}, \texttt{r}$\leftrightarrow$\texttt{s}---confirming these represent genuine visual ambiguity in cursive handwriting rather than system-specific biases. This convergence suggests a principled strategy: \textbf{VLM confusion patterns can serve as a prior for targeted data collection}.
+
+%% ============================================================
+\section{Language Model Rescoring}
+%% ============================================================
+
+\subsection{KenLM 4-gram Language Model}
+
+We train a word 4-gram KenLM model with modified Kneser-Ney smoothing on 183,468 sentences: IAM train+val labels ($\sim$7,400) and 176,010 lines from 20 Project Gutenberg novels. The resulting model is 150MB (ARPA format). Beam search uses pyctcdecode with a 73,540-word vocabulary.
+
+\subsection{Results}
+
+\begin{table}[h]
+\centering
+\caption{Beam Search Decoding Results (beam=50, $\alpha$=0.5, $\beta$=1.0, mixed-case vocab)}
+\label{tab:beam}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Exp} & \textbf{Scale} & \textbf{Greedy} & \textbf{Beam} & $\boldsymbol{\Delta}$ \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Vocabulary ablation (Exp3-10x base)}} \\
+Exp3-10x & greedy         & 7.53\% & ---    & ---       \\
+Exp3-10x & beam+unigram   & ---    & 7.50\% & $-$0.03\% \\
+Exp3-10x & beam+4g (lower)& ---    & 6.64\% & $-$0.89\% \\
+\textbf{Exp3-10x} & \textbf{beam+4g (mixed)} & --- & \textbf{6.41\%} & \textbf{$-$1.12\%} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Exp3 --- Full IAM + synthetic}} \\
+Exp3-1x  & 1$\times$  & 7.92\% & 6.58\% & $-$1.34\% \\
+Exp3-3x  & 3$\times$  & 7.67\% & 6.61\% & $-$1.06\% \\
+Exp3-5x  & 5$\times$  & 7.63\% & 6.56\% & $-$1.07\% \\
+\textbf{Exp3-10x} & \textbf{10$\times$} & \textbf{7.53\%} & \textbf{6.41\%} & \textbf{$-$1.12\%} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Exp4 --- V1-cleaned IAM + synthetic}} \\
+Exp4-3x  & 3$\times$  & 8.61\% & 7.37\% & $-$1.24\% \\
+Exp4-10x & 10$\times$ & 9.07\% & 7.64\% & $-$1.44\% \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Exp5 --- V2-cleaned IAM + synthetic}} \\
+Exp5-5x  & 5$\times$  & 7.92\% & 6.90\% & $-$1.02\% \\
+Exp5-7x  & 7$\times$  & 8.17\% & 6.84\% & $-$1.33\% \\
+Exp5-10x & 10$\times$ & 8.06\% & 6.87\% & $-$1.19\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The initial lowercase vocabulary caused proper nouns (\textit{London}, \textit{Manchester}) to be penalized as unknown tokens. Rebuilding the vocabulary with original case improved CER from 6.64\% to 6.41\%.
+
+A notable observation: \textbf{Exp3-1x + beam (6.58\%)} is within 0.17\% of \textbf{Exp3-10x + beam (6.41\%)}, despite requiring only 1/10th the synthetic data. This suggests LM rescoring is more cost-efficient than scaling synthetic volume once a reasonable greedy baseline is established. Conversely, beam search cannot fully recover the deficit caused by aggressive cleaning: Exp4-10x + beam (7.64\%) remains substantially worse than Exp3-10x + beam (6.41\%), confirming that the training data distribution loss is irreversible at inference time.
+
+%% ============================================================
+\section{Discussion}
+%% ============================================================
+
+\subsection{VLM Prompt Design in Annotation Cleaning}
+
+Our most important finding is that VLM-based annotation cleaning is highly sensitive to prompt aggressiveness. The cross-matrix analysis ($\rho=0.559$) reveals why: the top confusion pairs flagged by the VLM (\texttt{o}$\leftrightarrow$\texttt{a}, \texttt{n}$\leftrightarrow$\texttt{m}) are the same pairs where the model makes the most prediction errors. Both genuinely cannot reliably distinguish these cursive strokes, making it impossible to separate annotation errors from hard-but-valid training examples without per-character confidence gating.
+
+\subsection{Synthetic Data: Diminishing Returns and the Anchor Effect}
+
+The Exp3 CER curve shows diminishing returns beyond $3\times$ scale ($\sim0.7\%$ total CER reduction at $1\times$--$3\times$ vs.\ $\sim0.1\%$ at $5\times$--$10\times$). The Exp4 results introduce a stronger finding: when the real-data anchor is too small (4,338 samples after V1 cleaning), increasing synthetic scale \emph{increases} CER beyond 3$\times$. This ``anchor effect'' implies a minimum real-data threshold below which synthetic augmentation becomes counter-productive. The per-character analysis confirms synthetic data's primary contribution is repairing rare characters, not improving common ones, validating our targeted LLM-generation design.
+
+\subsection{LM Rescoring vs.\ Synthetic Data}
+
+\begin{table}[h]
+\centering
+\caption{Cost-Benefit Comparison}
+\label{tab:costbenefit}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Method} & \textbf{CER Gain} & \textbf{Cost} \\
+\midrule
+10$\times$ synthetic augmentation & 0.91\% & High \\
+4-gram KenLM beam search          & 1.12\% & Low  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+KenLM rescoring slightly outperforms 10$\times$ synthetic augmentation while requiring no model retraining, making it the higher-value optimization per unit of effort. In practice, combining both achieves the best result (6.41\%).
+
+\subsection{Limitations}
+
+VLM cleaning does not improve over the full dataset baseline. Our best result (6.41\%) is approximately 3.5\% absolute above TrOCR-Large (2.89\%). All experiments are on IAM; generalizability to RIMES or CVL is not demonstrated. Font-rendered text lacks stroke-level variability; diffusion-based synthesis would likely yield larger gains.
+
+%% ============================================================
+\section{Conclusion}
+%% ============================================================
+
+We present a data-centric study of HTR on IAM examining hyperparameter optimization, VLM-based annotation cleaning, synthetic data augmentation, and language model rescoring. Key results: a 14-run hyperparameter search reduces validation CER from 9.04\% to 6.29\%; synthetic data at 10$\times$ scale improves test CER from 8.43\% to 7.52\%; VLM annotation cleaning is highly sensitive to prompt design (aggressive cleaning degrades by 1.90\%; conservative cleaning is neutral); and 4-gram KenLM beam search reduces CER by 1.12\% with no model retraining. Our best result is \textbf{6.41\% test CER} (Exp3-10x + 4-gram KenLM, mixed-case vocab). A previously unreported anchor effect shows that synthetic augmentation becomes counter-productive when the real-data base set is too small ($<$5,000 samples), with CER increasing monotonically beyond $3\times$ scale in Exp4.
+
+Two findings stand out for future HTR research: (1) VLM annotation cleaning is prompt-sensitive, and the cross-matrix correlation ($\rho=0.559$) between VLM and model confusion patterns explains why; (2) this convergence suggests targeted acquisition of unambiguous handwriting samples for high-confusion pairs (\texttt{o}/\texttt{a}, \texttt{n}/\texttt{m}) as a principled data collection strategy.
+
+\textbf{Future work:} (1) Manual validation of VLM-flagged samples to quantify true IAM annotation error rate; (2) Extension to additional HTR benchmarks; (3) Integration of model prediction uncertainty for confidence-gated VLM correction; (4) Diffusion-based handwriting synthesis for higher-quality rare-character augmentation.
+
+%% ============================================================
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{99}
+
+\bibitem{shi2016}
+B.~Shi, X.~Bai, and C.~Yao, ``An end-to-end trainable neural network for image-based sequence recognition,'' \textit{IEEE Trans.\ Pattern Anal.\ Mach.\ Intell.}, vol.~39, no.~11, pp.~2298--2304, 2016.
+
+\bibitem{graves2006}
+A.~Graves, S.~Fern\'andez, F.~Gomez, and J.~Schmidhuber, ``Connectionist temporal classification: Labelling unsegmented sequence data with recurrent neural networks,'' in \textit{Proc.\ ICML}, 2006.
+
+\bibitem{li2021}
+M.~Li et al., ``TrOCR: Transformer-based optical character recognition with pre-trained models,'' \textit{arXiv:2109.10282}, 2021.
+
+\bibitem{retsinas2022}
+G.~Retsinas, P.~Sfikas, B.~Gatos, and C.~Nikou, ``Best practices for a handwritten text recognition system,'' \textit{arXiv:2404.11339}, 2022.
+
+\bibitem{marti2002}
+U.-V.~Marti and H.~Bunke, ``The IAM-database: An English sentence database for offline handwriting recognition,'' \textit{Int.\ J.\ Document Anal.\ Recognit.}, vol.~5, no.~1, pp.~39--46, 2002.
+
+\bibitem{frenay2014}
+B.~Fr\'enay and M.~Verleysen, ``Classification in the presence of label noise: A survey,'' \textit{IEEE Trans.\ Neural Netw.\ Learn.\ Syst.}, vol.~25, no.~5, pp.~845--869, 2014.
+
+\bibitem{jiang2025}
+X.~Jiang et al., ``When VLMs meet image classification: Test sets renovation via VLM-guided generative data augmentation,'' \textit{arXiv:2505.16149}, 2025.
+
+\bibitem{belval2019}
+E.~Belval, ``TextRecognitionDataGenerator,'' GitHub, 2019. [Online]. Available: \url{https://github.com/Belval/TextRecognitionDataGenerator}
+
+\bibitem{luo2023}
+C.~Luo, L.~Jin, and Z.~Sun, ``CNN-BiLSTM model for English handwriting recognition,'' \textit{arXiv:2307.00664}, 2023.
+
+\bibitem{hannun2014}
+A.~Hannun et al., ``Deep Speech: Scaling up end-to-end speech recognition,'' \textit{arXiv:1412.5567}, 2014.
+
+\bibitem{heafield2011}
+K.~Heafield, ``KenLM: Faster and smaller language model queries,'' in \textit{Proc.\ WMT}, 2011.
+
+\bibitem{wigington2017}
+C.~Wigington et al., ``Data augmentation for recognition of handwritten words and lines using a CNN-LSTM network,'' in \textit{Proc.\ ICDAR}, 2017.
+
+\end{thebibliography}
+
+%% ============================================================
+\appendix
+\section{Hyperparameter Search Full Configuration}
+
+\begin{table}[h]
+\centering
+\caption{All 14 Hyperparameter Search Configurations}
+\label{tab:hparam_full}
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+\textbf{Run} & \textbf{hid} & \textbf{drop} & \textbf{bs} & \textbf{lr} & \textbf{cnn} & \textbf{wd} \\
+\midrule
+00 & 256 & 0.1 & 64 & 1e-4 & 512 & 1e-4 \\
+01 & 128 & 0.1 & 64 & 1e-4 & 512 & 1e-4 \\
+02 & 512 & 0.1 & 64 & 1e-4 & 512 & 1e-4 \\
+03 & 512 & 0.0 & 64 & 1e-4 & 512 & 1e-4 \\
+04 & 512 & 0.2 & 64 & 1e-4 & 512 & 1e-4 \\
+05 & 512 & 0.3 & 64 & 1e-4 & 512 & 1e-4 \\
+06 & 512 & 0.1 & 32 & 1e-4 & 512 & 1e-4 \\
+07 & 512 & 0.1 & 128 & 1e-4 & 512 & 1e-4 \\
+08 & 512 & 0.1 & 64 & 3e-4 & 512 & 1e-4 \\
+09 & 512 & 0.1 & 64 & 5e-5 & 512 & 1e-4 \\
+10 & 512 & 0.1 & 64 & 1e-4 & 256 & 1e-4 \\
+11 & 512 & 0.1 & 64 & 1e-4 & 512 & 1e-3 \\
+12 & 512 & 0.1 & 64 & 1e-4 & 512 & 0.0 \\
+13 & 512 & 0.1 & 64 & 1e-4 & 512 & 1e-4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{VLM Audit Prompt Comparison}
+
+\textbf{V1 Prompt (aggressive, flag rate 33\%):}
+\begin{quote}\small
+\textit{The image shows a single line of handwritten English text. The claimed annotation is: ``\{annotation\}''. Compare word by word. Reply CORRECT / INCORRECT / AMBIGUOUS. Rules: INCORRECT: use whenever you can read a word and it differs. Err on the side of flagging. AMBIGUOUS: only when ink is too faded to read at all.}
+\end{quote}
+
+\textbf{V2 Prompt (conservative, flag rate 12.6\%):}
+\begin{quote}\small
+\textit{The image shows a single line of handwritten English text from the IAM Handwriting Database, annotated by trained human experts (expected $\sim$95\%+ accuracy). Annotation: ``\{annotation\}''. Default to CORRECT. Only flag INCORRECT when ALL of the following: you can clearly read the word; the difference is unambiguous; you can specify exactly which characters differ. Do NOT flag: digit 0 vs letter O (IAM uses 0 for zero; trust annotation), minor punctuation, British spelling, abbreviations, proper nouns, handwriting style variations.}
+\end{quote}
+
+\end{document}
