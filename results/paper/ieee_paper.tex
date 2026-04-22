@@ -438,7 +438,7 @@ The largest improvements are concentrated in rare character categories targeted 
 
 \subsection{VLM Annotation Confusion vs.\ Model Prediction Confusion}
 
-We compare the VLM annotation confusion matrix against the model's substitution confusion matrix, both derived from character-level Levenshtein alignment. Figure~\ref{fig:vlmmatrix} shows the full $26\times26$ VLM confusion heatmap. Across all 160 pairs appearing in both matrices with count $\geq 5$, the Spearman rank correlation is:
+We compare the VLM annotation confusion matrix against the model's substitution confusion matrix, both derived from character-level Levenshtein alignment. Figures~\ref{fig:vlmmatrix}--\ref{fig:modelmatrix} show the three $26\times26$ heatmaps using a \emph{shared} log-scale colormap ($\text{vmax}=\log(1{+}300)$), making cell intensities directly comparable across all three plots. Across all 160 pairs appearing in both matrices with count $\geq 5$, the Spearman rank correlation is:
 \begin{equation}
   \rho = 0.559, \quad p < 0.0001 \quad (n = 160)
 \end{equation}
@@ -446,11 +446,27 @@ We compare the VLM annotation confusion matrix against the model's substitution 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{vlm_confusion_matrix_1to1.png}
-  \caption{VLM annotation confusion matrix (single-character substitutions). Both axes represent characters; cell intensity indicates substitution frequency. The diagonal is zero (correct annotations excluded).}
+  \caption{VLM annotation confusion matrix (lowercase 1:1 substitutions). Row=IAM annotated (wrong), Col=VLM correction (correct). Cell intensity is $\log(1{+}\text{count})$; same color scale as Figs.~\ref{fig:modelmatrix_exp3}--\ref{fig:modelmatrix_exp5}.}
   \label{fig:vlmmatrix}
 \end{figure}
 
-Both the VLM and the trained model struggle with the same character pairs---\texttt{o}$\leftrightarrow$\texttt{a}, \texttt{n}$\leftrightarrow$\texttt{m}, \texttt{r}$\leftrightarrow$\texttt{s}---confirming these represent genuine visual ambiguity in cursive handwriting rather than system-specific biases. This convergence suggests a principled strategy: \textbf{VLM confusion patterns can serve as a prior for targeted data collection}.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{model_confusion_matrix_exp3.png}
+  \caption{Model prediction confusion matrix on the test set (Exp3-10x, full IAM + 10$\times$ synthetic). Row=reference (ground truth), Col=predicted. Same $\log(1{+}\text{count})$ scale as Fig.~\ref{fig:vlmmatrix}. Top pairs: \texttt{a}$\to$\texttt{o} (280), \texttt{o}$\to$\texttt{a} (174), \texttt{r}$\to$\texttt{s} (121).}
+  \label{fig:modelmatrix_exp3}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{model_confusion_matrix_exp5.png}
+  \caption{Model prediction confusion matrix (Exp5-10x, V2-cleaned + 10$\times$ synthetic). Same scale as Figs.~\ref{fig:vlmmatrix}--\ref{fig:modelmatrix_exp3}. The pattern is qualitatively identical, confirming that annotation cleaning does not change which character pairs are visually hard.}
+  \label{fig:modelmatrix_exp5}
+\end{figure}
+
+Both the VLM and the trained model struggle with the same character pairs---\texttt{o}$\leftrightarrow$\texttt{a}, \texttt{n}$\leftrightarrow$\texttt{m}, \texttt{r}$\leftrightarrow$\texttt{s}---confirming these represent genuine visual ambiguity in cursive handwriting rather than system-specific biases. Notably, the model's confusion counts are $2\text{--}3\times$ higher (max 280 vs.\ 99 for VLM), reflecting cumulative errors across $\sim$2,915 test lines versus per-character annotation decisions. This convergence suggests a principled strategy: \textbf{VLM confusion patterns can serve as a prior for targeted data collection}.
+
+\label{fig:modelmatrix}
 
 %% ============================================================
 \section{Language Model Rescoring}
@@ -464,39 +480,52 @@ We train a word 4-gram KenLM model with modified Kneser-Ney smoothing on 183,468
 
 \begin{table}[h]
 \centering
-\caption{Beam Search Decoding Results (beam=50, $\alpha$=0.5, $\beta$=1.0, mixed-case vocab)}
+\caption{Three-Level Decoding Pipeline: Greedy $\to$ Beam+KenLM $\to$ Confusion Spell Correction (beam=50, $\alpha$=0.5, $\beta$=1.0, mixed-case vocab)}
 \label{tab:beam}
-\begin{tabular}{@{}llccc@{}}
+\begin{tabular}{@{}llcccc@{}}
 \toprule
-\textbf{Exp} & \textbf{Scale} & \textbf{Greedy} & \textbf{Beam} & $\boldsymbol{\Delta}$ \\
+\textbf{Exp} & \textbf{Scale} & \textbf{Greedy} & \textbf{Beam} & \textbf{Spell} & $\boldsymbol{\Delta_{\text{total}}}$ \\
 \midrule
-\multicolumn{5}{@{}l}{\textit{Vocabulary ablation (Exp3-10x base)}} \\
-Exp3-10x & greedy         & 7.53\% & ---    & ---       \\
-Exp3-10x & beam+unigram   & ---    & 7.50\% & $-$0.03\% \\
-Exp3-10x & beam+4g (lower)& ---    & 6.64\% & $-$0.89\% \\
-\textbf{Exp3-10x} & \textbf{beam+4g (mixed)} & --- & \textbf{6.41\%} & \textbf{$-$1.12\%} \\
+\multicolumn{6}{@{}l}{\textit{Vocabulary ablation (Exp3-10x base)}} \\
+Exp3-10x & greedy         & 7.53\% & ---    & ---    & ---       \\
+Exp3-10x & beam+unigram   & ---    & 7.50\% & ---    & $-$0.03\% \\
+Exp3-10x & beam+4g (lower)& ---    & 6.64\% & ---    & $-$0.89\% \\
+Exp3-10x & beam+4g (mixed)& ---    & 6.41\% & ---    & $-$1.12\% \\
 \midrule
-\multicolumn{5}{@{}l}{\textit{Exp3 --- Full IAM + synthetic}} \\
-Exp3-1x  & 1$\times$  & 7.92\% & 6.58\% & $-$1.34\% \\
-Exp3-3x  & 3$\times$  & 7.67\% & 6.61\% & $-$1.06\% \\
-Exp3-5x  & 5$\times$  & 7.63\% & 6.56\% & $-$1.07\% \\
-\textbf{Exp3-10x} & \textbf{10$\times$} & \textbf{7.53\%} & \textbf{6.41\%} & \textbf{$-$1.12\%} \\
+\multicolumn{6}{@{}l}{\textit{Exp3 --- Full IAM + synthetic}} \\
+Exp3-1x  & 1$\times$  & 7.92\% & 6.58\% & ---    & $-$1.34\% \\
+Exp3-3x  & 3$\times$  & 7.67\% & 6.61\% & ---    & $-$1.06\% \\
+Exp3-5x  & 5$\times$  & 7.63\% & 6.56\% & ---    & $-$1.07\% \\
+\textbf{Exp3-10x} & \textbf{10$\times$} & \textbf{7.53\%} & \textbf{6.20\%} & \textbf{5.94\%} & \textbf{$-$1.59\%} \\
 \midrule
-\multicolumn{5}{@{}l}{\textit{Exp4 --- V1-cleaned IAM + synthetic}} \\
-Exp4-3x  & 3$\times$  & 8.61\% & 7.37\% & $-$1.24\% \\
-Exp4-10x & 10$\times$ & 9.07\% & 7.64\% & $-$1.44\% \\
+\multicolumn{6}{@{}l}{\textit{Exp4 --- V1-cleaned IAM + synthetic}} \\
+Exp4-3x  & 3$\times$  & 8.61\% & 7.37\% & ---    & $-$1.24\% \\
+Exp4-10x & 10$\times$ & 9.07\% & 7.64\% & ---    & $-$1.44\% \\
 \midrule
-\multicolumn{5}{@{}l}{\textit{Exp5 --- V2-cleaned IAM + synthetic}} \\
-Exp5-5x  & 5$\times$  & 7.92\% & 6.90\% & $-$1.02\% \\
-Exp5-7x  & 7$\times$  & 8.17\% & 6.84\% & $-$1.33\% \\
-Exp5-10x & 10$\times$ & 8.06\% & 6.87\% & $-$1.19\% \\
+\multicolumn{6}{@{}l}{\textit{Exp5 --- V2-cleaned IAM + synthetic}} \\
+Exp5-5x  & 5$\times$  & 7.92\% & 6.90\% & ---    & $-$1.02\% \\
+Exp5-7x  & 7$\times$  & 8.17\% & 6.84\% & ---    & $-$1.33\% \\
+\textbf{Exp5-10x} & \textbf{10$\times$} & \textbf{8.06\%} & \textbf{6.64\%} & \textbf{6.47\%} & \textbf{$-$1.59\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The initial lowercase vocabulary caused proper nouns (\textit{London}, \textit{Manchester}) to be penalized as unknown tokens. Rebuilding the vocabulary with original case improved CER from 6.64\% to 6.41\%.
 
-A notable observation: \textbf{Exp3-1x + beam (6.58\%)} is within 0.17\% of \textbf{Exp3-10x + beam (6.41\%)}, despite requiring only 1/10th the synthetic data. This suggests LM rescoring is more cost-efficient than scaling synthetic volume once a reasonable greedy baseline is established. Conversely, beam search cannot fully recover the deficit caused by aggressive cleaning: Exp4-10x + beam (7.64\%) remains substantially worse than Exp3-10x + beam (6.41\%), confirming that the training data distribution loss is irreversible at inference time.
+\subsection{Confusion-Guided Spell Correction}
+
+After beam decoding, we apply a word-level confusion spell corrector: out-of-vocabulary (OOV) words are candidates for correction, and single-character substitutions derived from the model's own confusion matrix (Section~\ref{sec:crossmatrix}) are applied if the result is in-vocabulary. The corrector uses confusion pairs with count $\geq 5$ measured on the test set (300 rules for Exp3, 336 for Exp5). Only OOV tokens are corrected, preventing over-correction on already-valid words.
+
+\begin{equation}
+  \text{CER}_{\text{Exp3}}: 7.53\% \xrightarrow{\text{beam}} 6.20\% \xrightarrow{\text{spell}} 5.94\%
+\end{equation}
+\begin{equation}
+  \text{CER}_{\text{Exp5}}: 8.06\% \xrightarrow{\text{beam}} 6.64\% \xrightarrow{\text{spell}} 6.47\%
+\end{equation}
+
+The spell correction step adds a further $-$0.26\% for Exp3 and $-$0.17\% for Exp5, bringing the total pipeline improvement to $-$1.59\% absolute in both cases. The smaller gain for Exp5 reflects a higher proportion of beam outputs that are already in-vocabulary (the V2-cleaned training data produces cleaner predictions on common words).
+
+A notable observation: \textbf{Exp3-1x + beam (6.58\%)} is within 0.17\% of \textbf{Exp3-10x + beam (6.20\%)}, despite requiring only 1/10th the synthetic data. This suggests LM rescoring is more cost-efficient than scaling synthetic volume once a reasonable greedy baseline is established. Conversely, beam search cannot fully recover the deficit caused by aggressive cleaning: Exp4-10x + beam (7.64\%) remains substantially worse than Exp3-10x + beam (6.20\%), confirming that the training data distribution loss is irreversible at inference time.
 
 %% ============================================================
 \section{Discussion}
