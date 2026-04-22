@@ -1,0 +1,12 @@
+{
+  "run_name": "exp5_clean2_base",
+  "checkpoint": "checkpoints/exp5_clean2_base/best.pt",
+  "confusion_csv": "results/model_confusion_exp5.csv",
+  "confusion_min": 5,
+  "n_samples": 2915,
+  "greedy_cer": 8.3764,
+  "beam_cer": 6.6465,
+  "spell_cer": 6.4284,
+  "beam_delta": -1.7299,
+  "spell_delta": -0.2181
+}

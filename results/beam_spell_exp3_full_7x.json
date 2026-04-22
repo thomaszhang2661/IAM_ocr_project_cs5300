@@ -1,0 +1,12 @@
+{
+  "run_name": "exp3_full_7x",
+  "checkpoint": "checkpoints/exp3_full_7x/best.pt",
+  "confusion_csv": "results/model_confusion_exp3.csv",
+  "confusion_min": 5,
+  "n_samples": 2915,
+  "greedy_cer": 7.7491,
+  "beam_cer": 6.3695,
+  "spell_cer": 6.1497,
+  "beam_delta": -1.3796,
+  "spell_delta": -0.2197
+}
