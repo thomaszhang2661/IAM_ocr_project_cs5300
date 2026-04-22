@@ -557,9 +557,9 @@ Exp5-base & 0$\times$  & 8.38\% & 6.65\% & 6.43\% & $-$1.95\% \\
 Exp5-1x  & 1$\times$  & 8.09\% & 6.58\% & 6.32\% & $-$1.78\% \\
 Exp5-2x  & 2$\times$  & 7.99\% & 6.63\% & 6.45\% & $-$1.54\% \\
 Exp5-3x  & 3$\times$  & 8.03\% & 6.57\% & 6.37\% & $-$1.66\% \\
-Exp5-5x  & 5$\times$  & 7.92\% & 6.46\% & 6.29\% & $-$1.63\% \\
+\textbf{Exp5-5x}  & \textbf{5}$\boldsymbol{\times}$  & \textbf{7.92\%} & \textbf{6.46\%} & \textbf{6.29\%} & \textbf{$-$1.63\%} \\
 Exp5-7x  & 7$\times$  & 8.17\% & 6.59\% & 6.39\% & $-$1.78\% \\
-\textbf{Exp5-10x} & \textbf{10}$\boldsymbol{\times}$ & \textbf{8.06\%} & \textbf{6.64\%} & \textbf{6.47\%} & \textbf{$-$1.59\%} \\
+Exp5-10x & 10$\times$ & 8.06\% & 6.64\% & 6.47\% & $-$1.59\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -574,10 +574,10 @@ After beam decoding, we apply a word-level confusion spell corrector: out-of-voc
   \text{CER}_{\text{Exp3}}: 7.53\% \xrightarrow{\text{beam}} 6.20\% \xrightarrow{\text{spell}} 5.94\%
 \end{equation}
 \begin{equation}
-  \text{CER}_{\text{Exp5}}: 8.06\% \xrightarrow{\text{beam}} 6.64\% \xrightarrow{\text{spell}} 6.47\%
+  \text{CER}_{\text{Exp5}}: 7.92\% \xrightarrow{\text{beam}} 6.46\% \xrightarrow{\text{spell}} 6.29\%
 \end{equation}
 
-The spell correction step adds a further $-$0.26\% for Exp3 and $-$0.17\% for Exp5, bringing the total pipeline improvement to $-$1.59\% absolute in both cases. The smaller gain for Exp5 reflects a higher proportion of beam outputs that are already in-vocabulary (the V2-cleaned training data produces cleaner predictions on common words).
+The spell correction step adds a further $-$0.26\% for Exp3 (best: Exp3-10x, 5.94\%) and $-$0.17\% for Exp5 (best: Exp5-5x, 6.29\%). The smaller spell gain for Exp5 reflects a higher proportion of beam outputs already in-vocabulary (the V2-cleaned training data produces cleaner predictions on common words). Notably, Exp5 peaks at $5\times$ rather than $10\times$, consistent with the diminishing-returns pattern observed in greedy CER.
 
 A notable observation: \textbf{Exp3-1x + beam + spell (6.10\%)} is within 0.16\% of \textbf{Exp3-10x + beam + spell (5.94\%)}, despite requiring only 1/10th the synthetic data. This suggests LM rescoring and spell correction are more cost-efficient than scaling synthetic volume once a reasonable greedy baseline is established. Conversely, beam search cannot fully recover the deficit caused by aggressive cleaning: Exp4-10x + spell (7.26\%) remains substantially worse than Exp3-10x + spell (5.94\%), confirming that the training data distribution loss is irreversible at inference time.
 
