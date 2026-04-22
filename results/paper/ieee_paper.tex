@@ -37,7 +37,7 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a data-centric study of handwritten text recognition (HTR) on the IAM Handwriting Database using a CRNN-CTC architecture. We make four contributions. First, a systematic 14-run hyperparameter search identifies an optimal configuration (BiGRU hidden=512, lr=$3\times10^{-4}$) that achieves \textbf{6.29\% validation CER} at 50 epochs---a 30\% relative improvement over a vanilla baseline. Second, a VLM-assisted annotation quality audit using Doubao Seed 2.0 Pro reveals structured character-level confusion patterns, and demonstrates that prompt engineering critically determines cleaning outcome: an aggressive prompt removing 33\% of training data degrades test CER from 8.43\% to 10.33\%, while a conservative prompt removing 12.6\% has negligible effect. A novel cross-matrix analysis shows that the VLM's annotation confusion pairs and the model's prediction confusion pairs are significantly correlated (Spearman $\rho=0.559$, $p<0.0001$ across 160 shared pairs), indicating both reflect the same underlying visual ambiguity in handwritten cursive strokes rather than system-specific biases. Third, a synthetic data augmentation pipeline targeting underrepresented characters achieves \textbf{7.52\% test CER} at 10$\times$ scale---an 11\% relative improvement---with per-character analysis confirming the largest gains on rare symbols (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase). Fourth, a three-level decoding pipeline---CTC greedy $\to$ beam search with a KenLM 4-gram language model $\to$ confusion-guided word-level spell correction---reduces test CER from 7.53\% to \textbf{5.94\%} (Exp3-10x), a 1.59\% absolute improvement. Vocabulary case preservation and OOV-gated correction are identified as critical factors.
+This paper presents a data-centric study of handwritten text recognition (HTR) on the IAM Handwriting Database using a CRNN-CTC architecture. We make four contributions. First, a systematic 14-run hyperparameter search identifies an optimal configuration (BiGRU hidden=512, lr=$3\times10^{-4}$) that achieves \textbf{6.29\% validation CER} at 50 epochs---a 30\% relative improvement over a vanilla baseline. Second, a VLM-assisted annotation quality audit using Doubao Seed 2.0 Pro reveals structured character-level confusion patterns, and demonstrates that prompt engineering critically determines cleaning outcome: an aggressive prompt removing 33\% of training data degrades test CER from 8.43\% to 10.33\%, while a conservative prompt removing 12.6\% has negligible effect. A novel cross-matrix analysis shows that the VLM's annotation confusion pairs and the model's prediction confusion pairs are significantly correlated (Spearman $\rho=0.559$, $p<0.0001$ across 160 shared pairs), indicating both reflect the same underlying visual ambiguity in handwritten cursive strokes rather than system-specific biases. Third, a synthetic data augmentation pipeline targeting underrepresented characters achieves \textbf{7.53\% test CER} at 10$\times$ scale---an 11\% relative improvement---with per-character analysis confirming the largest gains on rare symbols (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase). Fourth, a three-level decoding pipeline---CTC greedy $\to$ beam search with a KenLM 4-gram language model $\to$ confusion-guided word-level spell correction---reduces test CER from 7.53\% to \textbf{5.94\%} (Exp3-10x), a 1.59\% absolute improvement. Vocabulary case preservation and OOV-gated correction are identified as critical factors.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -388,6 +388,7 @@ V1 cleaning ($-$33\% of data) significantly degrades test CER from 8.43\% to 10.
 \multicolumn{4}{@{}l}{\textit{Exp3 --- Full IAM + synthetic (6,482 base samples)}} \\
 Exp1          & Full IAM   & 0$\times$  & 8.43\% \\
 Exp3-1x       & Full IAM   & 1$\times$  & 7.93\% \\
+Exp3-2x       & Full IAM   & 2$\times$  & 7.88\% \\
 Exp3-3x       & Full IAM   & 3$\times$  & 7.66\% \\
 Exp3-5x       & Full IAM   & 5$\times$  & 7.63\% \\
 Exp3-7x       & Full IAM   & 7$\times$  & 7.75\% \\
@@ -442,11 +443,46 @@ Synthetic data provides consistent improvement for the full IAM baseline (Exp3):
 The largest improvements are concentrated in rare character categories targeted by our synthesis pipeline, directly confirming the effectiveness of LLM-generated rare-character text. The small regression on \texttt{z} is attributable to font rendering domain shift.
 
 \subsection{VLM Annotation Confusion vs.\ Model Prediction Confusion}
+\label{sec:crossmatrix}
 
-We compare the VLM annotation confusion matrix against the model's substitution confusion matrix, both derived from character-level Levenshtein alignment. Figures~\ref{fig:vlmmatrix}--\ref{fig:modelmatrix} show the three $26\times26$ heatmaps using a \emph{shared} log-scale colormap ($\text{vmax}=\log(1{+}300)$), making cell intensities directly comparable across all three plots. Across all 160 pairs appearing in both matrices with count $\geq 5$, the Spearman rank correlation is:
+A central question is whether the confusion patterns observed in VLM annotation auditing and those made by the trained model share the same underlying structure, or whether they arise from independent, system-specific sources. If the two confusion matrices are correlated, it implies that both are driven by the same physical property---visual ambiguity in cursive strokes---rather than VLM hallucination or model overfitting.
+
+We extract all character pairs that appear with count $\geq 5$ in \emph{both} the VLM confusion matrix (from character-level alignment of IAM labels vs.\ VLM-corrected text) and the model confusion matrix (from Levenshtein alignment of model outputs vs.\ ground truth on the test set). This yields 65 shared lowercase substitution pairs. Spearman rank correlation:
 \begin{equation}
-  \rho = 0.559, \quad p < 0.0001 \quad (n = 160)
+  \rho = 0.636, \quad p < 0.0001 \quad (n = 65 \text{ pairs})
 \end{equation}
+
+\noindent Figure~\ref{fig:crossscatter} plots the 65 pairs on log-log axes, colored by visual category. We partition pairs into three groups based on the cursive stroke properties of the characters involved:
+
+\begin{itemize}
+  \item \textbf{Round/oval} (\texttt{o,a,e,c,g,q}): pairs where both characters are formed from closed or nearly-closed oval strokes. These are the most visually ambiguous in cursive writing.
+  \item \textbf{Stroke/ascender} (\texttt{n,m,u,r,s,h,l,t}): pairs involving characters distinguished primarily by stroke count, ascender height, or loop presence.
+  \item \textbf{Other}: remaining pairs (cross-category or less visually motivated).
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Per-Category Spearman Correlation (VLM vs.\ Model Confusion)}
+\label{tab:crossmatrix}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Category} & \textbf{$n$} & \textbf{$\rho$} & \textbf{$p$} \\
+\midrule
+Round/oval (o,a,e,c,g,q)         & 10 & \textbf{0.942} & $<$0.001 \\
+Stroke/ascender (n,m,u,r,s,h,l,t)& 23 & 0.651          & $<$0.001 \\
+Other                              & 32 & 0.354          & 0.047    \\
+\midrule
+\textbf{Global}                    & \textbf{65} & \textbf{0.636} & $<$0.0001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{cross_matrix_scatter.png}
+  \caption{Log-log scatter of VLM confusion count vs.\ model confusion count for 65 shared substitution pairs (count $\geq 5$ in both). Red: round/oval pairs ($\rho=0.942$); blue: stroke/ascender pairs ($\rho=0.651$); gray: other ($\rho=0.354$). The strong correlation within visually motivated categories confirms a shared physical cause.}
+  \label{fig:crossscatter}
+\end{figure}
 
 \begin{figure}[t]
   \centering
@@ -469,9 +505,9 @@ We compare the VLM annotation confusion matrix against the model's substitution 
   \label{fig:modelmatrix_exp5}
 \end{figure}
 
-Both the VLM and the trained model struggle with the same character pairs---\texttt{o}$\leftrightarrow$\texttt{a}, \texttt{n}$\leftrightarrow$\texttt{m}, \texttt{r}$\leftrightarrow$\texttt{s}---confirming these represent genuine visual ambiguity in cursive handwriting rather than system-specific biases. Notably, the model's confusion counts are $2\text{--}3\times$ higher (max 280 vs.\ 99 for VLM), reflecting cumulative errors across $\sim$2,915 test lines versus per-character annotation decisions. This convergence suggests a principled strategy: \textbf{VLM confusion patterns can serve as a prior for targeted data collection}.
+Figures~\ref{fig:vlmmatrix}--\ref{fig:modelmatrix_exp5} show the three heatmaps using a shared log-scale colormap. Both matrices concentrate errors on the same regions: the \texttt{o}/\texttt{a}/\texttt{e} cluster and the \texttt{n}/\texttt{m}/\texttt{r}/\texttt{s} cluster. The model's raw counts are $2\text{--}3\times$ higher than the VLM's (max 280 vs.\ 99), reflecting cumulative errors across 2,915 test lines. Critically, Exp3 and Exp5 produce virtually identical confusion patterns (Figs.~\ref{fig:modelmatrix_exp3}--\ref{fig:modelmatrix_exp5}), confirming that annotation cleaning does not shift \emph{which} pairs are hard---only the overall error rate.
 
-\label{fig:modelmatrix}
+The quantitative analysis (Table~\ref{tab:crossmatrix}, Fig.~\ref{fig:crossscatter}) reveals that the correlation is not uniform: it is strongest for \textbf{round/oval characters} ($\rho=0.942$, pairs like \texttt{o}$\leftrightarrow$\texttt{a}, \texttt{a}$\leftrightarrow$\texttt{e}), weaker for stroke/ascender characters ($\rho=0.651$), and weakest for cross-category pairs ($\rho=0.354$). This gradient directly reflects the visual structure of lowercase cursive script: oval characters share the most stroke-level features and therefore produce the most transferable confusion signal between annotators and learned models. This finding has a practical implication: \textbf{VLM confusion patterns, particularly for round/oval pairs, can serve as a high-confidence prior for targeted synthetic data collection or confusion-guided post-correction}---which is exactly the design rationale of our spell corrector in Section~VIII.
 
 %% ============================================================
 \section{Language Model Rescoring}
