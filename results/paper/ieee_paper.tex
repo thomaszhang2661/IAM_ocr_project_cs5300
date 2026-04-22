@@ -521,7 +521,7 @@ We train a word 4-gram KenLM model with modified Kneser-Ney smoothing on 183,468
 
 \begin{table}[h]
 \centering
-\caption{Three-Level Decoding Pipeline: Greedy $\to$ Beam+KenLM $\to$ Confusion Spell Correction (beam=50, $\alpha$=0.5, $\beta$=1.0, mixed-case vocab)}
+\caption{Three-Level Decoding Pipeline: Greedy $\to$ Beam+KenLM $\to$ Confusion Spell Correction (beam=50, $\alpha$=0.5, $\beta$=1.0, mixed-case vocab). Vocabulary ablation rows show beam-only results; spell correction is applied in the main experiment rows below.}
 \label{tab:beam}
 \begin{tabular}{@{}llcccc@{}}
 \toprule
@@ -542,12 +542,12 @@ Exp3-2x  & 2$\times$  & 7.88\% & 6.45\% & 6.23\% & $-$1.64\% \\
 Exp3-3x  & 3$\times$  & 7.67\% & 6.34\% & 6.13\% & $-$1.54\% \\
 Exp3-5x  & 5$\times$  & 7.65\% & 6.27\% & 6.06\% & $-$1.58\% \\
 Exp3-7x  & 7$\times$  & 7.75\% & 6.37\% & 6.15\% & $-$1.60\% \\
-\textbf{Exp3-10x} & \textbf{10$\times$} & \textbf{7.53\%} & \textbf{6.20\%} & \textbf{5.94\%} & \textbf{$-$1.59\%} \\
+\textbf{Exp3-10x} & \textbf{10}$\boldsymbol{\times}$ & \textbf{7.53\%} & \textbf{6.20\%} & \textbf{5.94\%} & \textbf{$-$1.59\%} \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{Exp4 --- V1-cleaned IAM + synthetic}} \\
 Exp4-1x  & 1$\times$  & 8.96\% & 7.34\% & 7.10\% & $-$1.86\% \\
 Exp4-2x  & 2$\times$  & 8.76\% & 7.19\% & 6.98\% & $-$1.77\% \\
-\textbf{Exp4-3x}  & \textbf{3$\times$}  & \textbf{8.61\%} & \textbf{7.09\%} & \textbf{6.91\%} & \textbf{$-$1.70\%} \\
+\textbf{Exp4-3x}  & \textbf{3}$\boldsymbol{\times}$  & \textbf{8.61\%} & \textbf{7.09\%} & \textbf{6.91\%} & \textbf{$-$1.70\%} \\
 Exp4-5x  & 5$\times$  & 8.88\% & 7.32\% & 7.09\% & $-$1.79\% $\uparrow$ \\
 Exp4-7x  & 7$\times$  & 8.92\% & 7.32\% & 7.10\% & $-$1.82\% $\uparrow$ \\
 Exp4-10x & 10$\times$ & 9.08\% & 7.48\% & 7.26\% & $-$1.82\% $\uparrow$ \\
@@ -559,7 +559,7 @@ Exp5-2x  & 2$\times$  & 7.99\% & 6.63\% & 6.45\% & $-$1.54\% \\
 Exp5-3x  & 3$\times$  & 8.03\% & 6.57\% & 6.37\% & $-$1.66\% \\
 Exp5-5x  & 5$\times$  & 7.92\% & 6.46\% & 6.29\% & $-$1.63\% \\
 Exp5-7x  & 7$\times$  & 8.17\% & 6.59\% & 6.39\% & $-$1.78\% \\
-\textbf{Exp5-10x} & \textbf{10$\times$} & \textbf{8.06\%} & \textbf{6.64\%} & \textbf{6.47\%} & \textbf{$-$1.59\%} \\
+\textbf{Exp5-10x} & \textbf{10}$\boldsymbol{\times}$ & \textbf{8.06\%} & \textbf{6.64\%} & \textbf{6.47\%} & \textbf{$-$1.59\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
