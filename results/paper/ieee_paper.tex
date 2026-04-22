@@ -37,7 +37,7 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a data-centric study of handwritten text recognition (HTR) on the IAM Handwriting Database using a CRNN-CTC architecture. We make four contributions. First, a systematic 14-run hyperparameter search identifies an optimal configuration (BiGRU hidden=512, lr=$3\times10^{-4}$) that achieves \textbf{6.29\% validation CER} at 50 epochs---a 30\% relative improvement over a vanilla baseline. Second, a VLM-assisted annotation quality audit using Doubao Seed 2.0 Pro reveals structured character-level confusion patterns, and demonstrates that prompt engineering critically determines cleaning outcome: an aggressive prompt removing 33\% of training data degrades test CER from 8.43\% to 10.33\%, while a conservative prompt removing 12.6\% has negligible effect. A novel cross-matrix analysis shows that the VLM's annotation confusion pairs and the model's prediction confusion pairs are significantly correlated (Spearman $\rho=0.559$, $p<0.0001$ across 160 shared pairs), indicating both reflect the same underlying visual ambiguity in handwritten cursive strokes rather than system-specific biases. Third, a synthetic data augmentation pipeline targeting underrepresented characters achieves \textbf{7.52\% test CER} at 10$\times$ scale---an 11\% relative improvement---with per-character analysis confirming the largest gains on rare symbols (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase). Fourth, beam search with a KenLM 4-gram language model trained on public English corpora reduces CER to \textbf{6.41\%}, a 1.12\% absolute improvement over greedy decoding, with a key insight that vocabulary case preservation is critical for proper-noun-heavy datasets.
+This paper presents a data-centric study of handwritten text recognition (HTR) on the IAM Handwriting Database using a CRNN-CTC architecture. We make four contributions. First, a systematic 14-run hyperparameter search identifies an optimal configuration (BiGRU hidden=512, lr=$3\times10^{-4}$) that achieves \textbf{6.29\% validation CER} at 50 epochs---a 30\% relative improvement over a vanilla baseline. Second, a VLM-assisted annotation quality audit using Doubao Seed 2.0 Pro reveals structured character-level confusion patterns, and demonstrates that prompt engineering critically determines cleaning outcome: an aggressive prompt removing 33\% of training data degrades test CER from 8.43\% to 10.33\%, while a conservative prompt removing 12.6\% has negligible effect. A novel cross-matrix analysis shows that the VLM's annotation confusion pairs and the model's prediction confusion pairs are significantly correlated (Spearman $\rho=0.559$, $p<0.0001$ across 160 shared pairs), indicating both reflect the same underlying visual ambiguity in handwritten cursive strokes rather than system-specific biases. Third, a synthetic data augmentation pipeline targeting underrepresented characters achieves \textbf{7.52\% test CER} at 10$\times$ scale---an 11\% relative improvement---with per-character analysis confirming the largest gains on rare symbols (\texttt{\#}, \texttt{;}, \texttt{:}, uppercase). Fourth, a three-level decoding pipeline---CTC greedy $\to$ beam search with a KenLM 4-gram language model $\to$ confusion-guided word-level spell correction---reduces test CER from 7.53\% to \textbf{5.94\%} (Exp3-10x), a 1.59\% absolute improvement. Vocabulary case preservation and OOV-gated correction are identified as critical factors.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -72,7 +72,8 @@ Figure~\ref{fig:samples} shows representative IAM line images alongside VLM audi
 DRetHTR (2025)          & Decoder-only RetNet  & 2.26\% & Yes    \\
 TrOCR-Large~\cite{li2021} & BEiT + RoBERTa    & 2.89\% & No     \\
 Retsinas et al.~\cite{retsinas2022} & CRNN+CTC shortcut & 5.14\% & No \\
-Ours (Exp3-10x + beam)  & CRNN-CTC BiGRU       & \textbf{6.41\%} & 4-gram \\
+Ours (Exp3-10x + beam + spell) & CRNN-CTC BiGRU  & \textbf{5.94\%} & 4-gram+spell \\
+Ours (Exp3-10x + beam)  & CRNN-CTC BiGRU       & 6.41\% & 4-gram \\
 Ours (Exp3-10x, greedy) & CRNN-CTC BiGRU       & 7.52\% & No     \\
 Ours (Exp1, greedy)     & CRNN-CTC BiGRU       & 8.43\% & No     \\
 \bottomrule
@@ -85,7 +86,7 @@ Our model does not aim to surpass Transformer-based SOTA. Instead, we use CRNN-C
   \item \textbf{RQ1:} Does systematic hyperparameter search substantially improve CRNN-CTC performance on IAM?
   \item \textbf{RQ2:} Does VLM-assisted annotation cleaning improve test CER, and how sensitive is the result to the cleaning aggressiveness?
   \item \textbf{RQ3:} Does font-based synthetic data augmentation at various scales provide consistent improvement, particularly for rare characters?
-  \item \textbf{RQ4:} Does word-level n-gram language model rescoring provide meaningful gains over unigram-based beam search?
+  \item \textbf{RQ4:} Does a three-level decoding pipeline (greedy $\to$ beam+KenLM $\to$ confusion spell correction) provide meaningful and additive CER reductions?
 \end{itemize}
 
 \noindent\textbf{Contributions:}
@@ -93,7 +94,7 @@ Our model does not aim to surpass Transformer-based SOTA. Instead, we use CRNN-C
   \item Systematic 14-run, 7-GPU parallel hyperparameter search for CRNN-CTC, reducing val CER from 9.04\% to 6.29\%.
   \item First systematic VLM-based annotation quality audit of IAM, with a $26\times26$ character confusion matrix and a controlled experiment showing that cleaning aggressiveness critically mediates outcomes.
   \item Synthetic data pipeline targeting underrepresented characters, evaluated at $1\times$--$10\times$ scale across three training set variants (full IAM, V1-cleaned, V2-cleaned) with per-character error analysis.
-  \item Beam search decoding with KenLM 4-gram LM achieving 6.41\% test CER; vocabulary case preservation identified as a critical factor.
+  \item Three-level decoding pipeline (greedy $\to$ beam+KenLM $\to$ confusion spell correction) achieving \textbf{5.94\% test CER}; vocabulary case preservation and OOV-gated correction identified as critical factors.
 \end{enumerate}
 
 %% ============================================================
@@ -549,23 +550,26 @@ The Exp3 CER curve shows diminishing returns beyond $3\times$ scale ($\sim0.7\%$
 \toprule
 \textbf{Method} & \textbf{CER Gain} & \textbf{Cost} \\
 \midrule
-10$\times$ synthetic augmentation & 0.91\% & High \\
-4-gram KenLM beam search          & 1.12\% & Low  \\
+10$\times$ synthetic augmentation  & 0.91\% & High   \\
+4-gram KenLM beam search           & 1.12\% & Low    \\
+Confusion spell correction (post)  & 0.26\% & Minimal \\
+\midrule
+\textbf{Full pipeline (beam+spell)} & \textbf{1.59\%} & \textbf{Low} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-KenLM rescoring slightly outperforms 10$\times$ synthetic augmentation while requiring no model retraining, making it the higher-value optimization per unit of effort. In practice, combining both achieves the best result (6.41\%).
+KenLM rescoring slightly outperforms 10$\times$ synthetic augmentation while requiring no model retraining, making it the higher-value optimization per unit of effort. Adding the confusion spell correction step further reduces CER to \textbf{5.94\%}, the best reported result in this work.
 
 \subsection{Limitations}
 
-VLM cleaning does not improve over the full dataset baseline. Our best result (6.41\%) is approximately 3.5\% absolute above TrOCR-Large (2.89\%). All experiments are on IAM; generalizability to RIMES or CVL is not demonstrated. Font-rendered text lacks stroke-level variability; diffusion-based synthesis would likely yield larger gains.
+VLM cleaning does not improve over the full dataset baseline. Our best result (5.94\%) is approximately 3.05\% absolute above TrOCR-Large (2.89\%). All experiments are on IAM; generalizability to RIMES or CVL is not demonstrated. Font-rendered text lacks stroke-level variability; diffusion-based synthesis would likely yield larger gains.
 
 %% ============================================================
 \section{Conclusion}
 %% ============================================================
 
-We present a data-centric study of HTR on IAM examining hyperparameter optimization, VLM-based annotation cleaning, synthetic data augmentation, and language model rescoring. Key results: a 14-run hyperparameter search reduces validation CER from 9.04\% to 6.29\%; synthetic data at 10$\times$ scale improves test CER from 8.43\% to 7.52\%; VLM annotation cleaning is highly sensitive to prompt design (aggressive cleaning degrades by 1.90\%; conservative cleaning is neutral); and 4-gram KenLM beam search reduces CER by 1.12\% with no model retraining. Our best result is \textbf{6.41\% test CER} (Exp3-10x + 4-gram KenLM, mixed-case vocab). A previously unreported anchor effect shows that synthetic augmentation becomes counter-productive when the real-data base set is too small ($<$5,000 samples), with CER increasing monotonically beyond $3\times$ scale in Exp4.
+We present a data-centric study of HTR on IAM examining hyperparameter optimization, VLM-based annotation cleaning, synthetic data augmentation, and language model rescoring. Key results: a 14-run hyperparameter search reduces validation CER from 9.04\% to 6.29\%; synthetic data at 10$\times$ scale improves test CER from 8.43\% to 7.52\%; VLM annotation cleaning is highly sensitive to prompt design (aggressive cleaning degrades by 1.90\%; conservative cleaning is neutral); and a three-level decoding pipeline (beam+KenLM+confusion spell correction) reduces CER by 1.59\% to \textbf{5.94\% test CER} (Exp3-10x). A previously unreported anchor effect shows that synthetic augmentation becomes counter-productive when the real-data base set is too small ($<$5,000 samples), with CER increasing monotonically beyond $3\times$ scale in Exp4.
 
 Two findings stand out for future HTR research: (1) VLM annotation cleaning is prompt-sensitive, and the cross-matrix correlation ($\rho=0.559$) between VLM and model confusion patterns explains why; (2) this convergence suggests targeted acquisition of unambiguous handwriting samples for high-confusion pairs (\texttt{o}/\texttt{a}, \texttt{n}/\texttt{m}) as a principled data collection strategy.
 
