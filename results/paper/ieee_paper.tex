@@ -347,14 +347,14 @@ All main experiments use the optimal configuration from Section~VI, trained for 
 \midrule
 Exp1      & Full IAM (6,482)    & No synth; optimal hparams \\
 Exp2      & V1-cleaned (4,338)  & Aggressive VLM cleaning; no synth \\
-Exp3-$N$x & Full IAM + $N\times$ synth & $N \in \{1,3,5,7,10\}$ \\
+Exp3-$N$x & Full IAM + $N\times$ synth & $N \in \{1,2,3,5,7,10\}$ \\
 Exp4-$N$x & V1-cleaned + $N\times$ synth & $N \in \{1,2,3,5,7,10\}$ \\
 Exp5-$N$x & V2-cleaned (5,668) + $N\times$ synth & $N \in \{0,1,2,3,5,7,10\}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Each series addresses a specific research question. \textbf{Exp1} establishes the post-hparam-search baseline on the full IAM training set without any data augmentation. \textbf{Exp2} isolates the effect of aggressive VLM annotation cleaning (V1 prompt, $-$33\% of data). \textbf{Exp3} ($N \in \{1,3,5,7,10\}$) is the primary synthetic augmentation experiment: it adds $N \times 6{,}482$ font-rendered samples to the full IAM set, testing whether synthetic volume provides monotonic improvement. \textbf{Exp4} ($N \in \{1,2,3,5,7,10\}$) combines V1-cleaned IAM with the same synthetic pipeline, probing the interaction between data removal (cleaning) and data addition (augmentation) under a reduced real-data anchor. \textbf{Exp5} ($N \in \{0,1,2,3,5,7,10\}$) repeats the augmentation study on the V2-cleaned set ($-$12.6\%), testing whether a less aggressive cleaning strategy changes the augmentation scaling behavior.
+Each series addresses a specific research question. \textbf{Exp1} establishes the post-hparam-search baseline on the full IAM training set without any data augmentation. \textbf{Exp2} isolates the effect of aggressive VLM annotation cleaning (V1 prompt, $-$33\% of data). \textbf{Exp3} ($N \in \{1,2,3,5,7,10\}$) is the primary synthetic augmentation experiment: it adds $N \times 6{,}482$ font-rendered samples to the full IAM set, testing whether synthetic volume provides monotonic improvement. \textbf{Exp4} ($N \in \{1,2,3,5,7,10\}$) combines V1-cleaned IAM with the same synthetic pipeline, probing the interaction between data removal (cleaning) and data addition (augmentation) under a reduced real-data anchor. \textbf{Exp5} ($N \in \{0,1,2,3,5,7,10\}$) repeats the augmentation study on the V2-cleaned set ($-$12.6\%), testing whether a less aggressive cleaning strategy changes the augmentation scaling behavior.
 
 \subsection{Full vs.\ VLM-Cleaned IAM}
 
